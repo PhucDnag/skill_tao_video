@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>3D Video Frame Renderer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 576px;
+      height: 1024px;
+      overflow: hidden;
+      background: #000;
+    }
+    #glCanvas {
+      display: none;
+    }
+    #outputCanvas {
+      display: block;
+      width: 576px;
+      height: 1024px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="glCanvas" width="576" height="324"></canvas>
+  <canvas id="outputCanvas" width="576" height="1024"></canvas>
+
+  <script type="module">
+    import * as THREE from '/vendor/three/three.module.js';
+    window.THREE = THREE;
+
+    const loadScript = (src) => new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.body.appendChild(s);
+    });
+
+    await loadScript('/js/scene3d.js');
+    await loadScript('/js/overlay2d.js');
+
+    const glCanvas = document.getElementById('glCanvas');
+    const outputCanvas = document.getElementById('outputCanvas');
+
+    let scene3d = new window.MetaphorScene3D(glCanvas, 576, 324);
+    let composer = new window.VideoOverlayComposer(outputCanvas, glCanvas, 576, 1024);
+    let currentTimeline = null;
+
+    window.initTimeline = function (timeline) {
+      currentTimeline = timeline;
+      const w = timeline.width || 1080;
+      const h = timeline.height || 1920;
+      const stageH = Math.round((w * 9) / 16);
+
+      document.body.style.width = w + 'px';
+      document.body.style.height = h + 'px';
+      outputCanvas.style.width = w + 'px';
+      outputCanvas.style.height = h + 'px';
+
+      scene3d.resize(w, stageH);
+      composer.resize(w, h);
+      window.renderFrameAt(0);
+      return true;
+    };
+
+    window.renderFrameAt = function (timeSec) {
+      if (!currentTimeline) return false;
+      const segs = currentTimeline.segments || [];
+      let activeSeg = segs[0] || null;
+      for (const seg of segs) {
+        if (timeSec >= seg.startTime && timeSec <= seg.endTime + 0.05) {
+          activeSeg = seg;
+          break;
+        }
+      }
+      if (!activeSeg && segs.length > 0) {
+        activeSeg = segs[segs.length - 1];
+      }
+
+      const segDur = activeSeg ? Math.max(0.1, activeSeg.endTime - activeSeg.startTime) : 1;
+      const segProgress = activeSeg ? Math.max(0, Math.min(1, (timeSec - activeSeg.startTime) / segDur)) : 0;
+
+      scene3d.renderAtTime(timeSec, activeSeg, segProgress);
+      composer.renderComposite(timeSec, currentTimeline);
+      return true;
+    };
+
+    window.__RENDERER_READY__ = true;
+  </script>
+</body>
+</html>
+

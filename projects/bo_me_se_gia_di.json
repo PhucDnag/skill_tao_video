@@ -1,0 +1,99 @@
+{
+  "id": "bo-me-se-gia-di",
+  "name": "MỘT NGÀY NÀO ĐÓ, BỐ MẸ SẼ GIÀ ĐI (Giọng Mẫu Clone • Cảnh 3D Mới)",
+  "title": "MỘT NGÀY NÀO ĐÓ, BỐ MẸ SẼ GIÀ ĐI",
+  "watermark": "",
+  "voice": "giong_mau",
+  "rate": "+0%",
+  "pitch": "+0Hz",
+  "outroDuration": 3.5,
+  "outroScene": "calendar_tree_leaves",
+  "outroCamera": "tree_outro_warm",
+  "segments": [
+    {
+      "vi": "Chúng ta thường mải miết chạy theo ước mơ và sự nghiệp ngoài kia,",
+      "en": "We are often so busy chasing dreams and careers out there,",
+      "receipt": "",
+      "scene": "time_gears",
+      "camera": "orbit_gears"
+    },
+    {
+      "vi": "mà quên mất rằng ở quê nhà, có hai người đang âm thầm già đi mỗi ngày.",
+      "en": "forgetting that back home, two people are quietly growing older every day.",
+      "receipt": "Âm thầm già đi",
+      "scene": "lifeline_candles",
+      "camera": "orbit_candles_warm"
+    },
+    {
+      "vi": "Khi bạn ngày càng trưởng thành, mạnh mẽ và vươn cao,",
+      "en": "As you grow more mature, stronger, and reach higher,",
+      "receipt": "Khi bạn trưởng thành",
+      "scene": "lifeline_candles",
+      "camera": "candles_closeup_flame"
+    },
+    {
+      "vi": "cũng là lúc mái tóc bố thêm bạc, đôi mắt mẹ thêm mờ và bước chân dần chậm lại.",
+      "en": "father's hair turns grayer, mother's eyes dimmer, and their steps slower.",
+      "receipt": "Tóc bố thêm bạc | Mắt mẹ thêm mờ",
+      "scene": "hourglass_time",
+      "camera": "orbit_hourglass_close"
+    },
+    {
+      "vi": "Một năm bạn về thăm nhà được mấy lần? Nếu mỗi năm chỉ về dịp Tết,",
+      "en": "How many times a year do you visit home? If only once every New Year,",
+      "receipt": "Một năm về mấy lần?",
+      "scene": "calendar_tree_leaves",
+      "camera": "orbit_golden_tree"
+    },
+    {
+      "vi": "thì thời gian thực sự bạn ở bên bố mẹ chỉ còn tính bằng vài chục ngày ngắn ngủi!",
+      "en": "the real time you have left with your parents is only a few dozen short days!",
+      "receipt": "Vài chục ngày ngắn ngủi",
+      "scene": "calendar_tree_leaves",
+      "camera": "low_angle_tree_leaves"
+    },
+    {
+      "vi": "Đằng sau câu nói bố mẹ vẫn khoẻ, con cứ yên tâm làm việc đi,",
+      "en": "Behind the words 'We are fine, just focus on your work,'",
+      "receipt": "Bố mẹ vẫn khoẻ",
+      "scene": "empty_home_table",
+      "camera": "orbit_home_table"
+    },
+    {
+      "vi": "là những bữa cơm chiều vắng lặng và chiếc ghế trống luôn chờ con trở về.",
+      "en": "are quiet evening meals and an empty chair always waiting for you to come home.",
+      "receipt": "Bữa cơm chiều vắng lặng | Chiếc ghế trống chờ con",
+      "scene": "empty_home_table",
+      "camera": "pullback_lonely_table"
+    },
+    {
+      "vi": "Chúng ta có thể kiên nhẫn với cả thế giới chỉ sau vài cú chạm màn hình,",
+      "en": "We can be patient with the whole world behind a phone screen,",
+      "receipt": "Kiên nhẫn với thế giới",
+      "scene": "phone_tap",
+      "camera": "macro_phone_screen"
+    },
+    {
+      "vi": "nhưng đôi khi lại vô tình cáu gắt trước những câu hỏi lặp đi lặp lại của đấng sinh thành.",
+      "en": "yet unintentionally impatient with our parents' repeated questions.",
+      "receipt": "Vô tình cáu gắt",
+      "scene": "balance_scale",
+      "camera": "orbit_scale"
+    },
+    {
+      "vi": "Tiền bạc mất đi còn có thể kiếm lại, nhưng thời gian của bố mẹ thì không bao giờ quay đầu.",
+      "en": "Lost money can be earned back, but our parents' time never turns around.",
+      "receipt": "Thời gian không quay đầu",
+      "scene": "hourglass_time",
+      "camera": "hourglass_top_down"
+    },
+    {
+      "vi": "Đừng đợi đến khi thành đạt mới báo hiếu, hãy gọi về nhà khi còn có người bắt máy chờ con!",
+      "en": "Don't wait until success to care—call home while someone is still there to answer!",
+      "receipt": "Đừng đợi quá muộn | Hãy gọi về nhà ngay",
+      "scene": "lifeline_candles",
+      "camera": "orbit_candles_warm"
+    }
+  ]
+}
+

@@ -1,0 +1,134 @@
+{
+  "id": "ngay-cuoi-cung",
+  "name": "NẾU HÔM NAY LÀ NGÀY CUỐI CÙNG CỦA CUỘC ĐỜI... (Giọng Mẫu Clone • Cảnh 3D Mới)",
+  "title": "NẾU HÔM NAY LÀ NGÀY CUỐI CÙNG CỦA CUỘC ĐỜI...",
+  "watermark": "",
+  "voice": "giong_mau",
+  "rate": "+0%",
+  "pitch": "+0Hz",
+  "outroDuration": 3.5,
+  "outroScene": "past_present_future_trinity",
+  "outroCamera": "hero_present_moment",
+  "segments": [
+    {
+      "vi": "Nếu hôm nay là ngày cuối cùng bạn được sống trên thế giới này… bạn sẽ làm gì?",
+      "en": "If today were the very last day you got to live in this world... what would you do?",
+      "receipt": "Ngày cuối cùng?",
+      "scene": "hourglass_time",
+      "camera": "orbit_hourglass_close"
+    },
+    {
+      "vi": "Bạn có còn tức giận vì một lời nói vô tình? Có còn buồn bã vì những chuyện không đáng?",
+      "en": "Would you still be angry over a careless word, or sad over things that don't matter?",
+      "receipt": "Tức giận vô tình? | Chuyện không đáng?",
+      "scene": "balance_scale",
+      "camera": "orbit_scale"
+    },
+    {
+      "vi": "Hay vẫn tiếp tục chạy theo những thứ mà chính bạn cũng chẳng biết mình thực sự cần hay không?",
+      "en": "Or keep chasing things you don't even know if you truly need?",
+      "receipt": "Chạy theo hư vô",
+      "scene": "time_gears",
+      "camera": "orbit_gears"
+    },
+    {
+      "vi": "Chúng ta luôn sống như thể mình còn rất nhiều thời gian.",
+      "en": "We always live as though we still have endless time left.",
+      "receipt": "Còn nhiều thời gian?",
+      "scene": "calendar_tree_leaves",
+      "camera": "orbit_golden_tree"
+    },
+    {
+      "vi": "Hẹn bố mẹ một ngày khác sẽ về thăm. Hẹn bạn bè một dịp khác sẽ gặp.",
+      "en": "Promising our parents we'll visit another day, promising friends we'll meet another time.",
+      "receipt": "Hẹn một ngày khác | Hẹn một dịp khác",
+      "scene": "empty_home_table",
+      "camera": "orbit_home_table"
+    },
+    {
+      "vi": "Hẹn bản thân khi nào thành công rồi mới cho phép mình hạnh phúc.",
+      "en": "Promising ourselves we'll only allow happiness once we finally succeed.",
+      "receipt": "Trì hoãn hạnh phúc",
+      "scene": "empty_home_table",
+      "camera": "pullback_lonely_table"
+    },
+    {
+      "vi": "Nhưng bạn biết không… Có những ngày mai mà chúng ta mãi mãi không bao giờ chạm tới.",
+      "en": "But do you know... there are tomorrows we will never, ever reach.",
+      "receipt": "Ngày mai không chạm tới",
+      "scene": "vanishing_bridge",
+      "camera": "approach_vanishing_bridge"
+    },
+    {
+      "vi": "Có những người, chúng ta cứ nghĩ họ sẽ luôn ở đó, cho đến một ngày… họ chỉ còn tồn tại trong ký ức.",
+      "en": "There are people we think will always be there, until one day... they only exist in memory.",
+      "receipt": "Chỉ còn trong ký ức",
+      "scene": "memory_silhouette_frames",
+      "camera": "orbit_memory_frames"
+    },
+    {
+      "vi": "Điều đáng tiếc nhất trong cuộc đời đôi khi không phải là những điều chúng ta đã làm sai, mà là những điều chúng ta chưa từng dám làm.",
+      "en": "The greatest regret in life is often not what we did wrong, but what we never dared to do.",
+      "receipt": "Chưa từng dám làm",
+      "scene": "two_paths_bridge",
+      "camera": "fork_two_paths"
+    },
+    {
+      "vi": "Một lời yêu thương chưa kịp nói. Một lời xin lỗi còn mắc kẹt trong lòng. Một ước mơ mãi mãi chỉ nằm trên trang giấy.",
+      "en": "Words of love left unspoken, an apology trapped inside, a dream forever left on paper.",
+      "receipt": "Lời yêu chưa nói | Xin lỗi mắc kẹt | Ước mơ trên giấy",
+      "scene": "locked_glass_cage",
+      "camera": "orbit_glass_cage"
+    },
+    {
+      "vi": "Chúng ta dành quá nhiều thời gian để lo lắng về tương lai, tiếc nuối quá khứ,",
+      "en": "We spend too much time worrying about the future and regretting the past,",
+      "receipt": "Lo lắng tương lai | Tiếc nuối quá khứ",
+      "scene": "past_present_future_trinity",
+      "camera": "pan_past_to_present"
+    },
+    {
+      "vi": "mà quên mất rằng… hiện tại mới là thứ duy nhất mình thực sự đang có.",
+      "en": "forgetting that the present moment is the only thing we truly have.",
+      "receipt": "Hiện tại là duy nhất",
+      "scene": "past_present_future_trinity",
+      "camera": "hero_present_moment"
+    },
+    {
+      "vi": "Nếu ngày mai không còn đến nữa, liệu hôm nay bạn có hài lòng với cách mình đã sống?",
+      "en": "If tomorrow never comes, would you be at peace with how you lived today?",
+      "receipt": "Nếu ngày mai không đến",
+      "scene": "lifeline_candles",
+      "camera": "candles_closeup_flame"
+    },
+    {
+      "vi": "Đừng đợi đến khi mất đi mới học cách trân trọng. Đừng đợi đến khi quá muộn mới nói lời yêu thương.",
+      "en": "Don't wait until it's gone to cherish it. Don't wait until it's too late to say you love them.",
+      "receipt": "Trân trọng ngay hôm nay | Nói lời yêu thương",
+      "scene": "lifeline_candles",
+      "camera": "orbit_candles_warm"
+    },
+    {
+      "vi": "Và cũng đừng đợi đến khi mọi thứ hoàn hảo mới bắt đầu sống cho chính mình.",
+      "en": "And don't wait for everything to be perfect before you start living for yourself.",
+      "receipt": "Sống cho chính mình",
+      "scene": "locked_glass_cage",
+      "camera": "closeup_caged_dream"
+    },
+    {
+      "vi": "Bởi vì… chúng ta không thể quyết định cuộc đời mình sẽ dài bao lâu. Nhưng chúng ta có thể quyết định mình sẽ sống như thế nào.",
+      "en": "Because we cannot decide how long our life will be, but we can decide how we live it.",
+      "receipt": "Làm chủ cuộc đời",
+      "scene": "golden_helm",
+      "camera": "hero_helm_front"
+    },
+    {
+      "vi": "Hãy sống để khi nhìn lại, điều còn đọng lại là những kỷ niệm đẹp… chứ không phải những lời giá như.",
+      "en": "Live so that when you look back, what remains are beautiful memories... not 'if only.'",
+      "receipt": "Kỷ niệm đẹp | Không phải 'Giá như'",
+      "scene": "memory_silhouette_frames",
+      "camera": "closeup_memory_stardust"
+    }
+  ]
+}
+

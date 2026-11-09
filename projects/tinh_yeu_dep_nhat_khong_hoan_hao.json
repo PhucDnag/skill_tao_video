@@ -1,0 +1,179 @@
+{
+  "title": "TÌNH YÊU ĐẸP NHẤT\nKHÔNG CẦN HOÀN HẢO",
+  "voice": "giong_mau",
+  "rate": "+0%",
+  "pitch": "+0Hz",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "outroDuration": 3.5,
+  "outroScene": "ordinary_days_starlight_walk",
+  "outroCamera": "ordinary_days_horizon_outro",
+  "watermark": "",
+  "disclaimer": null,
+  "segments": [
+    {
+      "id": 1,
+      "vi": "Bạn có bao giờ tự hỏi… Giữa hàng tỷ người trên thế giới này, điều gì khiến hai con người xa lạ quyết định ở lại bên nhau?",
+      "en": "Have you ever wondered what makes two strangers among billions choose to stay together?",
+      "receipt": "Giữa hàng tỷ người",
+      "scene": "earth_billions_two_souls",
+      "camera": "globe_billions_two_souls",
+      "pauseAfter": 0.35
+    },
+    {
+      "id": 2,
+      "vi": "Là ngoại hình? Là tiền bạc? Hay là những lời hứa ngọt ngào lúc mới yêu? Có lẽ… chẳng phải điều nào trong số đó có thể giữ một tình yêu đi đến cuối cùng.",
+      "en": "Is it looks, money, or sweet early promises? None of those alone can keep love until the very end.",
+      "receipt": "Điều giữ tình yêu ở lại",
+      "scene": "earth_billions_two_souls",
+      "camera": "illusions_fade_away",
+      "pauseAfter": 0.4
+    },
+    {
+      "id": 3,
+      "vi": "Bởi vì khi mới bắt đầu, ai cũng có thể dành cho nhau những điều tốt đẹp nhất.",
+      "en": "Because in the beginning, anyone can offer the very best of themselves.",
+      "receipt": "Thuở mới bắt đầu",
+      "scene": "sweet_beginnings_constellation",
+      "camera": "sweet_start_bridge",
+      "pauseAfter": 0.35
+    },
+    {
+      "id": 4,
+      "vi": "Những tin nhắn chúc ngủ ngon. Những cuộc gọi kéo dài đến tận khuya. Những lời quan tâm, những cái nắm tay và cả những lời hứa về một tương lai hạnh phúc.",
+      "en": "Goodnight texts, late-night calls, gentle care, holding hands, and promises of a happy future.",
+      "receipt": "Khoảnh khắc ngọt ngào",
+      "scene": "sweet_beginnings_constellation",
+      "camera": "orbit_late_night_promises",
+      "pauseAfter": 0.4
+    },
+    {
+      "id": 5,
+      "vi": "Nhưng tình yêu thực sự… không chỉ được đo bằng những khoảnh khắc ngọt ngào ấy. Mà còn được thử thách vào những ngày cả hai chẳng còn dễ thương như lúc ban đầu.",
+      "en": "True love isn't measured only by sweet moments—it is tested on days when neither is easy to love.",
+      "receipt": "Thử thách qua giông bão",
+      "scene": "thorny_storm_imperfect_days",
+      "camera": "storm_test_of_love",
+      "pauseAfter": 0.35
+    },
+    {
+      "id": 6,
+      "vi": "Là khi người ấy mệt mỏi, cáu giận, im lặng và chẳng muốn nói chuyện với bất kỳ ai.",
+      "en": "When they are exhausted, irritable, silent, and don't want to talk to anyone.",
+      "receipt": "Những ngày mệt mỏi",
+      "scene": "thorny_storm_imperfect_days",
+      "camera": "exhausted_silent_cloud",
+      "pauseAfter": 0.35
+    },
+    {
+      "id": 7,
+      "vi": "Là khi hai người bất đồng quan điểm, có những hiểu lầm, những tổn thương mà đôi khi chẳng biết phải bắt đầu giải quyết từ đâu.",
+      "en": "When disagreements, misunderstandings, and hurts arise, and you don't know where to begin healing.",
+      "receipt": "Nút thắt hiểu lầm",
+      "scene": "thorny_storm_imperfect_days",
+      "camera": "tangled_knot_misunderstanding",
+      "pauseAfter": 0.4
+    },
+    {
+      "id": 8,
+      "vi": "Và chính những lúc ấy, tình yêu mới cho chúng ta thấy ý nghĩa thật sự của nó. Bởi yêu một người không phải là yêu mỗi nụ cười của họ. Mà còn là học cách thấu hiểu những nỗi buồn phía sau nụ cười ấy.",
+      "en": "Loving someone isn't just loving their smile—it is understanding the sadness hidden behind it.",
+      "receipt": "Thấu hiểu sau nụ cười",
+      "scene": "smile_mask_to_kintsugi_heart",
+      "camera": "embrace_hidden_sadness",
+      "pauseAfter": 0.4
+    },
+    {
+      "id": 9,
+      "vi": "Không phải là tìm một người chẳng bao giờ mắc sai lầm. Mà là hai người biết nhận lỗi, biết thay đổi và cùng nhau trưởng thành.",
+      "en": "It's not finding someone flawless, but two people who admit mistakes, change, and grow together.",
+      "receipt": "Cùng sửa sai & trưởng thành",
+      "scene": "smile_mask_to_kintsugi_heart",
+      "camera": "kintsugi_mending_together",
+      "pauseAfter": 0.4
+    },
+    {
+      "id": 10,
+      "vi": "Bạn biết không… Một mối quan hệ đẹp không phải là mối quan hệ chưa từng xảy ra tranh cãi.",
+      "en": "You know... a beautiful relationship isn't one that has never known an argument.",
+      "receipt": "Không phải không tranh cãi",
+      "scene": "listening_bridge_table",
+      "camera": "beyond_arguments_table",
+      "pauseAfter": 0.35
+    },
+    {
+      "id": 11,
+      "vi": "Mà là sau những bất đồng, cả hai vẫn muốn ngồi lại, lắng nghe và tìm cách hiểu nhau hơn.",
+      "en": "It is when after every disagreement, both still choose to sit down, listen, and understand each other.",
+      "receipt": "Ngồi lại để lắng nghe",
+      "scene": "listening_bridge_table",
+      "camera": "orbit_listening_harmony",
+      "pauseAfter": 0.4
+    },
+    {
+      "id": 12,
+      "vi": "Tình yêu không cần lúc nào cũng rực rỡ như pháo hoa. Đôi khi, nó chỉ đơn giản là một ngọn đèn nhỏ, âm thầm soi sáng cho nhau qua những ngày giông bão.",
+      "en": "Love needn't always blaze like fireworks—sometimes it's a quiet lamp guiding each other through storms.",
+      "receipt": "Ngọn đèn nhỏ giữa bão giông",
+      "scene": "fireworks_vs_storm_lighthouse",
+      "camera": "ephemeral_fireworks_to_lantern",
+      "pauseAfter": 0.4
+    },
+    {
+      "id": 13,
+      "vi": "Là khi bạn thất bại, vẫn có người tin rằng bạn có thể bắt đầu lại. Là khi bạn mệt mỏi với cả thế giới, vẫn có một nơi khiến bạn cảm thấy mình được yêu thương.",
+      "en": "When you fail, someone still believes in you; when tired of the world, you have a place of love.",
+      "receipt": "Nơi bình yên để trở về",
+      "scene": "fireworks_vs_storm_lighthouse",
+      "camera": "warm_lighthouse_shelter",
+      "pauseAfter": 0.4
+    },
+    {
+      "id": 14,
+      "vi": "Và là khi cả hai không còn hoàn hảo trong mắt nhau… nhưng vẫn trân trọng những điều tốt đẹp mà người kia mang lại.",
+      "en": "And when neither looks perfect anymore, yet both still cherish the goodness the other brings.",
+      "receipt": "Trân trọng điều tốt đẹp",
+      "scene": "balanced_pillars_mutual_respect",
+      "camera": "cherish_imperfect_goodness",
+      "pauseAfter": 0.35
+    },
+    {
+      "id": 15,
+      "vi": "Tất nhiên, yêu thương không có nghĩa là phải chịu đựng mọi tổn thương. Một tình yêu xứng đáng phải có sự tôn trọng, chân thành và cố gắng từ cả hai phía.",
+      "en": "Worthy love never means enduring harm—it requires respect, sincerity, and effort from both sides.",
+      "receipt": "Cố gắng từ cả hai phía",
+      "scene": "balanced_pillars_mutual_respect",
+      "camera": "mutual_pillars_respect",
+      "pauseAfter": 0.4
+    },
+    {
+      "id": 16,
+      "vi": "Vì vậy, đừng chỉ tìm kiếm một người có thể khiến trái tim bạn rung động. Hãy trân trọng người sẵn sàng cùng bạn xây dựng một tình yêu bình yên và bền vững.",
+      "en": "Don't just seek someone who makes your heart flutter—cherish the one who builds lasting peace with you.",
+      "receipt": "Cùng xây bình yên bền vững",
+      "scene": "two_imperfect_puzzle_spheres",
+      "camera": "build_peaceful_foundation",
+      "pauseAfter": 0.4
+    },
+    {
+      "id": 17,
+      "vi": "Bởi sau tất cả… Tình yêu đẹp nhất không phải là gặp được một người hoàn hảo. Mà là hai con người không hoàn hảo, vẫn lựa chọn thấu hiểu, yêu thương và cùng nhau trở thành phiên bản tốt hơn mỗi ngày.",
+      "en": "The most beautiful love is two imperfect people choosing to understand, love, and grow better together every day.",
+      "receipt": "Hai mảnh ghép không hoàn hảo",
+      "scene": "two_imperfect_puzzle_spheres",
+      "camera": "imperfect_halves_complete_sphere",
+      "pauseAfter": 0.45
+    },
+    {
+      "id": 18,
+      "vi": "Và nếu bạn đang có một người như thế bên cạnh… Hãy trân trọng họ. Bởi giữa một thế giới rộng lớn, tìm được người muốn cùng mình đi qua những ngày bình thường nhất… cũng đã là một điều vô cùng đáng quý.",
+      "en": "If you have someone like that by your side, cherish them—walking through ordinary days together is priceless.",
+      "receipt": "Đi qua những ngày bình thường",
+      "scene": "ordinary_days_starlight_walk",
+      "camera": "walk_ordinary_days_together",
+      "pauseAfter": 0.6
+    }
+  ]
+}
+

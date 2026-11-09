@@ -1,0 +1,115 @@
+{
+  "title": "ĐỪNG SỢ NHỮNG NGÀY GIÔNG BÃO",
+  "watermark": "",
+  "voice": "giong_mau",
+  "rate": "+8%",
+  "pitch": "+0Hz",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "pauseBetweenSegments": 0.06,
+  "outroDuration": 3.2,
+  "outroScene": "proud_flower_blooming_in_storm",
+  "outroCamera": "storm_blossom_crown_outro",
+  "segments": [
+    {
+      "vi": "Bạn có bao giờ tự hỏi… Vì sao những đóa sen tinh khiết nhất lại vươn mình từ bùn lầy? Vì sao những viên kim cương rực rỡ phải trải qua áp lực khắc nghiệt của lòng đất?",
+      "en": "Have you ever wondered... Why do the purest lotuses rise from the mud? Why must brilliant diamonds endure the harsh pressure of the earth?",
+      "receipt": "LOTUS & DIAMOND",
+      "scene": "lotus_mud_diamond_pressure",
+      "camera": "lotus_mud_to_diamond_core"
+    },
+    {
+      "vi": "Phải chăng, những điều đẹp đẽ nhất của cuộc đời thường được tôi luyện từ những tháng ngày chẳng mấy bình yên?",
+      "en": "Could it be that the most beautiful things in life are forged during our most restless days?",
+      "receipt": "FORGED IN ADVERSITY",
+      "scene": "lotus_mud_diamond_pressure",
+      "camera": "orbit_forged_beauty_duality"
+    },
+    {
+      "vi": "Con người cũng vậy. Chúng ta sinh ra không phải để sống một cuộc đời chưa từng vấp ngã, mà để học cách đứng dậy sau mỗi lần tưởng chừng không thể bước tiếp.",
+      "en": "Humans are the same. We aren't born to live a life without stumbling, but to learn how to rise each time we feel we cannot go on.",
+      "receipt": "RISING AFTER EVERY FALL",
+      "scene": "rising_from_stumble_steps",
+      "camera": "rise_from_cracked_step"
+    },
+    {
+      "vi": "Có những ngày, cuộc sống giống như một cơn mưa dài bất tận. Bạn cố gắng nhưng chẳng ai công nhận. Bạn chân thành nhưng vẫn bị tổn thương.",
+      "en": "Some days, life feels like an endless rain. You try hard yet no one recognizes it. You are sincere yet still get hurt.",
+      "receipt": "ENDLESS RAIN",
+      "scene": "endless_rain_high_walls",
+      "camera": "endless_rain_bruised_heart"
+    },
+    {
+      "vi": "Bạn mang trong mình những ước mơ lớn lao, nhưng hiện thực lại liên tục đặt trước mắt những bức tường tưởng chừng không thể vượt qua. Và rồi, bạn bắt đầu hoài nghi chính mình.",
+      "en": "You carry great dreams within, yet reality keeps placing seemingly insurmountable walls before you. And then, you begin to doubt yourself.",
+      "receipt": "WALLS OF DOUBT",
+      "scene": "endless_rain_high_walls",
+      "camera": "towering_reality_walls_doubt"
+    },
+    {
+      "vi": "Nhưng hãy nhớ rằng… Một hạt giống muốn trở thành cây đại thụ, trước hết phải đủ can đảm để phá vỡ lớp vỏ đang bao bọc lấy nó.",
+      "en": "But remember... A seed that wants to become a mighty tree must first have the courage to break through its own shell.",
+      "receipt": "BREAKING THE SHELL",
+      "scene": "seed_breaks_shell_mighty_tree",
+      "camera": "seed_shell_to_mighty_tree"
+    },
+    {
+      "vi": "Một con thuyền muốn khám phá đại dương, không thể mãi neo mình trong vùng nước lặng. Và một con người muốn trưởng thành, đôi khi phải bước qua những mùa giông bão của riêng mình.",
+      "en": "A ship that wants to explore the ocean cannot stay anchored in calm waters forever. And to grow, one must walk through their own seasons of storms.",
+      "receipt": "BEYOND CALM WATERS",
+      "scene": "ship_sailing_stormy_ocean",
+      "camera": "ship_braving_storm_waves"
+    },
+    {
+      "vi": "Người ta gọi đó là Resilience… sức mạnh phục hồi sau nghịch cảnh. Đó không phải khả năng chưa từng gục ngã, mà là bản lĩnh tìm lại ánh sáng ngay cả khi cuộc đời đã nhiều lần đẩy ta vào bóng tối.",
+      "en": "They call it Resilience... the power to recover from adversity. Not never falling, but the courage to find the light even after being pushed into darkness.",
+      "receipt": "TRUE RESILIENCE",
+      "scene": "resilience_light_in_darkness",
+      "camera": "resilience_phoenix_light_core"
+    },
+    {
+      "vi": "Đừng xấu hổ vì những vết sẹo của mình. Bởi mỗi vết sẹo là một minh chứng rằng bạn đã từng đau đớn, nhưng vẫn lựa chọn tiếp tục sống, tiếp tục hy vọng và tiếp tục vươn lên.",
+      "en": "Do not be ashamed of your scars. Every scar is proof that you once hurt, yet chose to keep living, keep hoping, and keep rising.",
+      "receipt": "SCARS OF HONOR",
+      "scene": "resilience_light_in_darkness",
+      "camera": "golden_scars_armor_of_hope"
+    },
+    {
+      "vi": "Đừng vội oán trách những ngày tháng khó khăn. Bởi đôi khi, chính những con đường gập ghềnh nhất lại đưa chúng ta đến những chân trời mà con đường bằng phẳng chẳng bao giờ chạm tới.",
+      "en": "Don't rush to blame difficult days. Sometimes the roughest roads lead us to horizons that smooth paths could never reach.",
+      "receipt": "NEW HORIZONS",
+      "scene": "rugged_mountain_new_horizon",
+      "camera": "rugged_climb_to_horizon"
+    },
+    {
+      "vi": "Hãy cứ kiên trì, ngay cả khi chưa ai nhìn thấy nỗ lực của bạn. Hãy cứ tin tưởng, ngay cả khi thành quả vẫn còn ở phía xa.",
+      "en": "Keep persevering, even when no one sees your effort yet. Keep believing, even when the reward is still far ahead.",
+      "receipt": "UNSEEN PERSEVERANCE",
+      "scene": "rugged_mountain_new_horizon",
+      "camera": "distant_summit_star_faith"
+    },
+    {
+      "vi": "Và hãy nhớ… Bầu trời không vì một cơn giông mà đánh mất màu xanh. Con người cũng không vì một lần thất bại mà đánh mất giá trị của chính mình.",
+      "en": "And remember... The sky does not lose its blue because of a storm. Nor does a person lose their worth because of a failure.",
+      "receipt": "ETERNAL SELF-WORTH",
+      "scene": "blue_sky_beyond_storm_clouds",
+      "camera": "parting_storm_eternal_blue_sky"
+    },
+    {
+      "vi": "Cuộc đời có thể không trao cho bạn một con đường trải đầy hoa hồng.",
+      "en": "Life may not hand you a path paved with roses.",
+      "receipt": "UNPAVED PATH",
+      "scene": "proud_flower_blooming_in_storm",
+      "camera": "unpaved_windy_road"
+    },
+    {
+      "vi": "Nhưng bạn hoàn toàn có thể trở thành một đóa hoa kiêu hãnh, nở rộ ngay giữa những tháng ngày giông bão.",
+      "en": "Yet you can become a proud flower, blooming radiantly right in the middle of stormy days.",
+      "receipt": "BLOOM IN THE STORM",
+      "scene": "proud_flower_blooming_in_storm",
+      "camera": "proud_blossom_in_tempest"
+    }
+  ]
+}
+

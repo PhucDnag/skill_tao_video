@@ -1,0 +1,101 @@
+{
+  "title": "ĐỪNG ĐỂ ĐẾN KHI MẤT ĐI, TA MỚI HIỂU ĐIỀU GÌ LÀ QUÝ GIÁ",
+  "watermark": "",
+  "voice": "giong_mau",
+  "rate": "+8%",
+  "pitch": "+0Hz",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "pauseBetweenSegments": 0.06,
+  "outroDuration": 3.2,
+  "outroScene": "existing_vs_truly_living_awakening",
+  "outroCamera": "truly_living_horizon_outro",
+  "segments": [
+    {
+      "vi": "Có một sự thật trong cuộc sống mà phải đi qua rất nhiều năm tháng, con người ta mới thực sự thấu hiểu: Chúng ta thường chỉ nhận ra giá trị của một điều gì đó khi nó không còn thuộc về mình.",
+      "en": "There is a truth in life that takes many years to truly understand: We often only realize the value of something when it no longer belongs to us.",
+      "receipt": "SLIPPING TREASURE",
+      "scene": "slipping_treasure_from_hand",
+      "camera": "slipping_treasure_reach"
+    },
+    {
+      "vi": "Khi còn trẻ, ta nghĩ thời gian là vô tận. Ta trì hoãn những cuộc gọi cho cha mẹ, bỏ lỡ những bữa cơm gia đình, vô tâm với những người luôn âm thầm ở bên cạnh.",
+      "en": "When young, we think time is endless. We postpone calls to our parents, miss family dinners, and neglect those who silently stay by our side.",
+      "receipt": "ILLUSION OF ENDLESS TIME",
+      "scene": "youth_illusion_missed_family",
+      "camera": "missed_call_to_waiting_parents"
+    },
+    {
+      "vi": "Ta cứ nghĩ rằng ngày mai vẫn còn cơ hội để yêu thương, để quan tâm, để nói một lời cảm ơn. Nhưng cuộc đời không vận hành theo những điều ta mong muốn.",
+      "en": "We keep thinking tomorrow still holds a chance to love, to care, to say thank you. Yet life does not operate according to our wishes.",
+      "receipt": "UNPREDICTABLE LIFE",
+      "scene": "youth_illusion_missed_family",
+      "camera": "unpredictable_life_table"
+    },
+    {
+      "vi": "Có những người hôm nay còn ngồi cạnh ta, ngày mai đã trở thành ký ức.",
+      "en": "Some people sitting beside us today become a memory by tomorrow.",
+      "receipt": "TODAY BESIDE, TOMORROW MEMORY",
+      "scene": "three_irreversible_losses_cards",
+      "camera": "pan_three_irreversible_cards"
+    },
+    {
+      "vi": "Có những cơ hội chỉ xuất hiện một lần. Có những lời xin lỗi, dù chân thành đến đâu, cũng không còn người để lắng nghe.",
+      "en": "Some opportunities appear only once. Some apologies, no matter how sincere, no longer have anyone left to listen.",
+      "receipt": "IRREVERSIBLE LOSSES",
+      "scene": "three_irreversible_losses_cards",
+      "camera": "focus_train_and_late_apology"
+    },
+    {
+      "vi": "Con người thường mải miết chạy theo những thứ xa xôi mà quên mất những điều bình dị đang hiện diện trước mắt.",
+      "en": "People often endlessly chase distant things while forgetting the simple blessings right before their eyes.",
+      "receipt": "CHASING DISTANT MIRAGES",
+      "scene": "chasing_distant_mirage_vs_home",
+      "camera": "chasing_mirage_forget_simple"
+    },
+    {
+      "vi": "Ta muốn có thật nhiều tiền, một vị trí thật cao, một cuộc sống khiến người khác ngưỡng mộ.",
+      "en": "We want abundant money, a high position, and a life that others admire.",
+      "receipt": "WEALTH & STATUS ILLUSION",
+      "scene": "chasing_distant_mirage_vs_home",
+      "camera": "money_status_mirage_tower"
+    },
+    {
+      "vi": "Nhưng rồi đến một lúc nào đó, ta nhận ra: Thành công lớn nhất không phải là sở hữu được bao nhiêu, mà là trong hành trình đạt được mọi thứ, ta đã không đánh mất những điều thực sự quan trọng.",
+      "en": "Yet one day we realize: The greatest success is not how much we own, but not losing what truly matters along the journey.",
+      "receipt": "TRUE MEASURE OF SUCCESS",
+      "scene": "true_success_checklist_balance",
+      "camera": "true_success_checklist_reveal"
+    },
+    {
+      "vi": "Vì vậy, đừng đợi đến khi cha mẹ già đi mới học cách quan tâm. Đừng đợi đến khi một người rời xa mới nhận ra họ quan trọng thế nào.",
+      "en": "So don't wait until your parents grow old to learn how to care. Don't wait until someone leaves to realize how much they mean.",
+      "receipt": "CHERISH BEFORE IT'S LATE",
+      "scene": "cherish_parents_and_loved_ones_now",
+      "camera": "cherish_parents_loved_ones_now"
+    },
+    {
+      "vi": "Và cũng đừng đợi đến khi tuổi trẻ qua đi mới bắt đầu sống cuộc đời mình từng mơ ước.",
+      "en": "And don't wait until your youth has passed to start living the life you once dreamed of.",
+      "receipt": "LIVE YOUR DREAM TODAY",
+      "scene": "cherish_parents_and_loved_ones_now",
+      "camera": "live_youth_dream_today"
+    },
+    {
+      "vi": "Bởi vì... Thời gian không lấy đi mọi thứ trong một khoảnh khắc. Nó chỉ lặng lẽ trôi qua, cho đến ngày ta nhìn lại và nhận ra có những điều mãi mãi không thể quay về.",
+      "en": "Because... Time doesn't take everything in a single moment. It simply flows by silently, until we look back and realize some things can never return.",
+      "receipt": "SILENT RIVER OF TIME",
+      "scene": "silent_river_of_time_hourglass",
+      "camera": "silent_hourglass_pages_drift"
+    },
+    {
+      "vi": "Hãy sống sao cho một ngày nhìn lại, ta không phải hối tiếc vì đã có quá nhiều ngày tồn tại, nhưng lại quá ít ngày thực sự sống.",
+      "en": "Live so that one day when you look back, you won't regret having had too many days merely existing, and too few days truly living.",
+      "receipt": "TRULY LIVING, NOT JUST EXISTING",
+      "scene": "existing_vs_truly_living_awakening",
+      "camera": "drop_regret_truly_live_sunrise"
+    }
+  ]
+}
+

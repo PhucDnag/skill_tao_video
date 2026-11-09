@@ -1,0 +1,24 @@
+{
+  "name": "video_ai",
+  "version": "1.0.0",
+  "description": "3D Metaphor Video AI Agent & Generator (Three.js + Edge Neural TTS Karaoke + Receipt Callouts -> MP4)",
+  "main": "server.js",
+  "scripts": {
+    "render": "node cli.js render --preset tien-di-dau-roi --output output/tien_di_dau_roi.mp4",
+    "render:quick": "node cli.js render --preset tien-di-dau-roi --maxSegments 4 --output output/demo_quick.mp4"
+  },
+  "keywords": [
+    "video-ai",
+    "threejs",
+    "tts",
+    "karaoke",
+    "3d-animation"
+  ],
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "puppeteer-core": "^24.8.2",
+    "three": "^0.176.0"
+  }
+}

@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Metaphor Video AI Agent Studio</title>
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --panel: #131822;
+      --panel-alt: #1a2130;
+      --border: #283246;
+      --accent: #f5b935;
+      --accent-hover: #ffca4b;
+      --text: #e8ecf2;
+      --muted: #93a1b8;
+      --danger: #ef4444;
+      --success: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    header {
+      height: 58px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      flex-shrink: 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: 0.3px;
+    }
+    .brand-badge {
+      background: linear-gradient(135deg, #f5b935, #d97706);
+      color: #000;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    button, select, input, textarea {
+      font-family: inherit;
+      font-size: 13px;
+      color: var(--text);
+      background: var(--panel-alt);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 8px 12px;
+      outline: none;
+    }
+    button {
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    button:hover { border-color: var(--accent); }
+    .btn-primary {
+      background: var(--accent);
+      color: #0b0e14;
+      border-color: var(--accent);
+      font-weight: 800;
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-success {
+      background: var(--success);
+      color: #051b11;
+      border-color: var(--success);
+      font-weight: 800;
+    }
+    .workspace {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 430px;
+      overflow: hidden;
+    }
+    .editor-pane {
+      padding: 18px 22px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 15px;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1.3fr 1.3fr 1fr;
+      gap: 10px;
+    }
+    .field label {
+      display: block;
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    .field input, .field select, .field textarea {
+      width: 100%;
+    }
+    .segments-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .seg-item {
+      background: var(--panel-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: border-color 0.15s;
+    }
+    .seg-item.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+    .seg-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .seg-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .seg-meta-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr auto;
+      gap: 8px;
+      align-items: end;
+    }
+    .preview-pane {
+      background: #07090d;
+      border-left: 1px solid var(--border);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      overflow-y: auto;
+    }
+    .viewport-wrap {
+      position: relative;
+      width: 315px;
+      height: 560px;
+      background: #000;
+      border: 2px solid #263042;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.65);
+      flex-shrink: 0;
+    }
+    #glCanvas { display: none; }
+    #outputCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .player-controls {
+      width: 100%;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .scrubber-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .scrubber-row input[type="range"] {
+      flex: 1;
+      padding: 0;
+      accent-color: var(--accent);
+    }
+    .status-box {
+      width: 100%;
+      background: var(--panel-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12.5px;
+      margin-top: 8px;
+    }
+    .progress-bar-bg {
+      width: 100%;
+      height: 7px;
+      background: #0d1118;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #f5b935, #10b981);
+      transition: width 0.2s;
+    }
+    .download-link {
+      display: none;
+      margin-top: 8px;
+      text-align: center;
+      background: #10b981;
+      color: #041f14;
+      font-weight: 800;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="brand-badge">AI VIDEO AGENT</span>
+      <span>3D Metaphor Video Generator (Không Nhạc Nền • TTS Karaoke + 3D + Receipt)</span>
+    </div>
+    <div class="header-actions">
+      <select id="presetSelect">
+        <option value="tu-duy-dai-han">Mẫu 1: TƯ DUY DÀI HẠN (Giọng Mẫu Clone • Cảnh 3D Mới)</option>
+        <option value="tien-di-dau-roi">Mẫu 2: TIỀN ĐI ĐÂU RỒI !? (Chuẩn Video Mẫu 100%)</option>
+        <option value="lai-kep-thoi-gian">Mẫu 3: BÍ MẬT CỦA LÃI KÉP !? (Biểu Đồ & Bánh Răng 3D)</option>
+      </select>
+      <button id="btnLoadPreset">📂 Nạp Mẫu</button>
+      <button id="btnSynthesizeTTS" class="btn-primary">🎙️ 1. Tạo Giọng Đọc AI & Khớp Karaoke</button>
+      <button id="btnRenderMP4" class="btn-success">🎬 2. Xuất Video MP4</button>
+    </div>
+  </header>
+
+  <div class="workspace">
+    <!-- Left Editor Pane -->
+    <div class="editor-pane">
+      <!-- Project Settings -->
+      <div class="card">
+        <div class="card-title">
+          <span>⚙️ Cấu Hình Video & Giọng Đọc AI (Không ghép nhạc nền)</span>
+        </div>
+        <div class="grid-3">
+          <div class="field">
+            <label>Tiêu đề lớn phía trên (In hoa)</label>
+            <input type="text" id="inputTitle" value="TIỀN ĐI ĐÂU RỒI !?" />
+          </div>
+          <div class="field">
+            <label>Chữ chạy góc phải (Watermark)</label>
+            <input type="text" id="inputWatermark" value="Nội dung thuộc hệ sinh thái kênh A&BMoney" />
+          </div>
+          <div class="field">
+            <label>Giọng đọc AI (Voice Clone & Neural TTS)</label>
+            <select id="inputVoice">
+              <option value="giong_mau">🔥 Giọng Mẫu (Clone trực tiếp từ Video Mẫu - Nam miền Nam)</option>
+              <option value="giahuy">Gia Huy (ZeroTTS - Nam miền Nam trầm ấm)</option>
+              <option value="tiendat">Tiến Đạt (ZeroTTS - Nam sôi nổi, năng lượng cao)</option>
+              <option value="quangminh">Quang Minh (ZeroTTS - Nam tin tức dứt khoát)</option>
+              <option value="huuduc">Hữu Đức (ZeroTTS - Nam điềm đạm)</option>
+              <option value="maichi">Mai Chi (ZeroTTS - Nữ kể chuyện)</option>
+              <option value="baotrang">Bảo Trang (ZeroTTS - Nữ tin tức)</option>
+              <option value="vi-VN-NamMinhNeural">Nam Minh (Edge Neural TTS - Nam)</option>
+              <option value="vi-VN-HoaiMyNeural">Hoài My (Edge Neural TTS - Nữ)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Auto-Director from Raw Script -->
+      <div class="card">
+        <div class="card-title">
+          <span>🤖 AI Agent Tự Động Phân Cảnh 3D Từ Kịch Bản Bất Kỳ</span>
+          <button id="btnAutoDirect" class="btn-primary">✨ AI Tự Động Phân Cảnh & Dịch Phụ Đề</button>
+        </div>
+        <div class="field">
+          <label>Nhập kịch bản tiếng Việt (mỗi câu 1 dòng hoặc đoạn văn — AI sẽ tự chọn cảnh 3D ẩn dụ, góc máy, rút trích thẻ Receipt và dịch phụ đề tiếng Anh):</label>
+          <textarea id="rawScriptInput" rows="3" placeholder="Ví dụ: Cuối tháng nhìn vào tài khoản ngân hàng còn vài trăm nghìn..."></textarea>
+        </div>
+      </div>
+
+      <!-- Storyboard Segments -->
+      <div class="card">
+        <div class="card-title">
+          <span>🎞️ Danh Sách Phân Cảnh 3D, Thẻ Receipt & Phụ Đề Song Ngữ</span>
+          <button id="btnAddSegment">➕ Thêm Phân Cảnh</button>
+        </div>
+        <div id="segmentsContainer" class="segments-list"></div>
+      </div>
+    </div>
+
+    <!-- Right 3D Live Preview & Render Pane -->
+    <div class="preview-pane">
+      <div class="viewport-wrap">
+        <canvas id="glCanvas" width="576" height="324"></canvas>
+        <canvas id="outputCanvas" width="576" height="1024"></canvas>
+      </div>
+
+      <div class="player-controls">
+        <div class="scrubber-row">
+          <button id="btnPlayPause">▶️ Phát</button>
+          <input type="range" id="timeScrubber" min="0" max="73" step="0.03" value="0" />
+          <span id="timeLabel" style="font-size:12px; font-variant-numeric: tabular-nums;">00:00 / 01:13</span>
+        </div>
+
+        <div class="status-box">
+          <div id="statusText">Sẵn sàng. Nhấn "Phát" để xem trước 3D hoặc "Xuất Video MP4".</div>
+          <div class="progress-bar-bg">
+            <div id="progressBar" class="progress-bar-fill"></div>
+          </div>
+          <a id="downloadMp4Link" class="download-link" href="#" download>⬇️ Tải Video MP4 Đã Render</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="voiceAudio" preload="auto"></audio>
+
+  <script type="module">
+    import * as THREE from '/vendor/three/three.module.js';
+    window.THREE = THREE;
+
+    const loadScript = (src) => new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.body.appendChild(s);
+    });
+
+    await loadScript('/js/scene3d.js');
+    await loadScript('/js/overlay2d.js');
+
+    const glCanvas = document.getElementById('glCanvas');
+    const outputCanvas = document.getElementById('outputCanvas');
+    const scene3d = new window.MetaphorScene3D(glCanvas, 576, 324);
+    const composer = new window.VideoOverlayComposer(outputCanvas, glCanvas, 576, 1024);
+
+    let currentProject = null;
+    let currentTimeline = null;
+    let isPlaying = false;
+    let playTime = 0;
+    let lastFrameTs = performance.now();
+
+    const voiceAudio = document.getElementById('voiceAudio');
+    const timeScrubber = document.getElementById('timeScrubber');
+    const timeLabel = document.getElementById('timeLabel');
+    const statusText = document.getElementById('statusText');
+    const progressBar = document.getElementById('progressBar');
+    const downloadMp4Link = document.getElementById('downloadMp4Link');
+
+    const SCENE_OPTIONS = [
+      ['tank_intro', 'Bể chứa đầu video (Ít đồng xu)'],
+      ['tank_to_pipe', 'Chuyển từ bể chứa sang ống dòng tiền'],
+      ['pipe_flow', 'Đường ống dòng tiền chảy mạnh'],
+      ['pipe_flow_leaks', 'Đường ống có điểm rò rỉ đồng xu'],
+      ['leak_closeup', 'Cận cảnh điểm rò rỉ dưới đáy ống'],
+      ['leak_particles_heavy', 'Bẫy rò rỉ hạt đỏ âm thầm'],
+      ['leak_cutters', 'Lưỡi cắt đỏ gặm nhấm dòng tiền'],
+      ['leak_pins_map', 'Bản đồ định vị dòng tiền (Ghim trắng)'],
+      ['golden_helm', 'Bánh lái vàng tài chính'],
+      ['phone_tap', 'Màn hình điện thoại chạm cảm ứng'],
+      ['helm_phone_combo', 'Bánh lái vàng + Điện thoại'],
+      ['pipe_overview', 'Toàn cảnh đường ống (Disclaimer)'],
+      ['tank_outro', 'Bể chứa cuối video đầy ắp tiền'],
+      ['growth_chart', 'Biểu đồ tăng trưởng 3D (Lãi kép)'],
+      ['balance_scale', 'Cân tiểu ly tài chính 3D'],
+      ['time_gears', 'Bánh răng cỗ máy thời gian 3D'],
+      ['vault_safe', 'Két sắt bảo vệ tài sản 3D']
+    ];
+
+    const CAMERA_OPTIONS = [
+      ['orbit_tank_close', 'Cận cảnh bể chứa đầu'],
+      ['pan_tank_to_pipe', 'Lia máy từ bể sang ống'],
+      ['track_pipe_forward', 'Trượt dọc theo đường ống'],
+      ['track_pipe_wide', 'Góc rộng dọc đường ống'],
+      ['approach_leak_valve', 'Tiến sát van rò rỉ'],
+      ['under_pipe_leak', 'Góc thấp dưới van rò rỉ'],
+      ['track_pipe_medium', 'Góc trung cảnh đường ống'],
+      ['track_pipe_reverse', 'Lia ngược chiều dòng tiền'],
+      ['closeup_pipe_rings', 'Cận cảnh vòng nối ống kính'],
+      ['closeup_pipe_smooth', 'Cận cảnh đồng xu phát sáng'],
+      ['low_angle_red_leaks', 'Góc thấp tia đỏ rò rỉ'],
+      ['pan_red_leaks', 'Lia máy qua vùng tia đỏ'],
+      ['closeup_tumbling_coins', 'Đặc tả đồng xu nhào lộn'],
+      ['closeup_red_blades', 'Đặc tả lưỡi cắt đỏ'],
+      ['high_angle_map', 'Góc cao toàn cảnh bản đồ định vị'],
+      ['hero_helm_front', 'Cận cảnh bánh lái vàng'],
+      ['macro_phone_screen', 'Cận cảnh chạm màn hình điện thoại'],
+      ['helm_and_phone_wide', 'Bánh lái vàng + Điện thoại'],
+      ['wide_pullback_pipe', 'Kéo xa toàn cảnh đường ống'],
+      ['final_tank_zoom', 'Zoom vào bể tiền đầy cuối video'],
+      ['orbit_chart_rise', 'Quay quanh biểu đồ tăng trưởng'],
+      ['orbit_scale', 'Quay quanh cân tài chính'],
+      ['orbit_gears', 'Quay quanh bánh răng thời gian'],
+      ['orbit_vault', 'Quay quanh két sắt']
+    ];
+
+    function formatTime(sec) {
+      const s = Math.max(0, Math.floor(sec));
+      const m = Math.floor(s / 60);
+      const r = s % 60;
+      return `${String(m).padStart(2, '0')}:${String(r).padStart(2, '0')}`;
+    }
+
+    // Build synthetic preview timeline when TTS hasn't been generated yet
+    function buildPreviewTimelineFromProject(proj) {
+      let t = 0;
+      const segments = (proj.segments || []).map((seg, idx) => {
+        const wordsRaw = (seg.vi || '').trim().split(/\s+/).filter(Boolean);
+        const dur = Math.max(2.2, wordsRaw.length * 0.31);
+        const step = dur / Math.max(1, wordsRaw.length);
+        const words = wordsRaw.map((w, i) => ({
+          word: w,
+          start: t + i * step,
+          end: t + (i + 1) * step
+        }));
+
+        const chunks = [];
+        for (let i = 0; i < words.length; i += 5) {
+          const slice = words.slice(i, i + 5);
+          chunks.push({
+            start: slice[0].start,
+            end: slice[slice.length - 1].end,
+            words: slice
+          });
+        }
+
+        const out = {
+          ...seg,
+          index: idx,
+          startTime: t,
+          endTime: t + dur,
+          duration: dur,
+          words,
+          karaokeChunks: chunks
+        };
+        t += dur;
+        return out;
+      });
+
+      const outroDur = proj.outroDuration || 3.5;
+      segments.push({
+        index: segments.length,
+        vi: '',
+        en: '',
+        receipt: '',
+        scene: proj.outroScene || 'tank_outro',
+        camera: proj.outroCamera || 'final_tank_zoom',
+        startTime: t,
+        endTime: t + outroDur,
+        duration: outroDur,
+        words: [],
+        karaokeChunks: [],
+        isOutro: true
+      });
+      t += outroDur;
+
+      return {
+        title: proj.title || 'TIỀN ĐI ĐÂU RỒI !?',
+        watermark: proj.watermark || 'Nội dung thuộc hệ sinh thái kênh A&BMoney',
+        width: 576,
+        height: 1024,
+        fps: 30,
+        totalDuration: t,
+        segments
+      };
+    }
+
+    function renderSegmentsUI() {
+      const container = document.getElementById('segmentsContainer');
+      container.innerHTML = '';
+      if (!currentProject || !currentProject.segments) return;
+
+      currentProject.segments.forEach((seg, idx) => {
+        const div = document.createElement('div');
+        div.className = 'seg-item';
+        div.dataset.index = idx;
+
+        const sceneOpts = SCENE_OPTIONS.map(([val, label]) =>
+          `<option value="${val}" ${seg.scene === val ? 'selected' : ''}>${label}</option>`
+        ).join('');
+
+        const camOpts = CAMERA_OPTIONS.map(([val, label]) =>
+          `<option value="${val}" ${seg.camera === val ? 'selected' : ''}>${label}</option>`
+        ).join('');
+
+        div.innerHTML = `
+          <div class="seg-header">
+            <span>Phân cảnh #${idx + 1}</span>
+            <div style="display:flex; gap:6px;">
+              <button class="btn-jump" data-idx="${idx}" style="padding:3px 8px; font-size:11px;">👁️ Xem cảnh này</button>
+              <button class="btn-del" data-idx="${idx}" style="padding:3px 8px; font-size:11px; color:#f87171;">🗑️ Xóa</button>
+            </div>
+          </div>
+          <div class="seg-row">
+            <div class="field">
+              <label>Lời thoại Tiếng Việt (Karaoke In Hoa)</label>
+              <input type="text" class="inp-vi" data-idx="${idx}" value="${(seg.vi || '').replace(/"/g, '&quot;')}" />
+            </div>
+            <div class="field">
+              <label>Phụ đề Tiếng Anh (Bên dưới)</label>
+              <input type="text" class="inp-en" data-idx="${idx}" value="${(seg.en || '').replace(/"/g, '&quot;')}" />
+            </div>
+          </div>
+          <div class="seg-meta-row">
+            <div class="field">
+              <label>Thẻ Receipt góc trái (Cách nhau bởi "|" nếu đổi nhiều thẻ)</label>
+              <input type="text" class="inp-receipt" data-idx="${idx}" placeholder="VD: Rò rỉ âm thầm hoặc Link ở Bio ↓" value="${(seg.receipt || '').replace(/"/g, '&quot;')}" />
+            </div>
+            <div class="field">
+              <label>Cảnh 3D ẩn dụ</label>
+              <select class="sel-scene" data-idx="${idx}">${sceneOpts}</select>
+            </div>
+            <div class="field">
+              <label>Chuyển động Camera 3D</label>
+              <select class="sel-camera" data-idx="${idx}">${camOpts}</select>
+            </div>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+
+      // Attach listeners
+      container.querySelectorAll('.inp-vi').forEach((el) => {
+        el.addEventListener('input', (e) => {
+          currentProject.segments[e.target.dataset.idx].vi = e.target.value;
+          syncModifiedProject();
+        });
+      });
+      container.querySelectorAll('.inp-en').forEach((el) => {
+        el.addEventListener('input', (e) => {
+          currentProject.segments[e.target.dataset.idx].en = e.target.value;
+          syncModifiedProject();
+        });
+      });
+      container.querySelectorAll('.inp-receipt').forEach((el) => {
+        el.addEventListener('input', (e) => {
+          currentProject.segments[e.target.dataset.idx].receipt = e.target.value;
+          syncModifiedProject();
+        });
+      });
+      container.querySelectorAll('.sel-scene').forEach((el) => {
+        el.addEventListener('change', (e) => {
+          currentProject.segments[e.target.dataset.idx].scene = e.target.value;
+          syncModifiedProject();
+        });
+      });
+      container.querySelectorAll('.sel-camera').forEach((el) => {
+        el.addEventListener('change', (e) => {
+          currentProject.segments[e.target.dataset.idx].camera = e.target.value;
+          syncModifiedProject();
+        });
+      });
+      container.querySelectorAll('.btn-jump').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          const i = Number(e.currentTarget.dataset.idx);
+          if (currentTimeline && currentTimeline.segments[i]) {
+            seekTo(currentTimeline.segments[i].startTime + 0.25);
+          }
+        });
+      });
+      container.querySelectorAll('.btn-del').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          const i = Number(e.currentTarget.dataset.idx);
+          currentProject.segments.splice(i, 1);
+          renderSegmentsUI();
+          syncModifiedProject();
+        });
+      });
+    }
+
+    function syncModifiedProject() {
+      currentProject.title = document.getElementById('inputTitle').value;
+      currentProject.watermark = document.getElementById('inputWatermark').value;
+      currentProject.voice = document.getElementById('inputVoice').value;
+
+      if (!voiceAudio.src) {
+        currentTimeline = buildPreviewTimelineFromProject(currentProject);
+        timeScrubber.max = currentTimeline.totalDuration;
+      } else if (currentTimeline) {
+        currentTimeline.title = currentProject.title;
+        currentTimeline.watermark = currentProject.watermark;
+        currentProject.segments.forEach((seg, i) => {
+          if (currentTimeline.segments[i]) {
+            currentTimeline.segments[i].en = seg.en;
+            currentTimeline.segments[i].receipt = seg.receipt;
+            currentTimeline.segments[i].scene = seg.scene;
+            currentTimeline.segments[i].camera = seg.camera;
+          }
+        });
+      }
+      drawAtTime(playTime);
+    }
+
+    async function loadPreset(presetId) {
+      const res = await fetch(`/api/presets/${presetId}`);
+      currentProject = await res.json();
+      document.getElementById('inputTitle').value = currentProject.title;
+      document.getElementById('inputWatermark').value = currentProject.watermark;
+      document.getElementById('inputVoice').value = currentProject.voice || 'vi-VN-NamMinhNeural';
+      document.getElementById('rawScriptInput').value = currentProject.segments.map((s) => s.vi).join('\n');
+
+      voiceAudio.pause();
+      voiceAudio.removeAttribute('src');
+      isPlaying = false;
+      document.getElementById('btnPlayPause').textContent = '▶️ Phát';
+
+      currentTimeline = buildPreviewTimelineFromProject(currentProject);
+      timeScrubber.max = currentTimeline.totalDuration;
+      renderSegmentsUI();
+      seekTo(0);
+    }
+
+    function seekTo(sec) {
+      if (!currentTimeline) return;
+      playTime = Math.max(0, Math.min(currentTimeline.totalDuration, sec));
+      timeScrubber.value = playTime;
+      timeLabel.textContent = `${formatTime(playTime)} / ${formatTime(currentTimeline.totalDuration)}`;
+      if (voiceAudio.src && Math.abs(voiceAudio.currentTime - playTime) > 0.15) {
+        voiceAudio.currentTime = playTime;
+      }
+      drawAtTime(playTime);
+    }
+
+    function drawAtTime(timeSec) {
+      if (!currentTimeline) return;
+      const segs = currentTimeline.segments || [];
+      let activeSeg = segs[0] || null;
+      for (const seg of segs) {
+        if (timeSec >= seg.startTime && timeSec <= seg.endTime + 0.05) {
+          activeSeg = seg;
+          break;
+        }
+      }
+      if (!activeSeg && segs.length > 0) activeSeg = segs[segs.length - 1];
+
+      const segDur = activeSeg ? Math.max(0.1, activeSeg.endTime - activeSeg.startTime) : 1;
+      const segProgress = activeSeg ? Math.max(0, Math.min(1, (timeSec - activeSeg.startTime) / segDur)) : 0;
+
+      scene3d.renderAtTime(timeSec, activeSeg, segProgress);
+      composer.renderComposite(timeSec, currentTimeline);
+
+      // Highlight active segment card in UI
+      document.querySelectorAll('.seg-item').forEach((el) => {
+        el.classList.toggle('active', activeSeg && Number(el.dataset.index) === activeSeg.index);
+      });
+    }
+
+    function tick(now) {
+      const dt = (now - lastFrameTs) / 1000;
+      lastFrameTs = now;
+
+      if (isPlaying && currentTimeline) {
+        if (voiceAudio.src && !voiceAudio.paused) {
+          playTime = voiceAudio.currentTime;
+        } else {
+          playTime += dt;
+        }
+        if (playTime >= currentTimeline.totalDuration) {
+          playTime = 0;
+          isPlaying = false;
+          voiceAudio.pause();
+          document.getElementById('btnPlayPause').textContent = '▶️ Phát';
+        }
+        timeScrubber.value = playTime;
+        timeLabel.textContent = `${formatTime(playTime)} / ${formatTime(currentTimeline.totalDuration)}`;
+        drawAtTime(playTime);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // Event bindings
+    document.getElementById('btnLoadPreset').addEventListener('click', () => {
+      loadPreset(document.getElementById('presetSelect').value);
+    });
+
+    document.getElementById('inputTitle').addEventListener('input', syncModifiedProject);
+    document.getElementById('inputWatermark').addEventListener('input', syncModifiedProject);
+    document.getElementById('inputVoice').addEventListener('change', syncModifiedProject);
+
+    document.getElementById('btnPlayPause').addEventListener('click', () => {
+      isPlaying = !isPlaying;
+      document.getElementById('btnPlayPause').textContent = isPlaying ? '⏸️ Tạm dừng' : '▶️ Phát';
+      if (isPlaying && voiceAudio.src) {
+        voiceAudio.currentTime = playTime;
+        voiceAudio.play().catch(() => {});
+      } else {
+        voiceAudio.pause();
+      }
+    });
+
+    timeScrubber.addEventListener('input', (e) => {
+      seekTo(parseFloat(e.target.value));
+    });
+
+    document.getElementById('btnAddSegment').addEventListener('click', () => {
+      currentProject.segments.push({
+        vi: 'Nhập câu thoại mới tại đây.',
+        en: 'Enter new subtitle line here.',
+        receipt: 'Điểm nhấn mới',
+        scene: 'pipe_flow',
+        camera: 'track_pipe_forward'
+      });
+      renderSegmentsUI();
+      syncModifiedProject();
+    });
+
+    document.getElementById('btnAutoDirect').addEventListener('click', async () => {
+      const rawScript = document.getElementById('rawScriptInput').value.trim();
+      if (!rawScript) {
+        alert('Vui lòng nhập nội dung kịch bản tiếng Việt!');
+        return;
+      }
+      statusText.textContent = '🤖 AI Agent đang phân tích kịch bản, chọn cảnh 3D và dịch phụ đề tiếng Anh...';
+      progressBar.style.width = '35%';
+
+      const res = await fetch('/api/auto-direct', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          rawScript,
+          title: document.getElementById('inputTitle').value,
+          watermark: document.getElementById('inputWatermark').value,
+          voice: document.getElementById('inputVoice').value
+        })
+      });
+      currentProject = await res.json();
+      voiceAudio.pause();
+      voiceAudio.removeAttribute('src');
+      currentTimeline = buildPreviewTimelineFromProject(currentProject);
+      timeScrubber.max = currentTimeline.totalDuration;
+      renderSegmentsUI();
+      seekTo(0);
+      progressBar.style.width = '100%';
+      statusText.textContent = `✅ Đã tự động phân cảnh ${currentProject.segments.length} đoạn 3D kèm phụ đề song ngữ!`;
+    });
+
+    document.getElementById('btnSynthesizeTTS').addEventListener('click', async () => {
+      syncModifiedProject();
+      statusText.textContent = '🎙️ Đang tạo giọng đọc AI (Edge Neural TTS) và căn chỉnh phụ đề Karaoke từng từ...';
+      progressBar.style.width = '25%';
+
+      const res = await fetch('/api/tts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ project: currentProject })
+      });
+      const data = await res.json();
+      if (data.error) {
+        statusText.textContent = '❌ Lỗi: ' + data.error;
+        return;
+      }
+      currentTimeline = data.timeline;
+      timeScrubber.max = currentTimeline.totalDuration;
+      voiceAudio.src = data.audioUrl + '?t=' + Date.now();
+      seekTo(0);
+      progressBar.style.width = '100%';
+      statusText.textContent = `✅ Đã tạo xong giọng đọc AI (${formatTime(currentTimeline.totalDuration)})! Nhấn "Phát" để nghe thử hoặc "Xuất Video MP4".`;
+    });
+
+    document.getElementById('btnRenderMP4').addEventListener('click', async () => {
+      syncModifiedProject();
+      downloadMp4Link.style.display = 'none';
+      statusText.textContent = '🎬 Bắt đầu tiến trình tạo giọng đọc AI & kết xuất video 3D MP4...';
+      progressBar.style.width = '8%';
+
+      const res = await fetch('/api/render', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ project: currentProject })
+      });
+      const { jobId } = await res.json();
+
+      const poll = setInterval(async () => {
+        const stRes = await fetch(`/api/render/${jobId}`);
+        const job = await stRes.json();
+        progressBar.style.width = `${job.percent || 10}%`;
+        statusText.textContent = job.message || 'Đang xử lý...';
+
+        if (job.status === 'done') {
+          clearInterval(poll);
+          if (job.timeline) {
+            currentTimeline = job.timeline;
+            timeScrubber.max = currentTimeline.totalDuration;
+            voiceAudio.src = job.audioUrl + '?t=' + Date.now();
+          }
+          downloadMp4Link.href = job.videoUrl;
+          downloadMp4Link.style.display = 'block';
+          statusText.textContent = '🎉 Xuất file MP4 hoàn tất! Bạn có thể tải về bên dưới.';
+        } else if (job.status === 'error') {
+          clearInterval(poll);
+          statusText.textContent = '❌ Lỗi render: ' + job.error;
+        }
+      }, 1000);
+    });
+
+    // Initialize default preset ("TIỀN ĐI ĐÂU RỒI !?")
+    await loadPreset('tien-di-dau-roi');
+    requestAnimationFrame(tick);
+  </script>
+</body>
+</html>
+

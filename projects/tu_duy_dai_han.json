@@ -1,0 +1,99 @@
+{
+  "id": "tu-duy-dai-han",
+  "name": "TƯ DUY DÀI HẠN (Phân cảnh 3D mới • Không Watermark)",
+  "title": "TƯ DUY DÀI HẠN",
+  "watermark": "",
+  "voice": "giong_mau",
+  "rate": "+0%",
+  "pitch": "+0Hz",
+  "outroDuration": 3.5,
+  "outroScene": "vault_safe",
+  "outroCamera": "vault_zoom_outro",
+  "segments": [
+    {
+      "vi": "Tại sao phần lớn mọi người đều khao khát thành công,",
+      "en": "Why do most people crave success,",
+      "receipt": "",
+      "scene": "hourglass_time",
+      "camera": "orbit_hourglass_close"
+    },
+    {
+      "vi": "nhưng lại dễ dàng bỏ cuộc chỉ sau vài tháng ngắn ngủi?",
+      "en": "yet easily give up after just a few short months?",
+      "receipt": "Bỏ cuộc quá sớm",
+      "scene": "two_paths_bridge",
+      "camera": "fork_two_paths"
+    },
+    {
+      "vi": "Bởi vì não bộ con người luôn bị cám dỗ bởi những phần thưởng tức thời,",
+      "en": "Because the human brain is always tempted by instant rewards,",
+      "receipt": "Cám dỗ tức thời",
+      "scene": "phone_tap",
+      "camera": "macro_phone_screen"
+    },
+    {
+      "vi": "mà quên mất rằng mọi giá trị vĩ đại đều cần thời gian để tích lũy.",
+      "en": "forgetting that every great value takes time to compound.",
+      "receipt": "Thời gian tích lũy",
+      "scene": "hourglass_time",
+      "camera": "hourglass_top_down"
+    },
+    {
+      "vi": "Người có tư duy ngắn hạn chỉ nhìn thấy sự mệt mỏi của ngày hôm nay,",
+      "en": "Short-term thinkers only see the exhaustion of today,",
+      "receipt": "Tư duy ngắn hạn",
+      "scene": "balance_scale",
+      "camera": "orbit_scale"
+    },
+    {
+      "vi": "còn người có tư duy dài hạn nhìn thấy cả một hệ thống đang âm thầm vận hành.",
+      "en": "while long-term thinkers see an entire system quietly at work.",
+      "receipt": "Tầm nhìn hệ thống",
+      "scene": "time_gears",
+      "camera": "orbit_gears"
+    },
+    {
+      "vi": "Hãy nhìn vào hiệu ứng domino trong cuộc sống và sự nghiệp của bạn:",
+      "en": "Look at the domino effect in your life and career:",
+      "receipt": "Hiệu ứng Domino",
+      "scene": "domino_chain",
+      "camera": "track_domino_arc"
+    },
+    {
+      "vi": "một thói quen nhỏ lặp lại mỗi ngày có vẻ chẳng tạo ra khác biệt ngay lập tức,",
+      "en": "one small habit repeated daily seems to make no immediate difference,",
+      "receipt": "Thói quen nhỏ mỗi ngày",
+      "scene": "domino_chain",
+      "camera": "low_angle_domino_giant"
+    },
+    {
+      "vi": "nhưng sau ba năm, năm năm, nó tạo ra sức bật khổng lồ không gì cản nổi!",
+      "en": "but after three or five years, it creates unstoppable momentum!",
+      "receipt": "Sức bật khổng lồ | Sau 3 - 5 năm",
+      "scene": "growth_chart",
+      "camera": "chart_low_hero"
+    },
+    {
+      "vi": "Đừng đánh đổi tương lai vững chắc chỉ để lấy vài phút thoả mãn ngắn hạn.",
+      "en": "Never trade a solid future for a few minutes of fleeting gratification.",
+      "receipt": "Đừng đánh đổi tương lai",
+      "scene": "two_paths_bridge",
+      "camera": "climb_golden_bridge"
+    },
+    {
+      "vi": "Hãy kiên nhẫn gieo hạt, giữ vững bánh lái trước những biến động nhất thời,",
+      "en": "Plant seeds patiently and hold the wheel steady through temporary storms,",
+      "receipt": "Giữ vững bánh lái",
+      "scene": "golden_helm",
+      "camera": "hero_helm_front"
+    },
+    {
+      "vi": "để dòng chảy kỷ luật mỗi ngày bồi đắp nên thành quả bền vững cho chính bạn!",
+      "en": "so the daily stream of discipline builds lasting prosperity for you!",
+      "receipt": "Kỷ luật mỗi ngày | Thành quả bền vững",
+      "scene": "growth_chart",
+      "camera": "orbit_chart_rise"
+    }
+  ]
+}
+

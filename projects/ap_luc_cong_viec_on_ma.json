@@ -1,0 +1,143 @@
+{
+  "title": "ÁP LỰC CÔNG VIỆC – ĐẰNG SAU HAI CHỮ ỔN MÀ",
+  "watermark": "",
+  "voice": "giong_mau",
+  "rate": "+8%",
+  "pitch": "+0Hz",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "pauseBetweenSegments": 0.06,
+  "outroDuration": 3.2,
+  "outroScene": "work_for_life_love_yourself",
+  "outroCamera": "self_love_dawn_outro",
+  "segments": [
+    {
+      "vi": "Có bao giờ bạn trở về nhà sau một ngày làm việc dài… Đặt chiếc túi xuống, ngồi lặng im trên giường, chẳng muốn nói chuyện với bất kỳ ai?",
+      "en": "Have you ever come home after a long workday... set your bag down, sat silently on the bed, not wanting to talk to anyone?",
+      "receipt": "SILENT EXHAUSTION",
+      "scene": "silent_bed_dropped_bag",
+      "camera": "exhausted_room_return"
+    },
+    {
+      "vi": "Không phải vì bạn không có chuyện để kể. Mà bởi vì… bạn đã quá mệt để giải thích rằng mình đang mệt mỏi đến nhường nào.",
+      "en": "Not because you have nothing to tell. But because... you are too tired to explain just how exhausted you truly are.",
+      "receipt": "TOO TIRED TO EXPLAIN",
+      "scene": "silent_bed_dropped_bag",
+      "camera": "silent_bed_dim_aura"
+    },
+    {
+      "vi": "Sáng thức dậy khi trời còn chưa sáng. Chen chúc giữa dòng người vội vã. Đến công ty với hàng tá công việc đang chờ đợi.",
+      "en": "Waking up before dawn breaks. Crowding into the rushing stream of people. Arriving at work with dozens of tasks waiting.",
+      "receipt": "DAWN RUSH",
+      "scene": "dawn_rush_deadline_storm",
+      "camera": "dawn_crowd_rush_office"
+    },
+    {
+      "vi": "Những cuộc họp kéo dài. Những deadline liên tục xuất hiện. Những lời phàn nàn, những kỳ vọng và cả nỗi sợ mình làm chưa đủ tốt.",
+      "en": "Endless meetings. Constant deadlines appearing. Complaints, expectations, and the fear of not doing well enough.",
+      "receipt": "ENDLESS DEADLINES",
+      "scene": "dawn_rush_deadline_storm",
+      "camera": "vortex_deadlines_meetings"
+    },
+    {
+      "vi": "Đôi khi, bạn chỉ muốn dừng lại một chút. Nhưng rồi lại nhớ đến tiền nhà, tiền sinh hoạt, những hóa đơn chưa thanh toán và cả những người đang đặt hy vọng vào mình. Thế là… bạn lại tiếp tục.",
+      "en": "Sometimes you just want to pause for a moment. Then you remember rent, living costs, unpaid bills, and those placing their hopes in you. So... you keep going.",
+      "receipt": "BILLS & RESPONSIBILITY",
+      "scene": "bills_and_family_expectations",
+      "camera": "bills_and_family_hope_step"
+    },
+    {
+      "vi": "Bạn mỉm cười khi đồng nghiệp hỏi: 'Dạo này ổn không?' Rồi nhẹ nhàng trả lời: 'Ổn mà.'",
+      "en": "You smile when a colleague asks: 'Are you doing okay lately?' And gently reply: 'I'm fine.'",
+      "receipt": "BEHIND 'I'M FINE'",
+      "scene": "smiling_mask_hidden_tears",
+      "camera": "front_smiling_mask_okay"
+    },
+    {
+      "vi": "Nhưng chỉ bạn mới biết, đằng sau hai chữ ấy là bao nhiêu đêm mất ngủ, bao nhiêu lần muốn bỏ cuộc và bao nhiêu cảm xúc phải giấu kín.",
+      "en": "Yet only you know how many sleepless nights, how many moments of wanting to quit, and how many hidden emotions lie behind those words.",
+      "receipt": "HIDDEN SLEEPLESS NIGHTS",
+      "scene": "smiling_mask_hidden_tears",
+      "camera": "behind_mask_sleepless_storm"
+    },
+    {
+      "vi": "Bạn biết không… Trưởng thành đôi khi không phải là trở nên mạnh mẽ hơn. Mà là học cách bước tiếp, ngay cả khi trong lòng đang có quá nhiều điều chưa thể giải quyết.",
+      "en": "You know... growing up isn't always about becoming stronger. It's learning to keep walking, even when your heart holds too many unresolved things.",
+      "receipt": "WALKING FORWARD",
+      "scene": "walking_through_unresolved_maze",
+      "camera": "walk_through_unresolved_labyrinth"
+    },
+    {
+      "vi": "Nhưng có một điều mình muốn nói với bạn… Bạn không phải một cỗ máy.",
+      "en": "But there is one thing I want to tell you... You are not a machine.",
+      "receipt": "NOT A MACHINE",
+      "scene": "not_a_machine_human_heart",
+      "camera": "gears_break_to_human_heart"
+    },
+    {
+      "vi": "Bạn không cần lúc nào cũng phải năng suất, phải thành công, phải chứng minh rằng mình giỏi hơn người khác.",
+      "en": "You don't always have to be productive, successful, or prove that you are better than others.",
+      "receipt": "BEYOND COMPARISON",
+      "scene": "not_a_machine_human_heart",
+      "camera": "step_off_comparison_podium"
+    },
+    {
+      "vi": "Có những ngày bạn làm việc rất tốt. Nhưng cũng sẽ có những ngày, chỉ cần hoàn thành những việc cần thiết thôi… đã là một sự cố gắng đáng ghi nhận.",
+      "en": "Some days you perform great. Other days, simply finishing what is necessary... is already an effort worth honoring.",
+      "receipt": "HONOR YOUR EFFORT",
+      "scene": "not_a_machine_human_heart",
+      "camera": "warm_essential_checkmarks"
+    },
+    {
+      "vi": "Đừng để một ngày làm việc tồi tệ khiến bạn nghĩ rằng cả cuộc đời mình là thất bại.",
+      "en": "Don't let one bad day at work make you believe your entire life is a failure.",
+      "receipt": "ONE BAD DAY != LIFE",
+      "scene": "bad_day_not_failed_life",
+      "camera": "zoom_out_one_storm_tile"
+    },
+    {
+      "vi": "Một lời phê bình không quyết định giá trị của bạn. Một lần mắc sai lầm cũng không có nghĩa rằng bạn kém cỏi. Và một công việc… không phải là toàn bộ con người bạn.",
+      "en": "One criticism doesn't define your worth. One mistake doesn't mean you're incapable. And a job... is not the entirety of who you are.",
+      "receipt": "TRUE SELF-WORTH",
+      "scene": "bad_day_not_failed_life",
+      "camera": "orbit_radiant_identity_mosaic"
+    },
+    {
+      "vi": "Nếu hôm nay quá mệt, hãy cho phép bản thân được nghỉ ngơi. Ăn một bữa cơm thật ngon. Ngủ một giấc thật sâu. Gọi điện cho người bạn thương, hoặc đơn giản là dành một chút thời gian cho chính mình.",
+      "en": "If today is too exhausting, allow yourself to rest. Eat a delicious meal. Sleep deeply. Call someone you love, or simply take time for yourself.",
+      "receipt": "PERMISSION TO REST",
+      "scene": "rest_recharge_sanctuary",
+      "camera": "cozy_rest_meal_sleep_call"
+    },
+    {
+      "vi": "Nghỉ ngơi không phải là lười biếng. Đó là cách bạn lấy lại sức lực để tiếp tục một hành trình dài.",
+      "en": "Resting is not laziness. It is how you regain your strength to continue a long journey.",
+      "receipt": "RECHARGE FOR THE JOURNEY",
+      "scene": "rest_recharge_sanctuary",
+      "camera": "soul_battery_emerald_recharge"
+    },
+    {
+      "vi": "Hãy nhớ rằng… Bạn đi làm để xây dựng một cuộc sống tốt đẹp hơn, chứ không phải đánh mất cuộc sống của mình vì công việc.",
+      "en": "Remember... You work to build a better life, not to lose your life because of work.",
+      "receipt": "WORK FOR LIFE",
+      "scene": "work_for_life_love_yourself",
+      "camera": "work_builds_blooming_life"
+    },
+    {
+      "vi": "Và nếu hôm nay chưa ai nói với bạn điều này… Cảm ơn bạn vì đã cố gắng đến tận bây giờ.",
+      "en": "And if no one has told you this today... Thank you for trying so hard up until now.",
+      "receipt": "THANK YOU FOR TRYING",
+      "scene": "work_for_life_love_yourself",
+      "camera": "gratitude_crown_of_effort"
+    },
+    {
+      "vi": "Bạn đã làm rất tốt rồi. Ngày mai, chúng ta lại tiếp tục… nhưng đừng quên yêu thương chính mình.",
+      "en": "You have done so well already. Tomorrow we continue... but never forget to love yourself.",
+      "receipt": "LOVE YOURSELF",
+      "scene": "work_for_life_love_yourself",
+      "camera": "love_yourself_sunrise_heart"
+    }
+  ]
+}
+
