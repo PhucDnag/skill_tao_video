@@ -408,6 +408,30 @@ const PRESETS = {
         camera: 'orbit_candles_warm'
       }
     ]
+  },
+
+  'phatbieulungtung-neon-stage': {
+    id: 'phatbieulungtung-neon-stage',
+    name: 'PHONG CÁCH NEON STORY STAGE (@phatbieulungtung — Full-Bleed)',
+    title: 'VƯỢT QUA NỖI SỢ ĐÁM ĐÔNG',
+    watermark: 'PHAT BIEU LUNG TUNG',
+    layoutMode: 'neon-story-stage',
+    style: 'phatbieulungtung',
+    voice: 'giong_mau',
+    rate: '+6%',
+    pitch: '+0Hz',
+    width: 1280,
+    height: 720,
+    fps: 30,
+    fadeInDuration: 0.45,
+    fadeOutDuration: 1.0,
+    crossfadeDuration: 0.18,
+    pauseBetweenSegments: 0.12,
+    outroDuration: 3.0,
+    outroScene: 'sunrise_ocean_horizon',
+    outroCamera: 'sunrise_backview_horizon',
+    outroHideCaption: true,
+    segments: require('../../projects/noi_so_dam_dong_neon_stage.json').segments
   }
 };
 

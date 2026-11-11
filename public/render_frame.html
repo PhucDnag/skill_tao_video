@@ -38,6 +38,7 @@
     });
 
     await loadScript('/js/scene3d.js');
+    await loadScript('/js/scene3d_neon_story.js');
     await loadScript('/js/overlay2d.js');
 
     const glCanvas = document.getElementById('glCanvas');
@@ -51,7 +52,11 @@
       currentTimeline = timeline;
       const w = timeline.width || 1080;
       const h = timeline.height || 1920;
-      const stageH = Math.round((w * 9) / 16);
+      const isFullBleed =
+        timeline.layoutMode === 'neon-story-stage' ||
+        timeline.style === 'phatbieulungtung' ||
+        w >= h;
+      const stageH = isFullBleed ? h : Math.round((w * 9) / 16);
 
       document.body.style.width = w + 'px';
       document.body.style.height = h + 'px';
@@ -59,7 +64,7 @@
       outputCanvas.style.height = h + 'px';
 
       scene3d.resize(w, stageH);
-      composer.resize(w, h);
+      composer.resize(w, h, timeline);
       window.renderFrameAt(0);
       return true;
     };

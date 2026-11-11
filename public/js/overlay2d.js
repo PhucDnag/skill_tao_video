@@ -20,18 +20,29 @@
       this.resize(width, height);
     }
 
-    resize(width, height) {
+    resize(width, height, timeline = null) {
       this.width = width;
       this.height = height;
       this.canvas.width = width;
       this.canvas.height = height;
-      this.scale = width / 576; // Base reference resolution is 576x1024
+      this.scale = Math.min(width, height) / 576; // Supports both 16:9 (1016x576/1920x1080) & 9:16 (1080x1920)
 
-      // 16:9 stage metrics inside 9:16 vertical frame
-      this.stageWidth = width;
-      this.stageHeight = Math.round((width * 9) / 16); // 324 at 576w
-      this.stageTop = Math.round(height * 0.328);      // 336 at 1024h
-      this.stageBottom = this.stageTop + this.stageHeight;
+      const isFullBleed =
+        (timeline && (timeline.layoutMode === 'neon-story-stage' || timeline.style === 'phatbieulungtung')) ||
+        width >= height;
+
+      if (isFullBleed) {
+        this.stageWidth = width;
+        this.stageHeight = height;
+        this.stageTop = 0;
+        this.stageBottom = height;
+      } else {
+        // 16:9 stage metrics inside 9:16 vertical frame
+        this.stageWidth = width;
+        this.stageHeight = Math.round((width * 9) / 16); // 324 at 576w
+        this.stageTop = Math.round(height * 0.328);      // 336 at 1024h
+        this.stageBottom = this.stageTop + this.stageHeight;
+      }
     }
 
     renderComposite(timeSec, timeline) {
@@ -39,6 +50,14 @@
       const w = this.width;
       const h = this.height;
       const s = this.scale;
+
+      const isNeonStory =
+        timeline && (timeline.layoutMode === 'neon-story-stage' || timeline.style === 'phatbieulungtung');
+
+      if (isNeonStory) {
+        this._renderNeonStoryComposite(ctx, timeSec, timeline, w, h, s);
+        return;
+      }
 
       // 1. Fill full 9:16 black background
       ctx.fillStyle = '#000000';
@@ -109,6 +128,223 @@
       if (!activeSeg.isOutro && activeSeg.vi) {
         this._drawSubtitles(ctx, timeSec, activeSeg, s);
       }
+    }
+
+    _renderNeonStoryComposite(ctx, timeSec, timeline, w, h, s) {
+      // 1. Full-frame dark stage draw
+      ctx.fillStyle = '#0D0F18';
+      ctx.fillRect(0, 0, w, h);
+      ctx.drawImage(
+        this.glCanvas,
+        0,
+        0,
+        this.glCanvas.width,
+        this.glCanvas.height,
+        0,
+        0,
+        w,
+        h
+      );
+
+      // 2. Persistent Top-Center Hollow White-Outlined Watermark ("PHAT BIEU LUNG TUNG")
+      const watermark = timeline && typeof timeline.watermark === 'string' ? timeline.watermark.trim() : '';
+      if (watermark) {
+        this._drawTopCenterOutlineWatermark(ctx, watermark, w, h, s);
+      }
+
+      const activeSeg = this._findActiveSegment(timeSec, timeline);
+      if (activeSeg) {
+        const segDuration = Math.max(0.1, activeSeg.endTime - activeSeg.startTime);
+        const segProgress = Math.max(0, Math.min(1, (timeSec - activeSeg.startTime) / segDuration));
+
+        // 3. Optional Glowing Neon-Pink Chapter Pill Badge (e.g. "NỖI SỢ ĐÁM ĐÔNG")
+        if (activeSeg.topicBadge && activeSeg.topicBadge.trim()) {
+          this._drawNeonTopicPill(ctx, activeSeg.topicBadge.trim(), w, h, s);
+        }
+
+        // 4. Condensed Kinetic Caption (Single-line Bold Italic White in upper-middle negative space)
+        if (!activeSeg.isOutro && !activeSeg.hideCaption) {
+          this._drawCondensedKineticCaption(ctx, timeSec, activeSeg, segProgress, w, h, s);
+        }
+      }
+
+      // 5. Smooth Fade-In / Cross-Dissolve Dip / Fade-To-Black transitions
+      let blackAlpha = 0;
+      const fadeInDur = timeline.fadeInDuration !== undefined ? Number(timeline.fadeInDuration) : 0.45;
+      const fadeOutDur = timeline.fadeOutDuration !== undefined ? Number(timeline.fadeOutDuration) : 0.95;
+      const crossfadeDur = timeline.crossfadeDuration !== undefined ? Number(timeline.crossfadeDuration) : 0.16;
+      const totalDur = timeline.totalDuration || 10;
+
+      if (fadeInDur > 0 && timeSec < fadeInDur) {
+        blackAlpha = Math.max(blackAlpha, 1 - timeSec / fadeInDur);
+      }
+      if (fadeOutDur > 0 && timeSec > totalDur - fadeOutDur) {
+        blackAlpha = Math.max(blackAlpha, Math.min(1, (timeSec - (totalDur - fadeOutDur)) / fadeOutDur));
+      }
+      if (crossfadeDur > 0 && timeline.segments && timeline.segments.length > 1) {
+        for (let i = 1; i < timeline.segments.length; i++) {
+          const prev = timeline.segments[i - 1];
+          const curr = timeline.segments[i];
+          if (prev.scene !== curr.scene) {
+            const boundary = curr.startTime;
+            const dist = Math.abs(timeSec - boundary);
+            if (dist < crossfadeDur * 0.5) {
+              const dip = 1 - dist / (crossfadeDur * 0.5);
+              blackAlpha = Math.max(blackAlpha, dip * 0.55);
+            }
+          }
+        }
+      }
+      if (blackAlpha > 0.005) {
+        ctx.fillStyle = `rgba(0, 0, 0, ${Math.min(1, blackAlpha).toFixed(3)})`;
+        ctx.fillRect(0, 0, w, h);
+      }
+    }
+
+    _drawTopCenterOutlineWatermark(ctx, text, w, h, s) {
+      ctx.save();
+      const wmText = text.toUpperCase();
+      let fontSize = Math.round((w > h ? 17 : 22) * s);
+      ctx.font = `900 ${fontSize}px "Arial Rounded MT Bold", "Segoe UI", Arial, sans-serif`;
+      while (ctx.measureText(wmText).width > w * 0.65 && fontSize > 12 * s) {
+        fontSize -= 1;
+        ctx.font = `900 ${fontSize}px "Arial Rounded MT Bold", "Segoe UI", Arial, sans-serif`;
+      }
+      const wmY = Math.round(h * (w > h ? 0.045 : 0.04));
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.lineJoin = 'round';
+      ctx.miterLimit = 2;
+
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.92)';
+      ctx.lineWidth = Math.max(1.5, 2.1 * s);
+      ctx.fillStyle = 'rgba(13, 15, 24, 0.72)';
+      ctx.strokeText(wmText, w / 2, wmY);
+      ctx.fillText(wmText, w / 2, wmY);
+      ctx.restore();
+    }
+
+    _drawNeonTopicPill(ctx, text, w, h, s) {
+      ctx.save();
+      const label = text.toUpperCase();
+      const fontSize = Math.round((w > h ? 16 : 19) * s);
+      ctx.font = `800 ${fontSize}px "Segoe UI", Arial, sans-serif`;
+      const textW = ctx.measureText(label).width;
+      const padX = 22 * s;
+      const pillW = Math.min(w * 0.85, textW + padX * 2);
+      const pillH = Math.round(fontSize * 1.95);
+      const pillX = (w - pillW) / 2;
+      const pillY = Math.round(h * (w > h ? 0.21 : 0.19)) - pillH / 2;
+      const rad = pillH / 2;
+
+      ctx.shadowColor = '#ff5ca8';
+      ctx.shadowBlur = 16 * s;
+      ctx.fillStyle = 'rgba(165, 72, 127, 0.45)';
+      ctx.strokeStyle = '#ff5ca8';
+      ctx.lineWidth = 2.2 * s;
+
+      ctx.beginPath();
+      ctx.moveTo(pillX + rad, pillY);
+      ctx.lineTo(pillX + pillW - rad, pillY);
+      ctx.quadraticCurveTo(pillX + pillW, pillY, pillX + pillW, pillY + rad);
+      ctx.lineTo(pillX + pillW, pillY + pillH - rad);
+      ctx.quadraticCurveTo(pillX + pillW, pillY + pillH, pillX + pillW - rad, pillY + pillH);
+      ctx.lineTo(pillX + rad, pillY + pillH);
+      ctx.quadraticCurveTo(pillX, pillY + pillH, pillX, pillY + pillH - rad);
+      ctx.lineTo(pillX, pillY + rad);
+      ctx.quadraticCurveTo(pillX, pillY, pillX + rad, pillY);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.shadowBlur = 6 * s;
+      ctx.fillStyle = '#ffffff';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(label, w / 2, pillY + pillH / 2 + 1 * s);
+      ctx.restore();
+    }
+
+    _drawCondensedKineticCaption(ctx, timeSec, activeSeg, segProgress, w, h, s) {
+      let displayText = '';
+      let yRatio = activeSeg.captionY !== undefined ? Number(activeSeg.captionY) : (w > h ? 0.34 : 0.30);
+
+      if (Array.isArray(activeSeg.captionBeats) && activeSeg.captionBeats.length > 0) {
+        const beats = activeSeg.captionBeats;
+        let chosen = beats[0];
+        for (let i = 0; i < beats.length; i++) {
+          const b = beats[i];
+          if (typeof b === 'string') {
+            const sr = i / beats.length;
+            const er = (i + 1) / beats.length;
+            if (segProgress >= sr && segProgress <= er + 0.001) {
+              chosen = b;
+              break;
+            }
+          } else if (b && typeof b === 'object') {
+            const sr = b.startRatio !== undefined ? b.startRatio : i / beats.length;
+            const er = b.endRatio !== undefined ? b.endRatio : (i + 1) / beats.length;
+            if (segProgress >= sr && segProgress <= er + 0.001) {
+              chosen = b;
+              break;
+            }
+          }
+        }
+        if (typeof chosen === 'string') {
+          displayText = chosen;
+        } else if (chosen && typeof chosen === 'object') {
+          displayText = chosen.text || '';
+          if (chosen.yRatio !== undefined) yRatio = chosen.yRatio;
+        }
+      } else if (activeSeg.caption && activeSeg.caption.trim()) {
+        displayText = activeSeg.caption.trim();
+      } else if (activeSeg.vi) {
+        // Fallback auto-condense if raw script lacks explicit `caption`
+        const raw = activeSeg.vi.trim().replace(/[.!?…]+$/, '');
+        const words = raw.split(/\s+/);
+        if (words.length <= 8) {
+          displayText = raw.toLowerCase();
+        } else {
+          // Pick the clause currently spoken based on progress
+          const clauses = raw.split(/[,;:—–-]+/).map((c) => c.trim()).filter(Boolean);
+          if (clauses.length > 1) {
+            const idx = Math.min(clauses.length - 1, Math.floor(segProgress * clauses.length));
+            displayText = clauses[idx].split(/\s+/).slice(0, 8).join(' ').toLowerCase();
+          } else {
+            displayText = words.slice(0, 7).join(' ').toLowerCase();
+          }
+        }
+      }
+
+      if (!displayText) return;
+
+      // Clamp to safe upper-middle empty negative space away from TikTok bottom chrome
+      const safeY = Math.round(Math.min(0.68, Math.max(0.14, yRatio)) * h);
+      const maxW = w * 0.86;
+
+      ctx.save();
+      let fontSize = Math.round((w > h ? 22 : 25) * s);
+      ctx.font = `italic 800 ${fontSize}px "Segoe UI", "Montserrat", Arial, sans-serif`;
+      while (ctx.measureText(displayText).width > maxW && fontSize > 13 * s) {
+        fontSize -= 1;
+        ctx.font = `italic 800 ${fontSize}px "Segoe UI", "Montserrat", Arial, sans-serif`;
+      }
+
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.lineJoin = 'round';
+      ctx.miterLimit = 2;
+
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.88)';
+      ctx.shadowBlur = 10 * s;
+      ctx.shadowOffsetY = 2 * s;
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.90)';
+      ctx.lineWidth = Math.max(2.0, 3.2 * s);
+      ctx.strokeText(displayText, w / 2, safeY);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.fillText(displayText, w / 2, safeY);
+      ctx.restore();
     }
 
     _findActiveSegment(timeSec, timeline) {

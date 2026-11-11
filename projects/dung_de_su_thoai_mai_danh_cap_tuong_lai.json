@@ -1,0 +1,157 @@
+{
+  "title": "ĐỪNG ĐỂ SỰ THOẢI MÁI HÔM NAY ĐÁNH CẮP TƯƠNG LAI NGÀY MAI",
+  "watermark": "",
+  "layoutMode": "neon-story-stage",
+  "style": "phatbieulungtung",
+  "voice": "giong_mau",
+  "rate": "+6%",
+  "pitch": "+0Hz",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "fadeInDuration": 0.45,
+  "fadeOutDuration": 1.0,
+  "crossfadeDuration": 0.18,
+  "pauseBetweenSegments": 0.12,
+  "outroDuration": 3.0,
+  "outroScene": "sunrise_ocean_horizon",
+  "outroCamera": "sunrise_backview_horizon",
+  "outroHideCaption": true,
+  "segments": [
+    {
+      "vi": "Có những ngày tan làm về, bạn chỉ muốn nằm dài trên giường, lướt điện thoại thêm năm phút rồi lại thêm một tiếng.",
+      "captionBeats": [
+        { "text": "chỉ muốn nằm dài trên giường", "startRatio": 0.0, "endRatio": 0.48 },
+        { "text": "thêm năm phút... rồi một tiếng", "startRatio": 0.48, "endRatio": 1.0 }
+      ],
+      "captionY": 0.24,
+      "scene": "neon_wireframe_bedroom",
+      "camera": "ken_burns_bedroom_static",
+      "stageMood": "phone_trap"
+    },
+    {
+      "vi": "Cảm giác lúc đó thật dễ chịu, vì chẳng phải cố gắng, chẳng phải chịu áp lực hay sợ thất bại.",
+      "captionBeats": [
+        { "text": "cảm giác thật dễ chịu", "startRatio": 0.0, "endRatio": 0.45 },
+        { "text": "chẳng phải cố gắng gì cả", "startRatio": 0.45, "endRatio": 1.0 }
+      ],
+      "scene": "neon_emotional_void",
+      "camera": "ken_burns_void_drift",
+      "voidMode": "comfort_bubbles"
+    },
+    {
+      "vi": "Nhưng bạn biết không... sự thoải mái không bao giờ miễn phí.",
+      "topicBadge": "BẪY SỰ THOẢI MÁI",
+      "caption": "sự thoải mái không bao giờ miễn phí",
+      "scene": "neon_theater_stage",
+      "camera": "ken_burns_stage_pullback",
+      "crowdMode": "pink_eyes",
+      "stageMood": "solo"
+    },
+    {
+      "vi": "Mỗi lần bạn chọn dễ dãi hôm nay, là bạn đang lặng lẽ vay mượn sự bình yên của chính mình trong tương lai.",
+      "captionBeats": [
+        { "text": "mỗi lần chọn dễ dãi hôm nay", "startRatio": 0.0, "endRatio": 0.48 },
+        { "text": "là vay mượn bình yên ngày mai", "startRatio": 0.48, "endRatio": 1.0 }
+      ],
+      "scene": "neon_emotional_void",
+      "camera": "ken_burns_void_drift",
+      "voidMode": "future_leak"
+    },
+    {
+      "vi": "Một trang sách chưa đọc, một kỹ năng cứ hẹn sang tháng sau, một dự định ấp ủ mãi mà chưa từng bắt đầu.",
+      "captionBeats": [
+        { "text": "một trang sách chưa đọc", "startRatio": 0.0, "endRatio": 0.35 },
+        { "text": "một kỹ năng hẹn sang tháng sau", "startRatio": 0.35, "endRatio": 0.68 },
+        { "text": "dự định mãi chưa bắt đầu", "startRatio": 0.68, "endRatio": 1.0 }
+      ],
+      "captionY": 0.24,
+      "scene": "neon_wireframe_bedroom",
+      "camera": "ken_burns_bedroom_static",
+      "stageMood": "empty_plans"
+    },
+    {
+      "vi": "Trong khi bạn còn đang do dự, thời gian vẫn trôi qua, và những người âm thầm kỷ luật ngoài kia đã đi một đoạn rất xa.",
+      "captionBeats": [
+        { "text": "khi bạn còn đang do dự", "startRatio": 0.0, "endRatio": 0.45 },
+        { "text": "người kỷ luật đã đi rất xa", "startRatio": 0.45, "endRatio": 1.0 }
+      ],
+      "scene": "neon_office_meeting",
+      "camera": "ken_burns_office_push",
+      "stageMood": "idle_watch"
+    },
+    {
+      "vi": "Đến một ngày nhìn lại, thứ khiến bạn hối tiếc nhất không phải là những lần từng vấp ngã, mà là những năm tháng mình đã sống quá an toàn.",
+      "captionBeats": [
+        { "text": "không hối tiếc vì vấp ngã", "startRatio": 0.0, "endRatio": 0.5 },
+        { "text": "mà vì sống quá an toàn", "startRatio": 0.5, "endRatio": 1.0 }
+      ],
+      "scene": "neon_city_street_home",
+      "camera": "ken_burns_street_walk",
+      "stageMood": "regret_walk"
+    },
+    {
+      "vi": "Trưởng thành luôn đòi hỏi bạn phải bước ra khỏi vùng êm ái. Không cần phải thay đổi cả cuộc đời chỉ sau một đêm.",
+      "captionBeats": [
+        { "text": "bước ra khỏi vùng êm ái", "startRatio": 0.0, "endRatio": 0.48 },
+        { "text": "không cần đổi đời sau một đêm", "startRatio": 0.48, "endRatio": 1.0 }
+      ],
+      "scene": "neon_theater_stage",
+      "camera": "ken_burns_stage_pushin",
+      "crowdMode": "neutral",
+      "stageMood": "breathing"
+    },
+    {
+      "vi": "Hãy bắt đầu từ những việc nhỏ đến mức bạn không thể tìm lý do để trì hoãn.",
+      "caption": "bắt đầu từ những việc nhỏ nhất",
+      "scene": "neon_theater_stage",
+      "camera": "ken_burns_stage_pushin",
+      "crowdMode": "friendly_smile",
+      "stageMood": "notecard"
+    },
+    {
+      "vi": "Đọc mười trang sách trước khi chạm vào điện thoại.",
+      "caption": "đọc 10 trang sách trước",
+      "captionY": 0.24,
+      "scene": "neon_wireframe_bedroom",
+      "camera": "ken_burns_bedroom_static",
+      "stageMood": "study_focus"
+    },
+    {
+      "vi": "Hoàn thành việc khó nhất vào buổi sáng.",
+      "caption": "làm việc khó nhất lúc sáng",
+      "scene": "neon_office_meeting",
+      "camera": "ken_burns_office_push",
+      "stageMood": "confident_action"
+    },
+    {
+      "vi": "Và giữ lời hứa với chính mình dù chẳng có ai đứng xem.",
+      "caption": "giữ lời hứa với chính mình",
+      "scene": "neon_city_street_home",
+      "camera": "ken_burns_street_walk",
+      "stageMood": "confident_run"
+    },
+    {
+      "vi": "Mỗi ngày kỷ luật một chút, bản thân bạn sẽ vững vàng hơn, và nỗi lo về tương lai cũng dần biến mất.",
+      "captionBeats": [
+        { "text": "kỷ luật từng chút mỗi ngày", "startRatio": 0.0, "endRatio": 0.48 },
+        { "text": "tương lai dần vững vàng", "startRatio": 0.48, "endRatio": 1.0 }
+      ],
+      "scene": "neon_emotional_void",
+      "camera": "ken_burns_void_drift",
+      "voidMode": "equalizer_vs_fear"
+    },
+    {
+      "vi": "Bởi vì tự do thực sự không nằm trong sự lười biếng hôm nay, mà nằm ở cuộc đời bạn tự kiến tạo cho ngày mai.",
+      "captionBeats": [
+        { "text": "tự do không nằm ở lười biếng", "startRatio": 0.0, "endRatio": 0.48 },
+        { "text": "mà ở tương lai bạn tự tạo", "startRatio": 0.48, "endRatio": 1.0 }
+      ],
+      "scene": "neon_theater_stage",
+      "camera": "ken_burns_stage_pushin",
+      "crowdMode": "confetti",
+      "stageMood": "confetti"
+    }
+  ]
+}
+

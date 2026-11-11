@@ -1,0 +1,93 @@
+{
+  "title": "BẠN LÀ NGƯỜI DUY NHẤT CHỊU TRÁCH NHIỆM CHO CUỘC ĐỜI MÌNH",
+  "watermark": "",
+  "voice": "giong_mau",
+  "rate": "+8%",
+  "pitch": "+0Hz",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "pauseBetweenSegments": 0.06,
+  "outroDuration": 3.2,
+  "outroScene": "destiny_master_sunrise_outro",
+  "outroCamera": "destiny_master_sunrise_outro",
+  "segments": [
+    {
+      "vi": "Có bao giờ bạn ngồi lại và tự hỏi: Tại sao cuộc sống hiện tại của mình lại thành ra như thế này?",
+      "en": "Have you ever paused and asked yourself: Why has my life turned out the way it is right now?",
+      "receipt": "SELF-REFLECTION",
+      "scene": "self_reflection_mirror_pause",
+      "camera": "self_reflection_mirror_orbit"
+    },
+    {
+      "vi": "Chúng ta rất dễ đổ lỗi cho hoàn cảnh, cho xuất phát điểm, cho sự bất công của số phận, hay cho một ai đó đã từng làm tổn thương mình.",
+      "en": "It's easy to blame circumstances, our starting point, life's unfairness, or someone who once hurt us.",
+      "receipt": "THE BLAME GAME",
+      "scene": "blame_pointing_arrows_vs_mirror",
+      "camera": "blame_pointing_arrows_pan"
+    },
+    {
+      "vi": "Đổ lỗi luôn là lựa chọn dễ dàng nhất. Bởi vì khi coi mình là nạn nhân, bạn không cần phải cố gắng thay đổi bất kỳ điều gì.",
+      "en": "Blaming is always the easiest choice, because playing the victim frees you from the effort to change.",
+      "receipt": "VICTIM MENTALITY",
+      "scene": "victim_comfort_cage_breaking",
+      "camera": "victim_cage_closeup_break"
+    },
+    {
+      "vi": "Nhưng có một sự thật mà bạn buộc phải chấp nhận: Dù quá khứ có bất công đến đâu, người gánh chịu hậu quả của ngày hôm nay... chỉ có thể là chính bạn.",
+      "en": "Yet here is a truth you must accept: No matter how unfair the past was, the only one bearing today's outcome is you.",
+      "receipt": "HARSH REALITY",
+      "scene": "past_shadow_today_burden",
+      "camera": "past_shadow_today_contrast"
+    },
+    {
+      "vi": "Cha mẹ không thể sống thay bạn cả đời. Bạn bè không thể gánh vác tương lai của bạn. Và không một ai có nghĩa vụ phải đến để giải cứu cuộc đời bạn.",
+      "en": "Parents cannot live your life, friends cannot carry your future, and no one owes you a rescue.",
+      "receipt": "NO SAVIOR COMING",
+      "scene": "solitary_standing_pillar_strength",
+      "camera": "solitary_pillar_strength_orbit"
+    },
+    {
+      "vi": "Hãy tưởng tượng cuộc đời bạn là một con tàu giữa đại dương. Nếu bạn trao bánh lái cho người khác, bạn không có quyền phàn nàn khi nó trôi dạt vào bão giông.",
+      "en": "Imagine your life as a ship at sea. If you hand over the helm to others, you have no right to complain when it drifts into storms.",
+      "receipt": "HOLD YOUR OWN HELM",
+      "scene": "ocean_ship_firm_helm_hands",
+      "camera": "firm_helm_steering_hero"
+    },
+    {
+      "vi": "Chiếc chìa khóa mở ra cánh cửa tương lai vốn luôn nằm trong tay bạn, đừng đứng im chờ đợi ai đó mở giúp.",
+      "en": "The key to your future has always been in your own hands; never stand still waiting for someone else to unlock it.",
+      "receipt": "GOLDEN KEY IN HAND",
+      "scene": "golden_key_future_portal",
+      "camera": "golden_key_unlock_portal"
+    },
+    {
+      "vi": "Hoàn cảnh có thể quyết định nơi bạn bắt đầu, nhưng thái độ và trách nhiệm sẽ quyết định nơi bạn dừng chân.",
+      "en": "Circumstances may determine where you begin, but your attitude and responsibility determine where you finish.",
+      "receipt": "ATTITUDE OVER ORIGIN",
+      "scene": "origin_valley_to_summit_peak",
+      "camera": "valley_to_summit_pan"
+    },
+    {
+      "vi": "Mỗi thói quen nhỏ hôm nay, mỗi quyết định bạn đưa ra, và mỗi lần bạn không bỏ cuộc... chính là viên gạch xây nên ngày mai.",
+      "en": "Every small habit today, every decision you make, and every time you refuse to quit is a brick building tomorrow.",
+      "receipt": "BUILDING BRICK BY BRICK",
+      "scene": "brick_by_brick_golden_bridge",
+      "camera": "brick_by_brick_bridge_track"
+    },
+    {
+      "vi": "Đừng chờ đợi một phép màu từ bên ngoài. Hãy là người hùng của chính cuộc đời mình.",
+      "en": "Stop waiting for external miracles. Be the hero of your own life.",
+      "receipt": "BE YOUR OWN HERO",
+      "scene": "own_hero_crown_awakening",
+      "camera": "own_hero_awakening_orbit"
+    },
+    {
+      "vi": "Bởi vì ngày bạn dám nhận một trăm phần trăm trách nhiệm về bản thân, cũng là ngày bạn bắt đầu nắm giữ vận mệnh của chính mình.",
+      "en": "Because the day you take 100% responsibility for yourself is the day you truly take control of your destiny.",
+      "receipt": "100% RESPONSIBILITY",
+      "scene": "destiny_master_sunrise_outro",
+      "camera": "destiny_master_sunrise_outro"
+    }
+  ]
+}

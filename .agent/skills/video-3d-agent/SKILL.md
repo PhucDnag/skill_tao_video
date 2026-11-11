@@ -111,6 +111,64 @@ Nếu không thể xác minh một tiêu chí bằng công cụ sẵn có, ghi r
 - “Tiền biến mất vì những khoản chi nhỏ”: nhân vật chạm điện thoại, vài hóa đơn/giao dịch nhỏ lần lượt trừ khỏi số dư; không mặc định dùng ống rò rỉ.
 - “Thời gian bên cha mẹ không còn nhiều”: bữa cơm gia đình, lịch thay trang và nhân vật trở về ngồi cạnh cha mẹ; không biến lời nhắc thành cảnh bi lụy nếu giọng kể nhẹ nhàng.
 - “Kỷ luật là làm ngay cả khi không có động lực”: nhân vật tắt báo thức, rời giường và bắt đầu buổi tập dù trời mưa; không chỉ quay bánh răng/đồng hồ.
+- “Tự chịu trách nhiệm cho cuộc đời mình”: nhân vật buông bỏ những mũi tên đổ lỗi, tự tay nắm chặt bánh lái vượt sóng, cầm chiếc chìa khóa vàng mở cổng tương lai và từng bước xếp gạch xây cầu vận mệnh.
+- “Chiến thắng bản thân là chiến thắng vĩ đại nhất”: nhân vật đối diện cái bóng lười biếng, tắt chuông báo thức rời giường ấm lúc bình minh, chọn trang sách và quả tạ thay vì màn hình lướt vô định, tôi luyện viên kim cương ý chí đón cổng khải hoàn.
+
+## Chế độ Phong cách `neon-story-stage` (Học từ `@phatbieulungtung/video/7706865970740022535`)
+
+Ngoài chế độ `classic-letterbox` truyền thống (9:16 hai dải đen + thẻ RECEIPT + Karaoke vàng song ngữ), engine hiện đã hỗ trợ trực tiếp chế độ **`neon-story-stage`** (Full-Bleed kiến trúc Neon-Wireframe tối giản trên nền `#0D0F18`–`#151827`).
+
+### 1. Cấu hình JSON cho `neon-story-stage`
+Đặt ở root project JSON:
+```json
+{
+  "title": "TIÊU ĐỀ",
+  "watermark": "PHAT BIEU LUNG TUNG",
+  "layoutMode": "neon-story-stage",
+  "style": "phatbieulungtung",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "fadeInDuration": 0.45,
+  "fadeOutDuration": 1.0,
+  "crossfadeDuration": 0.18,
+  "outroDuration": 3.0,
+  "outroScene": "sunrise_ocean_horizon",
+  "outroCamera": "sunrise_backview_horizon",
+  "outroHideCaption": true
+}
+```
+*(Có thể đổi `"width": 1080, "height": 1920` nếu muốn xuất dọc 9:16 Full-Bleed; các trường mới hoạt động đồng nhất trên cả 16:9 và 9:16).*
+
+### 2. Quy chuẩn Hình ảnh & Phụ đề Rút gọn (`overlay2d.js`)
+- **Top Watermark viền trắng rỗng ruột**: Khi `"watermark"` có chữ, hiển thị cố định căn giữa sát mép trên (`y ≈ 0.04`), chữ in hoa bo tròn ruột tối viền trắng sắc nét (không chạy marquee).
+- **Topic Pill Badge**: Truyền `"topicBadge": "NỖI SỢ ĐÁM ĐÔNG"` trên segment để hiện thẻ viên thuốc phát sáng viền neon hồng `#FF5CA8` ở vùng `y ≈ 0.21–0.24`.
+- **Condensed Kinetic Captions**: Dùng `"caption"` (3–8 từ rút gọn ý chính) hoặc `"captionBeats": [{"text": "...", "startRatio": 0, "endRatio": 0.5}]` để đổi cụm chữ mỗi 2–3 giây. Chữ **Bold Italic** trắng tinh 1 dòng duy nhất (không bôi vàng karaoke, không tiếng Anh), đặt an toàn ở khoảng trống **trên–giữa (`y ≈ 0.28–0.44`)**, tuyệt đối không đặt dưới đáy (`y > 0.78`) để tránh bị giao diện TikTok che.
+- **Outro tĩnh lặng không chữ**: Đặt `"hideCaption": true` hoặc `"outroHideCaption": true` ở 2–3 giây cuối (cảnh bình minh nhìn từ sau gáy) để người xem lắng đọng cảm xúc.
+
+### 3. Thư viện 9 Bối cảnh Neon-Wireframe & Camera Ken Burns (`scene3d.js`)
+Tất cả các scene dưới đây tự động tắt lưới sàn cũ (`floorMesh`) và sử dụng Ken Burns camera drift mượt:
+- `neon_wireframe_bedroom` + `ken_burns_bedroom_static`: Phòng ngủ đêm nét wireframe phát sáng (giá sách cầu vồng, cửa sổ sao vàng, bàn laptop, giường xanh ngọc, dây đèn fairy lights), nhân vật khăn quàng đỏ cầm điện thoại với **3 bong bóng chat xếp tầng** (`haha`, `chuẩn luôn`, `đỉnh thật`) và phong thư bay.
+- `neon_theater_stage` + `ken_burns_stage_pullback` / `ken_burns_stage_pushin`: Sân khấu rèm nhung đỏ rượu (`#54202D`) viền vàng, spotlight nón từ trần, hàng khán giả tiền cảnh. Tùy biến qua:
+  - `"crowdMode"`: `"pink_eyes"` (mắt chấm hồng soi mói) | `"neutral"` (dịu nhẹ) | `"friendly_smile"` (một mặt cười vàng `:)` rực sáng giữa khán giả) | `"confetti"` (pháo giấy chấm màu).
+  - `"stageMood"`: `"solo"` (đứng run) | `"mic"` (micro đứng) | `"breathing"` (vòng tròn cyan hít thở lan tỏa) | `"notecard"` (thẻ ghi chú viền vàng 3 gạch đầu dòng) | `"confetti"`.
+- `neon_emotional_void` + `ken_burns_void_drift`: Không gian tâm lý tối sâu đổi biểu tượng qua `"voidMode"`:
+  - `"symptoms"`: Nhân vật nheo mắt căng thẳng + tia giật mình vàng `\|/` + tim đỏ neon đập mạnh + trang tài liệu xanh bay mất.
+  - `"zipper"`: Nhân vật **khóa kéo xanh bịt miệng** (chọn im lặng).
+  - `"empathy_bubbles"`: Trái tim hồng phát sáng trên đầu + 3 bong bóng lo âu xếp tầng (`sợ nói sai`, `sợ làm phiền`, `sợ người khác thất vọng`).
+  - `"equalizer_vs_fear"`: **7 cột equalizer xanh lá dâng cao** đối trọng với **khối nỗi sợ tím mắt đỏ thu nhỏ dần**.
+- `neon_classroom_stage` + `ken_burns_classroom_pan`: Lớp học bảng xanh viền neon xanh lá kép, 5 bàn học tiền cảnh (`"stageMood": "shy" | "confident"`).
+- `neon_party_room` + `ken_burns_party_corner`: Phòng tiệc tụ tập 4 NPC dưới đèn nón ấm, nhân vật chính né góc khuất.
+- `neon_office_meeting` + `ken_burns_office_push`: Văn phòng cửa sổ cao ốc đêm, bảng biểu đồ vàng, sếp áo xanh ngọc (`"stageMood": "rushed"` bong bóng nói vội `"dạ-em-làm-xong-rồi-ạ"` | `"confident"` `"em có ý này..."`).
+- `neon_night_park_crush` + `ken_burns_park_couple`: Công viên đêm trăng tròn, cây anh đào wireframe, bạn nữ cardigan hồng + **bong bóng rối rắm nguệch ngoạc màu hồng**.
+- `neon_city_street_home` + `ken_burns_street_walk`: Phố đêm biển hiệu neon (`NHÀ SÁCH`, `QUÁN NHẬU`, `TIỆM HOA`, `HOME`), tùy biến `"stageMood"`: `"nervous_walk"` (`ờ... à...`) | `"lightbulb_home"` (bóng đèn ý tưởng vàng) | `"confident_greet"` (`chào bạn!`).
+- `sunrise_ocean_horizon` + `sunrise_backview_horizon`: Bờ biển bình minh cát ấm & sóng biển phản chiếu mặt trời mọc vàng cam, góc máy over-the-shoulder nhìn từ phía sau đầu nhân vật.
+
+### 4. Công thức Kể chuyện 4 Hồi & Rapid Callback Montage
+1. **Hồi 1 — Hook gần gũi & Triệu chứng**: Mở bằng tương phản ở nhà tự tin -> ra đám đông nghẹn lời (`neon_wireframe_bedroom` -> `neon_theater_stage` + `pink_eyes` -> `neon_emotional_void` + `symptoms`).
+2. **Hồi 2 — Kịch bản đời thực & Im lặng**: Lần lượt qua lớp học (`shy`), phòng tiệc, văn phòng (`rushed`), công viên (`crush`), phố đêm (`nervous_walk`) rồi kết bằng khóa kéo bịt miệng (`zipper`).
+3. **Hồi 3 — Tái định khung, Mẹo hành động & Rapid Callback Montage**: Chuyển sang đồng cảm (`empathy_bubbles`), đưa mẹo thở chậm & nhớ 3 ý chính (`breathing`, `notecard`, `friendly_smile`), rồi cắt nhanh **~1.5s/cảnh qua đúng 3 bối cảnh cũ** (`neon_classroom_stage` confident -> `neon_city_street_home` confident_greet -> `neon_office_meeting` confident).
+4. **Hồi 4 — Kết cảm xúc & Bình minh không chữ**: Giọng vững dần (`equalizer_vs_fear`) -> ăn mừng can đảm (`confetti`) -> cắt êm sang `sunrise_ocean_horizon` không chữ + fade-to-black `1.0s`.
 
 ## Sử dụng trong dự án
 

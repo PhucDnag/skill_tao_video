@@ -341,6 +341,93 @@
       this.empathyWalkHero = null;
       this.empathyHorizonGateway = null;
 
+      // Personal-Responsibility ("Trách Nhiệm Cá Nhân Đối Với Tương Lai") 3D elements
+      this.selfReflectionChar = null;
+      this.selfMirrorMesh = null;
+      this.blameArrows = [];
+      this.blameShield = null;
+      this.blameChar = null;
+      this.victimCageMesh = null;
+      this.victimChar = null;
+      this.pastShadowMesh = null;
+      this.presentHeroChar = null;
+      this.solitaryPillar = null;
+      this.solitaryRings = [];
+      this.solitaryChar = null;
+      this.firmHelmMesh = null;
+      this.captainChar = null;
+      this.goldenKeyMesh = null;
+      this.futurePortalGateway = null;
+      this.keyBearerChar = null;
+      this.mountainClimberChar = null;
+      this.summitStarMesh = null;
+      this.brickBridgeBlocks = [];
+      this.bridgeBuilderChar = null;
+      this.heroCrownMesh = null;
+      this.ownHeroChar = null;
+      this.destinySunriseArch = null;
+      this.destinyMasterChar = null;
+
+      // Self-Conquest ("Chiến Thắng Bản Thân") 3D elements
+      this.arenaClashPillars = [];
+      this.pedestalPodiumL = null;
+      this.pedestalPodiumR = null;
+      this.innerShadowChar = null;
+      this.innerLightChar = null;
+      this.lazyAlarmClock = null;
+      this.lazyComfortPillow = null;
+      this.transientTrophy = null;
+      this.innerFreedomCrown = null;
+      this.dawnAwakeningChar = null;
+      this.dawnSunSphere = null;
+      this.focusedBookMesh = null;
+      this.focusedDumbbellMesh = null;
+      this.dimPhoneScrollMesh = null;
+      this.zenWaterSphere = null;
+      this.rageFlameMesh = null;
+      this.yesterdayGhostChar = null;
+      this.todayProgressChar = null;
+      this.willpowerAnvilDiamond = null;
+      this.willpowerForgeSparks = [];
+      this.selfConquestGateway = null;
+      this.selfConquestHeroChar = null;
+
+      // Neon-Story-Stage ("@phatbieulungtung" style) elements
+      this.neonBedroomChar = null;
+      this.neonBedroomChatStack = [];
+      this.neonBedroomMail = null;
+      this.neonStageHero = null;
+      this.neonStageSpotlight = null;
+      this.neonStageMic = null;
+      this.neonStageBreathingRing = null;
+      this.neonStageNoteCard = null;
+      this.neonAudiencePinkEyes = [];
+      this.neonAudienceFriendlySmile = null;
+      this.neonAudienceConfetti = [];
+      this.neonVoidHeart = null;
+      this.neonVoidDocs = [];
+      this.neonVoidSymptomChar = null;
+      this.neonVoidZipperChar = null;
+      this.neonVoidEmpathyChar = null;
+      this.neonVoidEmpathyBubbles = [];
+      this.neonVoidEqualizerBars = [];
+      this.neonVoidFearBlob = null;
+      this.neonVoidNaturalPair = [];
+      this.neonClassroomHero = null;
+      this.neonClassroomBubble = null;
+      this.neonPartyHero = null;
+      this.neonOfficeHero = null;
+      this.neonOfficeRushedBubble = null;
+      this.neonOfficeConfidentBubble = null;
+      this.neonParkHero = null;
+      this.neonParkScribbleBubble = null;
+      this.neonStreetHero = null;
+      this.neonStreetNervousBubble = null;
+      this.neonStreetConfidentBubble = null;
+      this.neonStreetLightbulb = null;
+      this.sunriseOceanSun = null;
+      this.sunriseOceanRays = [];
+
       this._buildLighting();
       this._buildFloor();
       this._buildStartTank();
@@ -355,6 +442,9 @@
       this._buildStormResilienceMetaphors();
       this._buildPreciousBeforeLostMetaphors();
       this._buildJudgeNotByPossessionsMetaphors();
+      this._buildPersonalResponsibilityMetaphors();
+      this._buildSelfConquestMetaphors();
+      if (this._buildNeonStoryStageMetaphors) this._buildNeonStoryStageMetaphors();
 
       this.currentCamPos = new THREE.Vector3(0, 4, 12);
       this.currentLookAt = new THREE.Vector3(0, 2, 0);
@@ -397,8 +487,8 @@
 
     _buildFloor() {
       const gridTex = createGridTexture();
-      gridTex.repeat.set(380, 380);
-      const floorGeo = new THREE.PlaneGeometry(2400, 2400);
+      gridTex.repeat.set(500, 380);
+      const floorGeo = new THREE.PlaneGeometry(3600, 2400);
       const floorMat = new THREE.MeshStandardMaterial({
         map: gridTex,
         roughness: 0.45,
@@ -406,7 +496,8 @@
       });
       const floor = new THREE.Mesh(floorGeo, floorMat);
       floor.rotation.x = -Math.PI / 2;
-      floor.position.set(500, 0, 0);
+      floor.position.set(1000, 0, 0);
+      this.floorMesh = floor;
       this.scene.add(floor);
     }
 
@@ -7269,6 +7360,1322 @@
       this.empathyWalkGroup.add(badge86);
     }
 
+    _buildPersonalResponsibilityMetaphors() {
+      const cyanCrystalMat = new THREE.MeshPhysicalMaterial({
+        color: 0x38bdf8,
+        emissive: 0x0284c7,
+        emissiveIntensity: 0.55,
+        roughness: 0.12,
+        metalness: 0.25
+      });
+      const roseQuartzMat = new THREE.MeshPhysicalMaterial({
+        color: 0xf43f5e,
+        emissive: 0xbe123c,
+        emissiveIntensity: 0.55,
+        roughness: 0.18,
+        metalness: 0.2
+      });
+      const sakuraPinkMat = new THREE.MeshPhysicalMaterial({
+        color: 0xf472b6,
+        emissive: 0xdb2777,
+        emissiveIntensity: 0.48,
+        roughness: 0.2,
+        metalness: 0.15
+      });
+      const amethystMat = new THREE.MeshPhysicalMaterial({
+        color: 0xc084fc,
+        emissive: 0x7e22ce,
+        emissiveIntensity: 0.52,
+        roughness: 0.16,
+        metalness: 0.3
+      });
+      const emeraldMat = new THREE.MeshPhysicalMaterial({
+        color: 0x10b981,
+        emissive: 0x047857,
+        emissiveIntensity: 0.55,
+        roughness: 0.15,
+        metalness: 0.28
+      });
+      const sunriseGoldMat = new THREE.MeshPhysicalMaterial({
+        color: 0xfbbf24,
+        emissive: 0xd97706,
+        emissiveIntensity: 0.62,
+        roughness: 0.14,
+        metalness: 0.65
+      });
+      const darkSteelMat = new THREE.MeshStandardMaterial({
+        color: 0x334155,
+        emissive: 0x0f172a,
+        emissiveIntensity: 0.25,
+        roughness: 0.38,
+        metalness: 0.82
+      });
+      const porcelainBlueMat = new THREE.MeshPhysicalMaterial({
+        color: 0xe0f2fe,
+        emissive: 0x38bdf8,
+        emissiveIntensity: 0.3,
+        roughness: 0.15,
+        metalness: 0.35
+      });
+
+      const makeColorHalo = (tex, scale = 1.6, opacity = 0.85) => {
+        const sp = new THREE.Sprite(
+          new THREE.SpriteMaterial({
+            map: tex,
+            transparent: true,
+            opacity,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending
+          })
+        );
+        sp.scale.set(scale, scale, 1);
+        return sp;
+      };
+
+      const makeStagePedestal = (group, radius = 2.45, ringColorMat = sunriseGoldMat) => {
+        const base = new THREE.Mesh(
+          new THREE.CylinderGeometry(radius, radius + 0.18, 0.14, 36),
+          new THREE.MeshStandardMaterial({
+            color: 0x0f172a,
+            emissive: 0x1e293b,
+            emissiveIntensity: 0.3,
+            roughness: 0.35,
+            metalness: 0.7
+          })
+        );
+        base.position.y = 0.07;
+        group.add(base);
+
+        const outerRing = new THREE.Mesh(
+          new THREE.TorusGeometry(radius + 0.02, 0.032, 12, 48),
+          ringColorMat
+        );
+        outerRing.rotation.x = Math.PI / 2;
+        outerRing.position.y = 0.14;
+        group.add(outerRing);
+
+        const innerRing = new THREE.Mesh(
+          new THREE.TorusGeometry(radius * 0.65, 0.022, 12, 48),
+          porcelainBlueMat
+        );
+        innerRing.rotation.x = Math.PI / 2;
+        innerRing.position.y = 0.142;
+        group.add(innerRing);
+      };
+
+      // =========================================================================
+      // 87. SCENE: self_reflection_mirror_pause (at x = 1584, z = 12)
+      // "Có bao giờ bạn ngồi lại và tự hỏi: Tại sao cuộc sống của mình lại thành ra như thế này?"
+      // Visual: Character pausing peacefully before a glowing oval Mirror of Truth
+      // =========================================================================
+      this.selfReflectionGroup = new THREE.Group();
+      this.selfReflectionGroup.position.set(1584, 0, 12);
+      this.scene.add(this.selfReflectionGroup);
+      makeStagePedestal(this.selfReflectionGroup, 2.45, cyanCrystalMat);
+
+      const light87A = new THREE.PointLight(0x38bdf8, 2.6, 20);
+      light87A.position.set(0, 4.0, 2.5);
+      this.selfReflectionGroup.add(light87A);
+
+      // Oval Mirror of Truth
+      this.selfMirrorMesh = new THREE.Group();
+      this.selfMirrorMesh.position.set(0, 1.65, 0);
+
+      const mirrorFrame = new THREE.Mesh(
+        new THREE.TorusGeometry(0.85, 0.045, 16, 48),
+        sunriseGoldMat
+      );
+      mirrorFrame.scale.set(0.75, 1.25, 1.0);
+      this.selfMirrorMesh.add(mirrorFrame);
+
+      const mirrorGlass = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.62, 0.62, 0.02, 32),
+        porcelainBlueMat
+      );
+      mirrorGlass.rotation.x = Math.PI / 2;
+      mirrorGlass.scale.set(1.0, 1.0, 1.65);
+      this.selfMirrorMesh.add(mirrorGlass);
+      this.selfMirrorMesh.add(makeColorHalo(this.cyanGlowTex, 2.2, 0.75));
+      this.selfReflectionGroup.add(this.selfMirrorMesh);
+
+      // Character sitting/standing thoughtfully
+      this.selfReflectionChar = this._createStylizedCharacter3D({
+        shirtColor: 0x0284c7,
+        mood: 'happy',
+        scale: 1.08,
+        hasHeart: true
+      });
+      this.selfReflectionChar.position.set(0, 0.14, 0.35);
+      this.selfReflectionGroup.add(this.selfReflectionChar);
+
+      const badge87 = this._create3DNeonBadge({
+        text: 'tự soi chiếu cuộc đời',
+        borderColor: '#38bdf8',
+        textColor: '#e0f2fe',
+        widthWorld: 2.65,
+        heightWorld: 0.52
+      });
+      badge87.position.set(0, 2.55, 0.15);
+      this.selfReflectionGroup.add(badge87);
+
+      // =========================================================================
+      // 88. SCENE: blame_pointing_arrows_vs_mirror (at x = 1602, z = 12)
+      // "Chúng ta rất dễ đổ lỗi cho hoàn cảnh, xuất phát điểm, số phận hay một ai đó..."
+      // Visual: Pointing outward Red Arrows of Blame colliding with a central Awakening Shield
+      // =========================================================================
+      this.blameArrowsGroup = new THREE.Group();
+      this.blameArrowsGroup.position.set(1602, 0, 12);
+      this.scene.add(this.blameArrowsGroup);
+      makeStagePedestal(this.blameArrowsGroup, 2.45, roseQuartzMat);
+
+      const light88A = new THREE.PointLight(0xf43f5e, 2.6, 20);
+      light88A.position.set(0, 4.0, 2.5);
+      this.blameArrowsGroup.add(light88A);
+
+      // Central Protective Crystal Shield
+      this.blameShield = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.65, 0.65, 0.06, 24),
+        amethystMat
+      );
+      this.blameShield.rotation.x = Math.PI / 2;
+      this.blameShield.position.set(0, 1.55, 0);
+      this.blameArrowsGroup.add(this.blameShield);
+
+      // 6 Pointing Outward Blame Arrows
+      for (let i = 0; i < 6; i++) {
+        const arrowGroup = new THREE.Group();
+        const ang = (i / 6) * Math.PI * 2;
+        arrowGroup.position.set(Math.cos(ang) * 1.15, 1.55 + Math.sin(ang) * 0.45, 0);
+        arrowGroup.rotation.z = ang - Math.PI / 2;
+
+        const arrowShaft = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.45, 0.06), roseQuartzMat);
+        arrowShaft.position.y = -0.15;
+        arrowGroup.add(arrowShaft);
+
+        const arrowHead = new THREE.Mesh(new THREE.ConeGeometry(0.12, 0.22, 12), sunriseGoldMat);
+        arrowHead.position.y = 0.15;
+        arrowGroup.add(arrowHead);
+
+        this.blameArrowsGroup.add(arrowGroup);
+        this.blameArrows.push(arrowGroup);
+      }
+
+      this.blameChar = this._createStylizedCharacter3D({
+        shirtColor: 0x9333ea,
+        mood: 'sad',
+        scale: 1.05
+      });
+      this.blameChar.position.set(0, 0.14, 0.25);
+      this.blameArrowsGroup.add(this.blameChar);
+
+      const badge88 = this._create3DNeonBadge({
+        text: 'ngừng đổ lỗi cho ngoại cảnh',
+        borderColor: '#f43f5e',
+        textColor: '#ffe4e6',
+        mark: 'X',
+        widthWorld: 2.75,
+        heightWorld: 0.52
+      });
+      badge88.position.set(0, 2.55, 0.15);
+      this.blameArrowsGroup.add(badge88);
+
+      // =========================================================================
+      // 89. SCENE: victim_comfort_cage_breaking (at x = 1620, z = 12)
+      // "Đổ lỗi là dễ nhất... coi mình là nạn nhân thì không cần cố gắng thay đổi"
+      // Visual: Gray Comfort Cage Bars shattering with Golden Breakthrough Sparks
+      // =========================================================================
+      this.victimCageGroup = new THREE.Group();
+      this.victimCageGroup.position.set(1620, 0, 12);
+      this.scene.add(this.victimCageGroup);
+      makeStagePedestal(this.victimCageGroup, 2.45, sunriseGoldMat);
+
+      const light89A = new THREE.PointLight(0xfbbf24, 2.6, 20);
+      light89A.position.set(0, 4.0, 2.5);
+      this.victimCageGroup.add(light89A);
+
+      // Cracking Comfort Cage
+      this.victimCageMesh = new THREE.Group();
+      this.victimCageMesh.position.set(0, 1.45, 0);
+
+      for (let b = 0; b < 6; b++) {
+        const barAngle = (b / 6) * Math.PI * 2;
+        const bar = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 1.85, 12), darkSteelMat);
+        bar.position.set(Math.cos(barAngle) * 0.85, 0, Math.sin(barAngle) * 0.85);
+        this.victimCageMesh.add(bar);
+      }
+      const cageRoof = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 0.06, 24), darkSteelMat);
+      cageRoof.position.y = 0.95;
+      this.victimCageMesh.add(cageRoof);
+
+      this.victimCageGroup.add(this.victimCageMesh);
+
+      this.victimChar = this._createStylizedCharacter3D({
+        shirtColor: 0xd97706,
+        mood: 'happy',
+        scale: 1.05,
+        hasHeart: true
+      });
+      this.victimChar.position.set(0, 0.14, 0.15);
+      this.victimCageGroup.add(this.victimChar);
+
+      const badge89 = this._create3DNeonBadge({
+        text: 'thoát khỏi bẫy tâm lý nạn nhân',
+        borderColor: '#fbbf24',
+        textColor: '#fef08a',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge89.position.set(0, 2.55, 0.15);
+      this.victimCageGroup.add(badge89);
+
+      // =========================================================================
+      // 90. SCENE: past_shadow_today_burden (at x = 1638, z = 12)
+      // "Dù quá khứ có bất công, người chịu hậu quả của hôm nay chỉ là chính bạn"
+      // Visual: Fading Past Shadow drifting back while Resilient Present Hero stands upright
+      // =========================================================================
+      this.pastShadowGroup = new THREE.Group();
+      this.pastShadowGroup.position.set(1638, 0, 12);
+      this.scene.add(this.pastShadowGroup);
+      makeStagePedestal(this.pastShadowGroup, 2.45, emeraldMat);
+
+      const light90A = new THREE.PointLight(0x10b981, 2.6, 20);
+      light90A.position.set(0, 4.0, 2.5);
+      this.pastShadowGroup.add(light90A);
+
+      // Fading Smoky Past Shadow Mesh
+      this.pastShadowMesh = new THREE.Mesh(
+        new THREE.DodecahedronGeometry(0.65, 0),
+        new THREE.MeshStandardMaterial({
+          color: 0x334155,
+          emissive: 0x1e293b,
+          transparent: true,
+          opacity: 0.45,
+          roughness: 0.8
+        })
+      );
+      this.pastShadowMesh.position.set(-0.75, 1.45, -0.6);
+      this.pastShadowGroup.add(this.pastShadowMesh);
+
+      // Present Hero standing firm with glowing heart
+      this.presentHeroChar = this._createStylizedCharacter3D({
+        shirtColor: 0x059669,
+        mood: 'happy',
+        scale: 1.08,
+        hasHeart: true
+      });
+      this.presentHeroChar.position.set(0.45, 0.14, 0.2);
+      this.pastShadowGroup.add(this.presentHeroChar);
+
+      const badge90 = this._create3DNeonBadge({
+        text: 'bạn chịu trách nhiệm hôm nay',
+        borderColor: '#10b981',
+        textColor: '#d1fae5',
+        mark: 'CHECK',
+        widthWorld: 2.75,
+        heightWorld: 0.52
+      });
+      badge90.position.set(0, 2.55, 0.15);
+      this.pastShadowGroup.add(badge90);
+
+      // =========================================================================
+      // 91. SCENE: solitary_standing_pillar_strength (at x = 1656, z = 12)
+      // "Cha mẹ không sống thay, bạn bè không gánh vác, không ai có nghĩa vụ giải cứu bạn"
+      // Visual: Solitary Crystal Pillar standing high & firm with concentric neon aura rings
+      // =========================================================================
+      this.solitaryPillarGroup = new THREE.Group();
+      this.solitaryPillarGroup.position.set(1656, 0, 12);
+      this.scene.add(this.solitaryPillarGroup);
+      makeStagePedestal(this.solitaryPillarGroup, 2.45, amethystMat);
+
+      const light91A = new THREE.PointLight(0xc084fc, 2.6, 20);
+      light91A.position.set(0, 4.0, 2.5);
+      this.solitaryPillarGroup.add(light91A);
+
+      // Central Solitary Pillar
+      this.solitaryPillar = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.55, 0.72, 1.25, 24),
+        porcelainBlueMat
+      );
+      this.solitaryPillar.position.set(0, 0.68, 0);
+      this.solitaryPillarGroup.add(this.solitaryPillar);
+
+      // 3 Concentric energy rings
+      for (let r = 0; r < 3; r++) {
+        const sRing = new THREE.Mesh(
+          new THREE.TorusGeometry(0.95 + r * 0.35, 0.025, 12, 36),
+          r === 0 ? sunriseGoldMat : r === 1 ? amethystMat : cyanCrystalMat
+        );
+        sRing.rotation.x = Math.PI / 2;
+        sRing.position.y = 0.5 + r * 0.35;
+        this.solitaryPillarGroup.add(sRing);
+        this.solitaryRings.push(sRing);
+      }
+
+      this.solitaryChar = this._createStylizedCharacter3D({
+        shirtColor: 0x7e22ce,
+        mood: 'happy',
+        scale: 1.05,
+        hasHeart: true
+      });
+      this.solitaryChar.position.set(0, 1.32, 0.1);
+      this.solitaryPillarGroup.add(this.solitaryChar);
+
+      const badge91 = this._create3DNeonBadge({
+        text: 'không ai đến giải cứu cuộc đời bạn',
+        borderColor: '#c084fc',
+        textColor: '#f3e8ff',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge91.position.set(0, 2.65, 0.15);
+      this.solitaryPillarGroup.add(badge91);
+
+      // =========================================================================
+      // 92. SCENE: ocean_ship_firm_helm_hands (at x = 1674, z = 12)
+      // "Cuộc đời là con tàu: Trao bánh lái cho người khác, bạn không có quyền phàn nàn bão giông"
+      // Visual: Giant Golden Ship Helm firmly gripped by resolute Captain Hero
+      // =========================================================================
+      this.firmHelmGroup = new THREE.Group();
+      this.firmHelmGroup.position.set(1674, 0, 12);
+      this.scene.add(this.firmHelmGroup);
+      makeStagePedestal(this.firmHelmGroup, 2.45, sunriseGoldMat);
+
+      const light92A = new THREE.PointLight(0xfbbf24, 2.8, 20);
+      light92A.position.set(0, 4.0, 2.5);
+      this.firmHelmGroup.add(light92A);
+
+      // Giant Golden Ship Helm
+      this.firmHelmMesh = new THREE.Group();
+      this.firmHelmMesh.position.set(0, 1.45, 0.05);
+
+      const helmOuter = new THREE.Mesh(new THREE.TorusGeometry(0.72, 0.045, 16, 40), sunriseGoldMat);
+      this.firmHelmMesh.add(helmOuter);
+      const helmHub = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 0.1, 16), darkSteelMat);
+      helmHub.rotation.x = Math.PI / 2;
+      this.firmHelmMesh.add(helmHub);
+
+      // 8 Spokes
+      for (let s = 0; s < 8; s++) {
+        const spk = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 1.65, 8), sunriseGoldMat);
+        spk.rotation.z = (s / 8) * Math.PI;
+        this.firmHelmMesh.add(spk);
+      }
+      this.firmHelmMesh.add(makeColorHalo(this.glowTex, 2.2, 0.85));
+      this.firmHelmGroup.add(this.firmHelmMesh);
+
+      this.captainChar = this._createStylizedCharacter3D({
+        shirtColor: 0x0284c7,
+        mood: 'happy',
+        scale: 1.08,
+        hasHeart: true
+      });
+      this.captainChar.position.set(0, 0.14, 0.35);
+      this.firmHelmGroup.add(this.captainChar);
+
+      const badge92 = this._create3DNeonBadge({
+        text: 'tự nắm chặt bánh lái cuộc đời',
+        borderColor: '#fbbf24',
+        textColor: '#fef08a',
+        mark: 'CHECK',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge92.position.set(0, 2.55, 0.15);
+      this.firmHelmGroup.add(badge92);
+
+      // =========================================================================
+      // 93. SCENE: golden_key_future_portal (at x = 1692, z = 12)
+      // "Chiếc chìa khóa mở ra cánh cửa tương lai vốn luôn nằm trong tay bạn..."
+      // Visual: Floating Glowing Golden Master Key opening an Emerald Future Gateway
+      // =========================================================================
+      this.goldenKeyGroup = new THREE.Group();
+      this.goldenKeyGroup.position.set(1692, 0, 12);
+      this.scene.add(this.goldenKeyGroup);
+      makeStagePedestal(this.goldenKeyGroup, 2.45, cyanCrystalMat);
+
+      const light93A = new THREE.PointLight(0x38bdf8, 2.6, 20);
+      light93A.position.set(0, 4.0, 2.5);
+      this.goldenKeyGroup.add(light93A);
+
+      // Emerald Future Gateway Arch
+      this.futurePortalGateway = new THREE.Group();
+      this.futurePortalGateway.position.set(0.65, 1.45, -0.2);
+
+      const portalArch = new THREE.Mesh(new THREE.TorusGeometry(0.85, 0.045, 16, 36, Math.PI), emeraldMat);
+      portalArch.rotation.z = Math.PI;
+      this.futurePortalGateway.add(portalArch);
+      this.goldenKeyGroup.add(this.futurePortalGateway);
+
+      // Giant Glowing Golden Key
+      this.goldenKeyMesh = new THREE.Group();
+      this.goldenKeyMesh.position.set(-0.45, 1.55, 0.1);
+
+      const keyBow = new THREE.Mesh(new THREE.TorusGeometry(0.22, 0.035, 12, 24), sunriseGoldMat);
+      this.goldenKeyMesh.add(keyBow);
+      const keyStem = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.65, 8), sunriseGoldMat);
+      keyStem.position.set(0.35, 0, 0);
+      keyStem.rotation.z = Math.PI / 2;
+      this.goldenKeyMesh.add(keyStem);
+
+      const keyBit1 = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.12, 0.04), sunriseGoldMat);
+      keyBit1.position.set(0.55, -0.07, 0);
+      this.goldenKeyMesh.add(keyBit1);
+      const keyBit2 = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.16, 0.04), sunriseGoldMat);
+      keyBit2.position.set(0.65, -0.09, 0);
+      this.goldenKeyMesh.add(keyBit2);
+
+      this.goldenKeyMesh.add(makeColorHalo(this.glowTex, 1.8, 0.9));
+      this.goldenKeyGroup.add(this.goldenKeyMesh);
+
+      this.keyBearerChar = this._createStylizedCharacter3D({
+        shirtColor: 0x059669,
+        mood: 'happy',
+        scale: 1.05,
+        hasHeart: true
+      });
+      this.keyBearerChar.position.set(-0.45, 0.14, 0.25);
+      this.goldenKeyGroup.add(this.keyBearerChar);
+
+      const badge93 = this._create3DNeonBadge({
+        text: 'chìa khóa tương lai trong tay bạn',
+        borderColor: '#38bdf8',
+        textColor: '#e0f2fe',
+        mark: 'CHECK',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge93.position.set(0, 2.55, 0.15);
+      this.goldenKeyGroup.add(badge93);
+
+      // =========================================================================
+      // 94. SCENE: origin_valley_to_summit_peak (at x = 1710, z = 12)
+      // "Hoàn cảnh quyết định nơi bắt đầu, thái độ & trách nhiệm quyết định nơi dừng chân"
+      // Visual: Ascending Mountain Ridge from Low Valley to Glowing Summit Star
+      // =========================================================================
+      this.valleySummitGroup = new THREE.Group();
+      this.valleySummitGroup.position.set(1710, 0, 12);
+      this.scene.add(this.valleySummitGroup);
+      makeStagePedestal(this.valleySummitGroup, 2.45, emeraldMat);
+
+      const light94A = new THREE.PointLight(0x10b981, 2.6, 20);
+      light94A.position.set(0, 4.0, 2.5);
+      this.valleySummitGroup.add(light94A);
+
+      // Low start block on left vs high summit on right
+      const startRock = new THREE.Mesh(new THREE.BoxGeometry(0.75, 0.25, 0.75), darkSteelMat);
+      startRock.position.set(-0.85, 0.2, 0);
+      this.valleySummitGroup.add(startRock);
+
+      const summitPeak = new THREE.Mesh(new THREE.ConeGeometry(0.65, 1.45, 16), emeraldMat);
+      summitPeak.position.set(0.85, 0.85, 0);
+      this.valleySummitGroup.add(summitPeak);
+
+      // Glowing Summit Star
+      this.summitStarMesh = new THREE.Mesh(new THREE.OctahedronGeometry(0.24, 0), sunriseGoldMat);
+      this.summitStarMesh.position.set(0.85, 1.75, 0);
+      this.summitStarMesh.add(makeColorHalo(this.glowTex, 1.6, 0.85));
+      this.valleySummitGroup.add(this.summitStarMesh);
+
+      this.mountainClimberChar = this._createStylizedCharacter3D({
+        shirtColor: 0x059669,
+        mood: 'happy',
+        scale: 1.05,
+        hasHeart: true
+      });
+      this.mountainClimberChar.position.set(-0.15, 0.35, 0.15);
+      this.valleySummitGroup.add(this.mountainClimberChar);
+
+      const badge94 = this._create3DNeonBadge({
+        text: 'thái độ quyết định đỉnh cao',
+        borderColor: '#10b981',
+        textColor: '#d1fae5',
+        mark: 'CHECK',
+        widthWorld: 2.75,
+        heightWorld: 0.52
+      });
+      badge94.position.set(0, 2.55, 0.15);
+      this.valleySummitGroup.add(badge94);
+
+      // =========================================================================
+      // 95. SCENE: brick_by_brick_golden_bridge (at x = 1728, z = 12)
+      // "Mỗi thói quen nhỏ, mỗi quyết định, mỗi lần không bỏ cuộc là viên gạch xây ngày mai"
+      // Visual: 5 Interlocking Crystal Bricks forming a sturdy bridge over the void
+      // =========================================================================
+      this.brickBridgeGroup = new THREE.Group();
+      this.brickBridgeGroup.position.set(1728, 0, 12);
+      this.scene.add(this.brickBridgeGroup);
+      makeStagePedestal(this.brickBridgeGroup, 2.45, sakuraPinkMat);
+
+      const light95A = new THREE.PointLight(0xf472b6, 2.6, 20);
+      light95A.position.set(0, 4.0, 2.5);
+      this.brickBridgeGroup.add(light95A);
+
+      for (let bk = 0; bk < 5; bk++) {
+        const brick = new THREE.Mesh(
+          new THREE.BoxGeometry(0.52, 0.14, 0.52),
+          bk % 2 === 0 ? sunriseGoldMat : cyanCrystalMat
+        );
+        brick.position.set(-1.0 + bk * 0.5, 0.35 + bk * 0.18, 0);
+        this.brickBridgeGroup.add(brick);
+        this.brickBridgeBlocks.push(brick);
+
+        // Small glowing habit token on each brick
+        const habitGlow = new THREE.Mesh(new THREE.SphereGeometry(0.06, 8, 8), sakuraPinkMat);
+        habitGlow.position.set(-1.0 + bk * 0.5, 0.48 + bk * 0.18, 0);
+        this.brickBridgeGroup.add(habitGlow);
+      }
+
+      this.bridgeBuilderChar = this._createStylizedCharacter3D({
+        shirtColor: 0xdb2777,
+        mood: 'happy',
+        scale: 1.05,
+        hasHeart: true
+      });
+      this.bridgeBuilderChar.position.set(-0.15, 0.82, 0.1);
+      this.brickBridgeGroup.add(this.bridgeBuilderChar);
+
+      const badge95 = this._create3DNeonBadge({
+        text: 'từng thói quen nhỏ xây ngày mai',
+        borderColor: '#f472b6',
+        textColor: '#fce7f3',
+        mark: 'CHECK',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge95.position.set(0, 2.55, 0.15);
+      this.brickBridgeGroup.add(badge95);
+
+      // =========================================================================
+      // 96. SCENE: own_hero_crown_awakening (at x = 1746, z = 12)
+      // "Đừng chờ đợi phép màu... Hãy là người hùng của chính cuộc đời mình"
+      // Visual: Hero Crown of Courage descending upon character's head with Radiant Heart
+      // =========================================================================
+      this.ownHeroGroup = new THREE.Group();
+      this.ownHeroGroup.position.set(1746, 0, 12);
+      this.scene.add(this.ownHeroGroup);
+      makeStagePedestal(this.ownHeroGroup, 2.45, sunriseGoldMat);
+
+      const light96A = new THREE.PointLight(0xfbbf24, 2.8, 20);
+      light96A.position.set(0, 4.0, 2.5);
+      this.ownHeroGroup.add(light96A);
+
+      // Glowing Golden Crown
+      this.heroCrownMesh = new THREE.Group();
+      this.heroCrownMesh.position.set(0, 1.85, 0.1);
+
+      const crownRing = new THREE.Mesh(new THREE.TorusGeometry(0.32, 0.035, 12, 32), sunriseGoldMat);
+      crownRing.rotation.x = Math.PI / 2;
+      this.heroCrownMesh.add(crownRing);
+
+      for (let p = 0; p < 5; p++) {
+        const peak = new THREE.Mesh(new THREE.ConeGeometry(0.06, 0.16, 8), sunriseGoldMat);
+        const ang = (p / 5) * Math.PI * 2;
+        peak.position.set(Math.cos(ang) * 0.3, 0.08, Math.sin(ang) * 0.3);
+        this.heroCrownMesh.add(peak);
+      }
+      this.heroCrownMesh.add(makeColorHalo(this.glowTex, 1.9, 0.9));
+      this.ownHeroGroup.add(this.heroCrownMesh);
+
+      this.ownHeroChar = this._createStylizedCharacter3D({
+        shirtColor: 0xf59e0b,
+        mood: 'happy',
+        scale: 1.12,
+        hasHeart: true
+      });
+      this.ownHeroChar.position.set(0, 0.14, 0.15);
+      this.ownHeroGroup.add(this.ownHeroChar);
+
+      const badge96 = this._create3DNeonBadge({
+        text: 'hãy là người hùng của chính mình',
+        borderColor: '#fbbf24',
+        textColor: '#fef08a',
+        mark: 'CHECK',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge96.position.set(0, 2.55, 0.15);
+      this.ownHeroGroup.add(badge96);
+
+      // =========================================================================
+      // 97. SCENE: destiny_master_sunrise_outro (at x = 1764, z = 12)
+      // "Ngày bạn dám nhận 100% trách nhiệm là ngày bạn nắm giữ vận mệnh của chính mình"
+      // Visual: Massive Radiant Golden Sun Portal Archway with Master of Destiny in open embrace
+      // =========================================================================
+      this.destinySunriseGroup = new THREE.Group();
+      this.destinySunriseGroup.position.set(1764, 0, 12);
+      this.scene.add(this.destinySunriseGroup);
+      makeStagePedestal(this.destinySunriseGroup, 2.55, sunriseGoldMat);
+
+      const light97A = new THREE.PointLight(0xfbbf24, 3.0, 24);
+      light97A.position.set(0, 4.2, 2.5);
+      this.destinySunriseGroup.add(light97A);
+
+      // Radiant Sun Archway
+      this.destinySunriseArch = new THREE.Group();
+      this.destinySunriseArch.position.set(0.65, 1.65, -0.4);
+
+      const sunRing1 = new THREE.Mesh(new THREE.TorusGeometry(1.35, 0.045, 16, 48), sunriseGoldMat);
+      this.destinySunriseArch.add(sunRing1);
+      const sunRing2 = new THREE.Mesh(new THREE.TorusGeometry(1.65, 0.035, 16, 48), sakuraPinkMat);
+      sunRing2.rotation.x = Math.PI / 4;
+      this.destinySunriseArch.add(sunRing2);
+
+      const sunCore97 = new THREE.Mesh(new THREE.OctahedronGeometry(0.58, 2), sunriseGoldMat);
+      this.destinySunriseArch.add(sunCore97);
+      this.destinySunriseArch.add(makeColorHalo(this.glowTex, 3.5, 0.95));
+      this.destinySunriseGroup.add(this.destinySunriseArch);
+
+      this.destinyMasterChar = this._createStylizedCharacter3D({
+        shirtColor: 0x059669,
+        mood: 'happy',
+        scale: 1.15,
+        hasHeart: true
+      });
+      this.destinyMasterChar.position.set(0.12, 0.14, 0.2);
+      this.destinySunriseGroup.add(this.destinyMasterChar);
+
+      const badge97 = this._create3DNeonBadge({
+        text: '100% trách nhiệm = làm chủ số phận',
+        borderColor: '#fbbf24',
+        textColor: '#fef08a',
+        mark: 'CHECK',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge97.position.set(0.2, 2.55, 0.15);
+      this.destinySunriseGroup.add(badge97);
+    }
+
+    _buildSelfConquestMetaphors() {
+      const cyanCrystalMat = new THREE.MeshPhysicalMaterial({
+        color: 0x38bdf8,
+        emissive: 0x0284c7,
+        emissiveIntensity: 0.55,
+        roughness: 0.12,
+        metalness: 0.25
+      });
+      const roseQuartzMat = new THREE.MeshPhysicalMaterial({
+        color: 0xf43f5e,
+        emissive: 0xbe123c,
+        emissiveIntensity: 0.55,
+        roughness: 0.18,
+        metalness: 0.2
+      });
+      const sakuraPinkMat = new THREE.MeshPhysicalMaterial({
+        color: 0xf472b6,
+        emissive: 0xdb2777,
+        emissiveIntensity: 0.48,
+        roughness: 0.2,
+        metalness: 0.15
+      });
+      const amethystMat = new THREE.MeshPhysicalMaterial({
+        color: 0xc084fc,
+        emissive: 0x7e22ce,
+        emissiveIntensity: 0.52,
+        roughness: 0.16,
+        metalness: 0.3
+      });
+      const emeraldMat = new THREE.MeshPhysicalMaterial({
+        color: 0x10b981,
+        emissive: 0x047857,
+        emissiveIntensity: 0.55,
+        roughness: 0.15,
+        metalness: 0.28
+      });
+      const sunriseGoldMat = new THREE.MeshPhysicalMaterial({
+        color: 0xfbbf24,
+        emissive: 0xd97706,
+        emissiveIntensity: 0.62,
+        roughness: 0.14,
+        metalness: 0.65
+      });
+      const darkSteelMat = new THREE.MeshStandardMaterial({
+        color: 0x334155,
+        emissive: 0x0f172a,
+        emissiveIntensity: 0.25,
+        roughness: 0.38,
+        metalness: 0.82
+      });
+      const porcelainBlueMat = new THREE.MeshPhysicalMaterial({
+        color: 0xe0f2fe,
+        emissive: 0x38bdf8,
+        emissiveIntensity: 0.3,
+        roughness: 0.15,
+        metalness: 0.35
+      });
+
+      const makeColorHalo = (tex, scale = 1.6, opacity = 0.85) => {
+        const sp = new THREE.Sprite(
+          new THREE.SpriteMaterial({
+            map: tex,
+            transparent: true,
+            opacity,
+            depthWrite: false,
+            blending: THREE.AdditiveBlending
+          })
+        );
+        sp.scale.set(scale, scale, 1);
+        return sp;
+      };
+
+      const makeStagePedestal = (group, radius = 2.45, ringColorMat = sunriseGoldMat) => {
+        const base = new THREE.Mesh(
+          new THREE.CylinderGeometry(radius, radius + 0.18, 0.14, 36),
+          new THREE.MeshStandardMaterial({
+            color: 0x0f172a,
+            emissive: 0x1e293b,
+            emissiveIntensity: 0.3,
+            roughness: 0.35,
+            metalness: 0.7
+          })
+        );
+        base.position.y = 0.07;
+        group.add(base);
+
+        const outerRing = new THREE.Mesh(
+          new THREE.TorusGeometry(radius + 0.02, 0.032, 12, 48),
+          ringColorMat
+        );
+        outerRing.rotation.x = Math.PI / 2;
+        outerRing.position.y = 0.14;
+        group.add(outerRing);
+
+        const innerRing = new THREE.Mesh(
+          new THREE.TorusGeometry(radius * 0.65, 0.022, 12, 48),
+          porcelainBlueMat
+        );
+        innerRing.rotation.x = Math.PI / 2;
+        innerRing.position.y = 0.142;
+        group.add(innerRing);
+      };
+
+      // =========================================================================
+      // 98. SCENE: outward_battle_arena_illusion (at x = 1782, z = 12)
+      // "Trong cuộc đời, chúng ta thường mải miết tìm cách chiến thắng người khác..."
+      // Visual: Two clashing external duel pillars emitting sparks vs central contemplating hero
+      // =========================================================================
+      this.outwardArenaGroup = new THREE.Group();
+      this.outwardArenaGroup.position.set(1782, 0, 12);
+      this.scene.add(this.outwardArenaGroup);
+      makeStagePedestal(this.outwardArenaGroup, 2.45, roseQuartzMat);
+
+      const light98A = new THREE.PointLight(0xf43f5e, 2.6, 20);
+      light98A.position.set(0, 4.0, 2.5);
+      this.outwardArenaGroup.add(light98A);
+
+      // Two clashing stone pillars with clashing energy
+      [-0.85, 0.85].forEach((px, idx) => {
+        const pillar = new THREE.Mesh(
+          new THREE.BoxGeometry(0.35, 1.65, 0.35),
+          idx === 0 ? roseQuartzMat : sunriseGoldMat
+        );
+        pillar.position.set(px, 0.85, 0);
+        this.outwardArenaGroup.add(pillar);
+        this.arenaClashPillars.push(pillar);
+      });
+
+      const arenaChar = this._createStylizedCharacter3D({
+        shirtColor: 0x0284c7,
+        mood: 'happy',
+        scale: 1.05,
+        hasHeart: true
+      });
+      arenaChar.position.set(0, 0.14, 0.35);
+      this.outwardArenaGroup.add(arenaChar);
+
+      const badge98 = this._create3DNeonBadge({
+        text: 'cuộc chiến bên ngoài',
+        borderColor: '#f43f5e',
+        textColor: '#ffe4e6',
+        widthWorld: 2.65,
+        heightWorld: 0.52
+      });
+      badge98.position.set(0, 2.55, 0.15);
+      this.outwardArenaGroup.add(badge98);
+
+      // =========================================================================
+      // 99. SCENE: comparison_pedestals_clash (at x = 1800, z = 12)
+      // "Muốn giỏi hơn đồng nghiệp, giàu hơn bạn bè, chứng minh mình vượt trội..."
+      // Visual: Two wobbling competition podiums competing for height with gold badges
+      // =========================================================================
+      this.comparisonPodiumsGroup = new THREE.Group();
+      this.comparisonPodiumsGroup.position.set(1800, 0, 12);
+      this.scene.add(this.comparisonPodiumsGroup);
+      makeStagePedestal(this.comparisonPodiumsGroup, 2.45, sunriseGoldMat);
+
+      const light99A = new THREE.PointLight(0xfbbf24, 2.6, 20);
+      light99A.position.set(0, 4.0, 2.5);
+      this.comparisonPodiumsGroup.add(light99A);
+
+      this.pedestalPodiumL = new THREE.Mesh(new THREE.CylinderGeometry(0.52, 0.58, 0.85, 20), darkSteelMat);
+      this.pedestalPodiumL.position.set(-0.75, 0.48, 0);
+      this.comparisonPodiumsGroup.add(this.pedestalPodiumL);
+
+      this.pedestalPodiumR = new THREE.Mesh(new THREE.CylinderGeometry(0.52, 0.58, 1.15, 20), sunriseGoldMat);
+      this.pedestalPodiumR.position.set(0.75, 0.62, 0);
+      this.comparisonPodiumsGroup.add(this.pedestalPodiumR);
+
+      const podiumChar = this._createStylizedCharacter3D({
+        shirtColor: 0xd97706,
+        mood: 'sad',
+        scale: 1.02
+      });
+      podiumChar.position.set(-0.75, 0.95, 0.1);
+      this.comparisonPodiumsGroup.add(podiumChar);
+
+      const badge99 = this._create3DNeonBadge({
+        text: 'bẫy so sánh hơn thua',
+        borderColor: '#fbbf24',
+        textColor: '#fef08a',
+        mark: 'X',
+        widthWorld: 2.75,
+        heightWorld: 0.52
+      });
+      badge99.position.set(0, 2.55, 0.15);
+      this.comparisonPodiumsGroup.add(badge99);
+
+      // =========================================================================
+      // 100. SCENE: inner_shadow_confrontation (at x = 1818, z = 12)
+      // "Nhưng kẻ thù lớn nhất cản bước bạn chưa bao giờ là một ai khác..."
+      // Visual: Glowing Hero standing face to face with their own smoky inner Shadow
+      // =========================================================================
+      this.innerShadowGroup = new THREE.Group();
+      this.innerShadowGroup.position.set(1818, 0, 12);
+      this.scene.add(this.innerShadowGroup);
+      makeStagePedestal(this.innerShadowGroup, 2.45, amethystMat);
+
+      const light100A = new THREE.PointLight(0xa855f7, 2.6, 20);
+      light100A.position.set(0, 4.0, 2.5);
+      this.innerShadowGroup.add(light100A);
+
+      // Light Hero on left
+      this.innerLightChar = this._createStylizedCharacter3D({
+        shirtColor: 0x0284c7,
+        mood: 'happy',
+        scale: 1.05,
+        hasHeart: true
+      });
+      this.innerLightChar.position.set(-0.65, 0.14, 0.2);
+      this.innerShadowGroup.add(this.innerLightChar);
+
+      // Shadow on right (dark smoky silhouette)
+      this.innerShadowChar = this._createStylizedCharacter3D({
+        shirtColor: 0x334155,
+        mood: 'sad',
+        scale: 1.05
+      });
+      this.innerShadowChar.position.set(0.65, 0.14, 0.2);
+      this.innerShadowChar.rotation.y = -0.55;
+      this.innerShadowGroup.add(this.innerShadowChar);
+
+      const badge100 = this._create3DNeonBadge({
+        text: 'kẻ thù lớn nhất bên trong',
+        borderColor: '#a855f7',
+        textColor: '#f3e8ff',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge100.position.set(0, 2.55, 0.15);
+      this.innerShadowGroup.add(badge100);
+
+      // =========================================================================
+      // 101. SCENE: lazy_whisper_comfort_pillow (at x = 1836, z = 12)
+      // "Đó là tiếng nói lười biếng thêm 5 phút, nỗi sợ thì thầm, sự dễ dãi..."
+      // Visual: Soft comfort pillow floating vs red pulsing alarm clock
+      // =========================================================================
+      this.lazyWhisperGroup = new THREE.Group();
+      this.lazyWhisperGroup.position.set(1836, 0, 12);
+      this.scene.add(this.lazyWhisperGroup);
+      makeStagePedestal(this.lazyWhisperGroup, 2.45, roseQuartzMat);
+
+      const light101A = new THREE.PointLight(0xf43f5e, 2.6, 20);
+      light101A.position.set(0, 4.0, 2.5);
+      this.lazyWhisperGroup.add(light101A);
+
+      // Soft Floating Comfort Pillow on left
+      this.lazyComfortPillow = new THREE.Mesh(
+        new THREE.BoxGeometry(0.85, 0.35, 0.65),
+        porcelainBlueMat
+      );
+      this.lazyComfortPillow.position.set(-0.75, 1.35, 0);
+      this.lazyWhisperGroup.add(this.lazyComfortPillow);
+
+      // Red Ringing Alarm Clock on right
+      this.lazyAlarmClock = new THREE.Group();
+      this.lazyAlarmClock.position.set(0.75, 1.35, 0);
+
+      const clockBody = new THREE.Mesh(new THREE.CylinderGeometry(0.38, 0.38, 0.15, 24), roseQuartzMat);
+      clockBody.rotation.x = Math.PI / 2;
+      this.lazyAlarmClock.add(clockBody);
+
+      const bellL = new THREE.Mesh(new THREE.SphereGeometry(0.12, 12, 12), sunriseGoldMat);
+      bellL.position.set(-0.28, 0.35, 0);
+      this.lazyAlarmClock.add(bellL);
+      const bellR = new THREE.Mesh(new THREE.SphereGeometry(0.12, 12, 12), sunriseGoldMat);
+      bellR.position.set(0.28, 0.35, 0);
+      this.lazyAlarmClock.add(bellR);
+      this.lazyWhisperGroup.add(this.lazyAlarmClock);
+
+      const badge101 = this._create3DNeonBadge({
+        text: 'tiếng nói của sự trì hoãn',
+        borderColor: '#f43f5e',
+        textColor: '#ffe4e6',
+        mark: 'X',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge101.position.set(0, 2.55, 0.15);
+      this.lazyWhisperGroup.add(badge101);
+
+      // =========================================================================
+      // 102. SCENE: trophy_vs_inner_crown (at x = 1854, z = 12)
+      // "Chiến thắng người khác là kiêu hãnh nhất thời, chiến thắng mình là bản lĩnh thực sự"
+      // Visual: Fading external trophy vs Radiant Inner Emerald Crown & Glowing Heart
+      // =========================================================================
+      this.trophyCrownGroup = new THREE.Group();
+      this.trophyCrownGroup.position.set(1854, 0, 12);
+      this.scene.add(this.trophyCrownGroup);
+      makeStagePedestal(this.trophyCrownGroup, 2.45, emeraldMat);
+
+      const light102A = new THREE.PointLight(0x10b981, 2.6, 20);
+      light102A.position.set(0, 4.0, 2.5);
+      this.trophyCrownGroup.add(light102A);
+
+      // Fading Trophy on left
+      this.transientTrophy = new THREE.Group();
+      this.transientTrophy.position.set(-0.75, 1.45, 0);
+
+      const cupBase = new THREE.Mesh(new THREE.CylinderGeometry(0.25, 0.32, 0.12, 16), darkSteelMat);
+      this.transientTrophy.add(cupBase);
+      const cupStem = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, 0.35, 12), sunriseGoldMat);
+      cupStem.position.y = 0.22;
+      this.transientTrophy.add(cupStem);
+      const cupBowl = new THREE.Mesh(new THREE.CylinderGeometry(0.32, 0.15, 0.45, 16), sunriseGoldMat);
+      cupBowl.position.y = 0.55;
+      this.transientTrophy.add(cupBowl);
+      this.trophyCrownGroup.add(this.transientTrophy);
+
+      // Inner Emerald Crown on right
+      this.innerFreedomCrown = new THREE.Group();
+      this.innerFreedomCrown.position.set(0.75, 1.55, 0);
+
+      const crownTorus = new THREE.Mesh(new THREE.TorusGeometry(0.35, 0.04, 12, 32), emeraldMat);
+      crownTorus.rotation.x = Math.PI / 2;
+      this.innerFreedomCrown.add(crownTorus);
+
+      for (let c = 0; c < 5; c++) {
+        const spike = new THREE.Mesh(new THREE.ConeGeometry(0.06, 0.18, 8), emeraldMat);
+        const ca = (c / 5) * Math.PI * 2;
+        spike.position.set(Math.cos(ca) * 0.32, 0.09, Math.sin(ca) * 0.32);
+        this.innerFreedomCrown.add(spike);
+      }
+      this.innerFreedomCrown.add(makeColorHalo(this.cyanGlowTex, 1.8, 0.85));
+      this.trophyCrownGroup.add(this.innerFreedomCrown);
+
+      const crownChar = this._createStylizedCharacter3D({
+        shirtColor: 0x059669,
+        mood: 'happy',
+        scale: 1.05,
+        hasHeart: true
+      });
+      crownChar.position.set(0.75, 0.14, 0.15);
+      this.trophyCrownGroup.add(crownChar);
+
+      const badge102 = this._create3DNeonBadge({
+        text: 'bản lĩnh & tự do thực sự',
+        borderColor: '#10b981',
+        textColor: '#d1fae5',
+        mark: 'CHECK',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge102.position.set(0, 2.55, 0.15);
+      this.trophyCrownGroup.add(badge102);
+
+      // =========================================================================
+      // 103. SCENE: dawn_discipline_awakening (at x = 1872, z = 12)
+      // "Đó là khi bạn chọn rời khỏi giường ấm lúc bình minh khi người khác còn đang ngủ"
+      // Visual: Rising Golden Sun Sphere with energetic hero stepping forth at dawn
+      // =========================================================================
+      this.dawnDisciplineGroup = new THREE.Group();
+      this.dawnDisciplineGroup.position.set(1872, 0, 12);
+      this.scene.add(this.dawnDisciplineGroup);
+      makeStagePedestal(this.dawnDisciplineGroup, 2.45, cyanCrystalMat);
+
+      const light103A = new THREE.PointLight(0x38bdf8, 2.8, 20);
+      light103A.position.set(0, 4.0, 2.5);
+      this.dawnDisciplineGroup.add(light103A);
+
+      // Rising Sun Sphere behind
+      this.dawnSunSphere = new THREE.Mesh(new THREE.SphereGeometry(0.75, 24, 24), sunriseGoldMat);
+      this.dawnSunSphere.position.set(0, 1.75, -0.6);
+      this.dawnSunSphere.add(makeColorHalo(this.glowTex, 2.6, 0.9));
+      this.dawnDisciplineGroup.add(this.dawnSunSphere);
+
+      this.dawnAwakeningChar = this._createStylizedCharacter3D({
+        shirtColor: 0x0284c7,
+        mood: 'happy',
+        scale: 1.08,
+        hasHeart: true
+      });
+      this.dawnAwakeningChar.position.set(0, 0.14, 0.25);
+      this.dawnDisciplineGroup.add(this.dawnAwakeningChar);
+
+      const badge103 = this._create3DNeonBadge({
+        text: 'kỷ luật lúc bình minh',
+        borderColor: '#38bdf8',
+        textColor: '#e0f2fe',
+        mark: 'CHECK',
+        widthWorld: 2.75,
+        heightWorld: 0.52
+      });
+      badge103.position.set(0, 2.55, 0.15);
+      this.dawnDisciplineGroup.add(badge103);
+
+      // =========================================================================
+      // 104. SCENE: book_and_dumbbell_vs_scroll (at x = 1890, z = 12)
+      // "Chọn đọc một trang sách, tập một bài thể dục, thay vì lướt màn hình vô bổ"
+      // Visual: Glowing open book & dumbbell of growth vs dim flickering smartphone
+      // =========================================================================
+      this.focusChoiceGroup = new THREE.Group();
+      this.focusChoiceGroup.position.set(1890, 0, 12);
+      this.scene.add(this.focusChoiceGroup);
+      makeStagePedestal(this.focusChoiceGroup, 2.45, sakuraPinkMat);
+
+      const light104A = new THREE.PointLight(0xf472b6, 2.6, 20);
+      light104A.position.set(0, 4.0, 2.5);
+      this.focusChoiceGroup.add(light104A);
+
+      // Dim phone on left
+      this.dimPhoneScrollMesh = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.65, 0.05), darkSteelMat);
+      this.dimPhoneScrollMesh.position.set(-0.85, 1.35, 0);
+      this.focusChoiceGroup.add(this.dimPhoneScrollMesh);
+
+      // Glowing Book & Dumbbell on right
+      this.focusedBookMesh = new THREE.Mesh(new THREE.BoxGeometry(0.65, 0.42, 0.08), sakuraPinkMat);
+      this.focusedBookMesh.position.set(0.45, 1.45, 0);
+      this.focusedBookMesh.rotation.x = -0.35;
+      this.focusChoiceGroup.add(this.focusedBookMesh);
+
+      this.focusedDumbbellMesh = new THREE.Group();
+      this.focusedDumbbellMesh.position.set(0.85, 0.85, 0);
+      const dbBar = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.55, 8), darkSteelMat);
+      dbBar.rotation.z = Math.PI / 2;
+      this.focusedDumbbellMesh.add(dbBar);
+      const dbPlateL = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.06, 16), sunriseGoldMat);
+      dbPlateL.position.x = -0.22;
+      dbPlateL.rotation.z = Math.PI / 2;
+      this.focusedDumbbellMesh.add(dbPlateL);
+      const dbPlateR = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.06, 16), sunriseGoldMat);
+      dbPlateR.position.x = 0.22;
+      dbPlateR.rotation.z = Math.PI / 2;
+      this.focusedDumbbellMesh.add(dbPlateR);
+      this.focusChoiceGroup.add(this.focusedDumbbellMesh);
+
+      const badge104 = this._create3DNeonBadge({
+        text: 'lựa chọn sự tập trung',
+        borderColor: '#f472b6',
+        textColor: '#fce7f3',
+        mark: 'CHECK',
+        widthWorld: 2.75,
+        heightWorld: 0.52
+      });
+      badge104.position.set(0, 2.55, 0.15);
+      this.focusChoiceGroup.add(badge104);
+
+      // =========================================================================
+      // 105. SCENE: flame_to_zen_water_sphere (at x = 1908, z = 12)
+      // "Kiểm soát cơn giận khi bị khiêu khích, giữ tâm thế bình thản giữa xáo động"
+      // Visual: Impulsive Red Flame transmuting into a Tranquil Crystal Water Sphere
+      // =========================================================================
+      this.flameZenWaterGroup = new THREE.Group();
+      this.flameZenWaterGroup.position.set(1908, 0, 12);
+      this.scene.add(this.flameZenWaterGroup);
+      makeStagePedestal(this.flameZenWaterGroup, 2.45, cyanCrystalMat);
+
+      const light105A = new THREE.PointLight(0x0284c7, 2.6, 20);
+      light105A.position.set(0, 4.0, 2.5);
+      this.flameZenWaterGroup.add(light105A);
+
+      // Red Flame on left
+      this.rageFlameMesh = new THREE.Mesh(new THREE.ConeGeometry(0.35, 0.85, 12), roseQuartzMat);
+      this.rageFlameMesh.position.set(-0.75, 1.45, 0);
+      this.flameZenWaterGroup.add(this.rageFlameMesh);
+
+      // Zen Water Sphere on right
+      this.zenWaterSphere = new THREE.Mesh(
+        new THREE.SphereGeometry(0.55, 24, 24),
+        new THREE.MeshPhysicalMaterial({
+          color: 0x38bdf8,
+          transmission: 0.85,
+          opacity: 0.85,
+          transparent: true,
+          roughness: 0.1
+        })
+      );
+      this.zenWaterSphere.position.set(0.75, 1.45, 0);
+      this.zenWaterSphere.add(makeColorHalo(this.cyanGlowTex, 1.8, 0.85));
+      this.flameZenWaterGroup.add(this.zenWaterSphere);
+
+      const zenChar = this._createStylizedCharacter3D({
+        shirtColor: 0x059669,
+        mood: 'happy',
+        scale: 1.05,
+        hasHeart: true
+      });
+      zenChar.position.set(0, 0.14, 0.25);
+      this.flameZenWaterGroup.add(zenChar);
+
+      const badge105 = this._create3DNeonBadge({
+        text: 'làm chủ cảm xúc nội tâm',
+        borderColor: '#0284c7',
+        textColor: '#e0f2fe',
+        mark: 'CHECK',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge105.position.set(0, 2.55, 0.15);
+      this.flameZenWaterGroup.add(badge105);
+
+      // =========================================================================
+      // 106. SCENE: two_versions_self_progress (at x = 1926, z = 12)
+      // "Không cần chạy đua với ai, chỉ cần hôm nay kiên định hơn hôm qua một chút"
+      // Visual: Yesterday Ghost staying back while Today Radiant Hero steps ahead
+      // =========================================================================
+      this.twoVersionsGroup = new THREE.Group();
+      this.twoVersionsGroup.position.set(1926, 0, 12);
+      this.scene.add(this.twoVersionsGroup);
+      makeStagePedestal(this.twoVersionsGroup, 2.45, emeraldMat);
+
+      const light106A = new THREE.PointLight(0x10b981, 2.6, 20);
+      light106A.position.set(0, 4.0, 2.5);
+      this.twoVersionsGroup.add(light106A);
+
+      // Yesterday silhouette standing back
+      this.yesterdayGhostChar = this._createStylizedCharacter3D({
+        shirtColor: 0x475569,
+        mood: 'sad',
+        scale: 0.95
+      });
+      this.yesterdayGhostChar.position.set(-0.65, 0.14, -0.4);
+      this.twoVersionsGroup.add(this.yesterdayGhostChar);
+
+      // Today progressing Hero stepping ahead
+      this.todayProgressChar = this._createStylizedCharacter3D({
+        shirtColor: 0x059669,
+        mood: 'happy',
+        scale: 1.1,
+        hasHeart: true
+      });
+      this.todayProgressChar.position.set(0.45, 0.14, 0.3);
+      this.twoVersionsGroup.add(this.todayProgressChar);
+
+      const badge106 = this._create3DNeonBadge({
+        text: 'tốt hơn chính mình hôm qua',
+        borderColor: '#10b981',
+        textColor: '#d1fae5',
+        mark: 'CHECK',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge106.position.set(0, 2.55, 0.15);
+      this.twoVersionsGroup.add(badge106);
+
+      // =========================================================================
+      // 107. SCENE: forging_willpower_diamond (at x = 1944, z = 12)
+      // "Mỗi lần nói 'Không' với sự lười biếng, bạn thắng một trận đánh vô hình vĩ đại"
+      // Visual: Willpower Anvil Diamond struck with Golden Spark Orbs of resilience
+      // =========================================================================
+      this.forgingDiamondGroup = new THREE.Group();
+      this.forgingDiamondGroup.position.set(1944, 0, 12);
+      this.scene.add(this.forgingDiamondGroup);
+      makeStagePedestal(this.forgingDiamondGroup, 2.45, sunriseGoldMat);
+
+      const light107A = new THREE.PointLight(0xfbbf24, 2.8, 20);
+      light107A.position.set(0, 4.0, 2.5);
+      this.forgingDiamondGroup.add(light107A);
+
+      // Golden Anvil Stand
+      const anvilBase = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.55, 0.85), darkSteelMat);
+      anvilBase.position.set(0, 0.35, 0);
+      this.forgingDiamondGroup.add(anvilBase);
+
+      // Glowing Diamond of Willpower
+      this.willpowerAnvilDiamond = new THREE.Mesh(new THREE.OctahedronGeometry(0.45, 1), cyanCrystalMat);
+      this.willpowerAnvilDiamond.position.set(0, 1.25, 0);
+      this.willpowerAnvilDiamond.add(makeColorHalo(this.cyanGlowTex, 2.2, 0.9));
+      this.forgingDiamondGroup.add(this.willpowerAnvilDiamond);
+
+      // 4 Golden Forge Sparks
+      for (let s = 0; s < 4; s++) {
+        const spk = new THREE.Mesh(new THREE.SphereGeometry(0.08, 8, 8), sunriseGoldMat);
+        const sa = (s / 4) * Math.PI * 2;
+        spk.position.set(Math.cos(sa) * 0.75, 1.25 + Math.sin(sa) * 0.35, 0);
+        this.forgingDiamondGroup.add(spk);
+        this.willpowerForgeSparks.push(spk);
+      }
+
+      const badge107 = this._create3DNeonBadge({
+        text: 'tôi luyện kim cương ý chí',
+        borderColor: '#fbbf24',
+        textColor: '#fef08a',
+        mark: 'CHECK',
+        widthWorld: 2.75,
+        heightWorld: 0.52
+      });
+      badge107.position.set(0, 2.55, 0.15);
+      this.forgingDiamondGroup.add(badge107);
+
+      // =========================================================================
+      // 108. SCENE: self_conquest_triumph_outro (at x = 1962, z = 12)
+      // "Chinh phục ngàn quân làm nên dũng tướng, chinh phục chính mình tạo nên vĩ nhân"
+      // Visual: Monumental Triumph Archway with Master Hero in glorious sunrise embrace
+      // =========================================================================
+      this.selfConquestGroup = new THREE.Group();
+      this.selfConquestGroup.position.set(1962, 0, 12);
+      this.scene.add(this.selfConquestGroup);
+      makeStagePedestal(this.selfConquestGroup, 2.55, sunriseGoldMat);
+
+      const light108A = new THREE.PointLight(0xfbbf24, 3.2, 24);
+      light108A.position.set(0, 4.2, 2.5);
+      this.selfConquestGroup.add(light108A);
+
+      // Grand Triumph Archway
+      this.selfConquestGateway = new THREE.Group();
+      this.selfConquestGateway.position.set(0.65, 1.65, -0.4);
+
+      const triumphRing1 = new THREE.Mesh(new THREE.TorusGeometry(1.45, 0.05, 16, 48), sunriseGoldMat);
+      this.selfConquestGateway.add(triumphRing1);
+      const triumphRing2 = new THREE.Mesh(new THREE.TorusGeometry(1.75, 0.035, 16, 48), emeraldMat);
+      triumphRing2.rotation.x = Math.PI / 4;
+      this.selfConquestGateway.add(triumphRing2);
+
+      const triumphSunCore = new THREE.Mesh(new THREE.OctahedronGeometry(0.62, 2), sunriseGoldMat);
+      this.selfConquestGateway.add(triumphSunCore);
+      this.selfConquestGateway.add(makeColorHalo(this.glowTex, 3.8, 0.95));
+      this.selfConquestGroup.add(this.selfConquestGateway);
+
+      this.selfConquestHeroChar = this._createStylizedCharacter3D({
+        shirtColor: 0x059669,
+        mood: 'happy',
+        scale: 1.15,
+        hasHeart: true
+      });
+      this.selfConquestHeroChar.position.set(0.12, 0.14, 0.2);
+      this.selfConquestGroup.add(this.selfConquestHeroChar);
+
+      const badge108 = this._create3DNeonBadge({
+        text: 'chiến thắng bản thân vĩ đại nhất',
+        borderColor: '#fbbf24',
+        textColor: '#fef08a',
+        mark: 'CHECK',
+        widthWorld: 2.85,
+        heightWorld: 0.52
+      });
+      badge108.position.set(0.2, 2.55, 0.15);
+      this.selfConquestGroup.add(badge108);
+    }
+
     /**
      * Compute target camera position & lookAt based on camera preset and local segment progress (0..1)
      */
@@ -8368,7 +9775,143 @@
             look: new THREE.Vector3(1566.0, 1.85, 11.6)
           };
 
+        case 'self_reflection_mirror_orbit':
+          return {
+            pos: new THREE.Vector3(1584.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.15 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1584.0, 1.7, 12.0)
+          };
+
+        case 'blame_pointing_arrows_pan':
+          return {
+            pos: new THREE.Vector3(1602.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.2 + p * 0.1, 18.4 - p * 0.5),
+            look: new THREE.Vector3(1602.0, 1.7, 12.0)
+          };
+
+        case 'victim_cage_closeup_break':
+          return {
+            pos: new THREE.Vector3(1620.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.15 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1620.0, 1.7, 12.0)
+          };
+
+        case 'past_shadow_today_contrast':
+          return {
+            pos: new THREE.Vector3(1638.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.2 + p * 0.15, 18.4 - p * 0.5),
+            look: new THREE.Vector3(1638.0, 1.7, 12.0)
+          };
+
+        case 'solitary_pillar_strength_orbit':
+          return {
+            pos: new THREE.Vector3(1656.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.25 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1656.0, 1.75, 12.0)
+          };
+
+        case 'firm_helm_steering_hero':
+          return {
+            pos: new THREE.Vector3(1674.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.15 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1674.0, 1.7, 12.0)
+          };
+
+        case 'golden_key_unlock_portal':
+          return {
+            pos: new THREE.Vector3(1692.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.2 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1692.0, 1.7, 12.0)
+          };
+
+        case 'valley_to_summit_pan':
+          return {
+            pos: new THREE.Vector3(1710.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.25 + p * 0.15, 18.4 - p * 0.5),
+            look: new THREE.Vector3(1710.0, 1.7, 12.0)
+          };
+
+        case 'brick_by_brick_bridge_track':
+          return {
+            pos: new THREE.Vector3(1728.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.2 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1728.0, 1.7, 12.0)
+          };
+
+        case 'own_hero_awakening_orbit':
+          return {
+            pos: new THREE.Vector3(1746.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.25 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1746.0, 1.75, 12.0)
+          };
+
+        case 'destiny_master_sunrise_outro':
+          return {
+            pos: new THREE.Vector3(1764.0 + Math.sin(p * 0.5) * 0.9, 2.3 - p * 0.1, 17.6 - p * 0.8),
+            look: new THREE.Vector3(1764.0, 1.85, 11.6)
+          };
+
+        case 'outward_battle_arena_pan':
+          return {
+            pos: new THREE.Vector3(1782.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.15 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1782.0, 1.7, 12.0)
+          };
+
+        case 'comparison_pedestals_orbit':
+          return {
+            pos: new THREE.Vector3(1800.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.2 + p * 0.1, 18.4 - p * 0.5),
+            look: new THREE.Vector3(1800.0, 1.7, 12.0)
+          };
+
+        case 'inner_shadow_closeup_face':
+          return {
+            pos: new THREE.Vector3(1818.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.15 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1818.0, 1.7, 12.0)
+          };
+
+        case 'comfort_pillow_to_alarm':
+          return {
+            pos: new THREE.Vector3(1836.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.2 + p * 0.15, 18.4 - p * 0.5),
+            look: new THREE.Vector3(1836.0, 1.7, 12.0)
+          };
+
+        case 'trophy_vs_crown_contrast':
+          return {
+            pos: new THREE.Vector3(1854.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.25 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1854.0, 1.75, 12.0)
+          };
+
+        case 'dawn_discipline_track_rise':
+          return {
+            pos: new THREE.Vector3(1872.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.15 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1872.0, 1.7, 12.0)
+          };
+
+        case 'book_dumbbell_orbit':
+          return {
+            pos: new THREE.Vector3(1890.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.2 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1890.0, 1.7, 12.0)
+          };
+
+        case 'flame_to_zen_water_pan':
+          return {
+            pos: new THREE.Vector3(1908.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.25 + p * 0.15, 18.4 - p * 0.5),
+            look: new THREE.Vector3(1908.0, 1.7, 12.0)
+          };
+
+        case 'two_versions_progress_track':
+          return {
+            pos: new THREE.Vector3(1926.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.2 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1926.0, 1.7, 12.0)
+          };
+
+        case 'forging_willpower_orbit':
+          return {
+            pos: new THREE.Vector3(1944.0 + Math.sin(p * 0.7 - 0.35) * 0.8, 2.25 + p * 0.15, 18.2 - p * 0.5),
+            look: new THREE.Vector3(1944.0, 1.75, 12.0)
+          };
+
+        case 'self_conquest_sunrise_outro':
+          return {
+            pos: new THREE.Vector3(1962.0 + Math.sin(p * 0.5) * 0.9, 2.3 - p * 0.1, 17.6 - p * 0.8),
+            look: new THREE.Vector3(1962.0, 1.85, 11.6)
+          };
+
         default:
+          if (this._getNeonStoryCameraTarget) {
+            const neonCam = this._getNeonStoryCameraTarget(cameraPreset, p, timeSec);
+            if (neonCam) return neonCam;
+          }
           return {
             pos: new THREE.Vector3(10.0 + (timeSec % 20), 2.5, 5.0),
             look: new THREE.Vector3(15.0 + (timeSec % 20), 2.2, 0)
@@ -8497,7 +10040,28 @@
       if (this.slingshotPrepGroup) this.slingshotPrepGroup.visible = sceneType === 'silent_preparation_slingshot_run';
       if (this.valuePerseveranceGroup) this.valuePerseveranceGroup.visible = sceneType === 'value_in_perseverance_climb';
       if (this.empathyWalkGroup) this.empathyWalkGroup.visible = sceneType === 'empathy_walk_horizon_outro';
-
+      if (this.selfReflectionGroup) this.selfReflectionGroup.visible = sceneType === 'self_reflection_mirror_pause';
+      if (this.blameArrowsGroup) this.blameArrowsGroup.visible = sceneType === 'blame_pointing_arrows_vs_mirror';
+      if (this.victimCageGroup) this.victimCageGroup.visible = sceneType === 'victim_comfort_cage_breaking';
+      if (this.pastShadowGroup) this.pastShadowGroup.visible = sceneType === 'past_shadow_today_burden';
+      if (this.solitaryPillarGroup) this.solitaryPillarGroup.visible = sceneType === 'solitary_standing_pillar_strength';
+      if (this.firmHelmGroup) this.firmHelmGroup.visible = sceneType === 'ocean_ship_firm_helm_hands';
+      if (this.goldenKeyGroup) this.goldenKeyGroup.visible = sceneType === 'golden_key_future_portal';
+      if (this.valleySummitGroup) this.valleySummitGroup.visible = sceneType === 'origin_valley_to_summit_peak';
+      if (this.brickBridgeGroup) this.brickBridgeGroup.visible = sceneType === 'brick_by_brick_golden_bridge';
+      if (this.ownHeroGroup) this.ownHeroGroup.visible = sceneType === 'own_hero_crown_awakening';
+      if (this.destinySunriseGroup) this.destinySunriseGroup.visible = sceneType === 'destiny_master_sunrise_outro';
+      if (this.outwardArenaGroup) this.outwardArenaGroup.visible = sceneType === 'outward_battle_arena_illusion';
+      if (this.comparisonPodiumsGroup) this.comparisonPodiumsGroup.visible = sceneType === 'comparison_pedestals_clash';
+      if (this.innerShadowGroup) this.innerShadowGroup.visible = sceneType === 'inner_shadow_confrontation';
+      if (this.lazyWhisperGroup) this.lazyWhisperGroup.visible = sceneType === 'lazy_whisper_comfort_pillow';
+      if (this.trophyCrownGroup) this.trophyCrownGroup.visible = sceneType === 'trophy_vs_inner_crown';
+      if (this.dawnDisciplineGroup) this.dawnDisciplineGroup.visible = sceneType === 'dawn_discipline_awakening';
+      if (this.focusChoiceGroup) this.focusChoiceGroup.visible = sceneType === 'book_and_dumbbell_vs_scroll';
+      if (this.flameZenWaterGroup) this.flameZenWaterGroup.visible = sceneType === 'flame_to_zen_water_sphere';
+      if (this.twoVersionsGroup) this.twoVersionsGroup.visible = sceneType === 'two_versions_self_progress';
+      if (this.forgingDiamondGroup) this.forgingDiamondGroup.visible = sceneType === 'forging_willpower_diamond';
+      if (this.selfConquestGroup) this.selfConquestGroup.visible = sceneType === 'self_conquest_triumph_outro';
       // Dynamic per-scene atmospheric background & fog color so scenes feel visually diverse
       const atmospherePalette = {
         chained_heavy_anchors: 0x060b16,
@@ -8567,8 +10131,32 @@
         tree_deep_roots_underground: 0x05120d,
         silent_preparation_slingshot_run: 0x0d0918,
         value_in_perseverance_climb: 0x090a18,
-        empathy_walk_horizon_outro: 0x0a0918
+        empathy_walk_horizon_outro: 0x0a0918,
+        self_reflection_mirror_pause: 0x070c18,
+        blame_pointing_arrows_vs_mirror: 0x110710,
+        victim_comfort_cage_breaking: 0x0e0915,
+        past_shadow_today_burden: 0x090b17,
+        solitary_standing_pillar_strength: 0x060f16,
+        ocean_ship_firm_helm_hands: 0x050e18,
+        golden_key_future_portal: 0x061112,
+        origin_valley_to_summit_peak: 0x080c16,
+        brick_by_brick_golden_bridge: 0x090816,
+        own_hero_crown_awakening: 0x0c0818,
+        destiny_master_sunrise_outro: 0x0a0918,
+        outward_battle_arena_illusion: 0x110710,
+        comparison_pedestals_clash: 0x0e0915,
+        inner_shadow_confrontation: 0x090616,
+        lazy_whisper_comfort_pillow: 0x0f0812,
+        trophy_vs_inner_crown: 0x061110,
+        dawn_discipline_awakening: 0x060f18,
+        book_and_dumbbell_vs_scroll: 0x090818,
+        flame_to_zen_water_sphere: 0x040e18,
+        two_versions_self_progress: 0x051210,
+        forging_willpower_diamond: 0x0e0a16,
+        self_conquest_triumph_outro: 0x0a0918
       };
+      if (this._getNeonStoryPalette) Object.assign(atmospherePalette, this._getNeonStoryPalette());
+      if (this._setNeonStoryVisibility) this._setNeonStoryVisibility(sceneType, activeSegment);
       const bgHex = atmospherePalette[sceneType] || 0x060809;
       this.scene.background.setHex(bgHex);
       this.scene.fog.color.setHex(bgHex);
@@ -9815,6 +11403,212 @@
       if (this.empathyWalkHero) {
         this.empathyWalkHero.position.y = 0.14 + Math.sin(timeSec * 2.4) * 0.05;
         this.empathyWalkHero.rotation.y = Math.sin(timeSec * 0.8) * 0.12;
+      }
+
+
+      // 87. Self Reflection Mirror & Pause animation
+      if (this.selfMirrorMesh) {
+        this.selfMirrorMesh.position.y = 1.65 + Math.sin(timeSec * 2.0) * 0.04;
+        this.selfMirrorMesh.rotation.y = Math.sin(timeSec * 0.8) * 0.08;
+      }
+      if (this.selfReflectionChar) {
+        this.selfReflectionChar.position.y = 0.14 + Math.sin(timeSec * 1.8) * 0.03;
+      }
+
+      // 88. Blame Pointing Arrows vs Central Shield animation
+      if (this.blameShield) {
+        this.blameShield.rotation.z = timeSec * 0.6;
+      }
+      this.blameArrows.forEach((arr, idx) => {
+        const arrPulse = 1.0 + Math.sin(timeSec * 3.5 + idx * 0.8) * 0.12;
+        arr.scale.set(arrPulse, arrPulse, arrPulse);
+      });
+      if (this.blameChar) {
+        this.blameChar.position.y = 0.14 + Math.sin(timeSec * 2.2) * 0.03;
+      }
+
+      // 89. Victim Comfort Cage Breaking animation
+      if (this.victimCageMesh) {
+        const breakPulse = 1.0 + Math.sin(timeSec * 2.8) * 0.05;
+        this.victimCageMesh.scale.set(breakPulse, 1.0, breakPulse);
+        this.victimCageMesh.rotation.y = Math.sin(timeSec * 0.6) * 0.06;
+      }
+      if (this.victimChar) {
+        this.victimChar.position.y = 0.14 + Math.sin(timeSec * 2.0) * 0.04;
+      }
+
+      // 90. Past Shadow vs Today Responsibility animation
+      if (this.pastShadowMesh) {
+        this.pastShadowMesh.position.y = 1.45 + Math.sin(timeSec * 1.5) * 0.06;
+        this.pastShadowMesh.rotation.y = timeSec * 0.3;
+      }
+      if (this.presentHeroChar) {
+        this.presentHeroChar.position.y = 0.14 + Math.sin(timeSec * 2.2) * 0.04;
+      }
+
+      // 91. Solitary Standing Pillar Strength animation
+      this.solitaryRings.forEach((rg, idx) => {
+        rg.rotation.z = timeSec * (idx % 2 === 0 ? 0.8 : -0.8);
+      });
+      if (this.solitaryChar) {
+        this.solitaryChar.position.y = 1.32 + Math.sin(timeSec * 2.0) * 0.03;
+      }
+
+      // 92. Ocean Ship Firm Helm Hands animation
+      if (this.firmHelmMesh) {
+        this.firmHelmMesh.rotation.z = Math.sin(timeSec * 1.4) * 0.35;
+      }
+      if (this.captainChar) {
+        this.captainChar.position.y = 0.14 + Math.sin(timeSec * 2.5) * 0.04;
+      }
+
+      // 93. Golden Key Future Portal Gateway animation
+      if (this.goldenKeyMesh) {
+        this.goldenKeyMesh.position.y = 1.55 + Math.sin(timeSec * 2.2) * 0.06;
+        this.goldenKeyMesh.rotation.z = Math.sin(timeSec * 1.2) * 0.1;
+      }
+      if (this.futurePortalGateway) {
+        this.futurePortalGateway.rotation.y = Math.sin(timeSec * 0.6) * 0.12;
+      }
+      if (this.keyBearerChar) {
+        this.keyBearerChar.position.y = 0.14 + Math.sin(timeSec * 2.0) * 0.04;
+      }
+
+      // 94. Origin Valley to Summit Peak animation
+      if (this.summitStarMesh) {
+        this.summitStarMesh.rotation.y = timeSec * 1.2;
+        this.summitStarMesh.rotation.z = timeSec * 0.8;
+      }
+      if (this.mountainClimberChar) {
+        this.mountainClimberChar.position.y = 0.35 + Math.sin(timeSec * 2.5) * 0.05;
+      }
+
+      // 95. Brick-by-Brick Golden Bridge animation
+      this.brickBridgeBlocks.forEach((bk, idx) => {
+        bk.position.y = 0.35 + idx * 0.18 + Math.sin(timeSec * 2.2 + idx * 0.6) * 0.03;
+      });
+      if (this.bridgeBuilderChar) {
+        this.bridgeBuilderChar.position.y = 0.82 + Math.sin(timeSec * 2.4) * 0.04;
+      }
+
+      // 96. Own Hero Crown of Courage Awakening animation
+      if (this.heroCrownMesh) {
+        this.heroCrownMesh.position.y = 1.85 + Math.sin(timeSec * 2.0) * 0.05;
+        this.heroCrownMesh.rotation.y = timeSec * 0.6;
+      }
+      if (this.ownHeroChar) {
+        this.ownHeroChar.position.y = 0.14 + Math.sin(timeSec * 2.2) * 0.04;
+      }
+
+      // 97. Destiny Master Sunrise Outro animation
+      if (this.destinySunriseArch) {
+        this.destinySunriseArch.rotation.y = timeSec * 0.35;
+        const archPulse = 1.0 + Math.sin(timeSec * 2.5) * 0.06;
+        this.destinySunriseArch.scale.set(archPulse, archPulse, archPulse);
+      }
+      if (this.destinyMasterChar) {
+        this.destinyMasterChar.position.y = 0.14 + Math.sin(timeSec * 2.4) * 0.05;
+        this.destinyMasterChar.rotation.y = Math.sin(timeSec * 0.8) * 0.12;
+      }
+
+      // 98. Outward Battle Arena Clash animation
+      this.arenaClashPillars.forEach((p, idx) => {
+        p.position.y = 0.85 + Math.sin(timeSec * 3.0 + idx * Math.PI) * 0.05;
+      });
+
+      // 99. Comparison Pedestals Clash animation
+      if (this.pedestalPodiumL && this.pedestalPodiumR) {
+        this.pedestalPodiumL.position.y = 0.48 + Math.sin(timeSec * 2.0) * 0.1;
+        this.pedestalPodiumR.position.y = 0.62 - Math.sin(timeSec * 2.0) * 0.1;
+      }
+
+      // 100. Inner Shadow Confrontation animation
+      if (this.innerLightChar) {
+        this.innerLightChar.position.y = 0.14 + Math.sin(timeSec * 2.0) * 0.03;
+      }
+      if (this.innerShadowChar) {
+        this.innerShadowChar.position.y = 0.14 + Math.sin(timeSec * 2.2 + 0.5) * 0.04;
+      }
+
+      // 101. Lazy Comfort Pillow vs Ringing Alarm Clock animation
+      if (this.lazyComfortPillow) {
+        this.lazyComfortPillow.position.y = 1.35 + Math.sin(timeSec * 1.5) * 0.05;
+      }
+      if (this.lazyAlarmClock) {
+        this.lazyAlarmClock.rotation.z = Math.sin(timeSec * 16.0) * 0.08;
+      }
+
+      // 102. Transient Trophy vs Inner Freedom Crown animation
+      if (this.transientTrophy) {
+        this.transientTrophy.position.y = 1.45 + Math.sin(timeSec * 1.8) * 0.04;
+      }
+      if (this.innerFreedomCrown) {
+        this.innerFreedomCrown.rotation.y = timeSec * 0.8;
+        const crPulse = 1.0 + Math.sin(timeSec * 2.5) * 0.06;
+        this.innerFreedomCrown.scale.set(crPulse, crPulse, crPulse);
+      }
+
+      // 103. Dawn Discipline Awakening animation
+      if (this.dawnSunSphere) {
+        this.dawnSunSphere.rotation.y = timeSec * 0.2;
+      }
+      if (this.dawnAwakeningChar) {
+        this.dawnAwakeningChar.position.y = 0.14 + Math.sin(timeSec * 2.2) * 0.04;
+      }
+
+      // 104. Focused Book & Dumbbell vs Dim Phone animation
+      if (this.focusedBookMesh) {
+        this.focusedBookMesh.position.y = 1.45 + Math.sin(timeSec * 2.0) * 0.04;
+      }
+      if (this.focusedDumbbellMesh) {
+        this.focusedDumbbellMesh.position.y = 0.85 + Math.sin(timeSec * 1.8) * 0.03;
+      }
+      if (this.dimPhoneScrollMesh) {
+        this.dimPhoneScrollMesh.rotation.z = Math.sin(timeSec * 1.0) * 0.05;
+      }
+
+      // 105. Flame to Zen Water Sphere animation
+      if (this.rageFlameMesh) {
+        const flmScale = 1.0 + Math.sin(timeSec * 4.5) * 0.08;
+        this.rageFlameMesh.scale.set(flmScale, flmScale, flmScale);
+      }
+      if (this.zenWaterSphere) {
+        this.zenWaterSphere.rotation.y = timeSec * 0.5;
+        this.zenWaterSphere.position.y = 1.45 + Math.sin(timeSec * 1.8) * 0.04;
+      }
+
+      // 106. Two Versions Self Progress animation
+      if (this.yesterdayGhostChar) {
+        this.yesterdayGhostChar.position.y = 0.14 + Math.sin(timeSec * 1.6) * 0.03;
+      }
+      if (this.todayProgressChar) {
+        this.todayProgressChar.position.y = 0.14 + Math.sin(timeSec * 2.4) * 0.04;
+      }
+
+      // 107. Forging Willpower Diamond animation
+      if (this.willpowerAnvilDiamond) {
+        this.willpowerAnvilDiamond.rotation.y = timeSec * 0.9;
+        this.willpowerAnvilDiamond.position.y = 1.25 + Math.sin(timeSec * 2.2) * 0.04;
+      }
+      this.willpowerForgeSparks.forEach((spk, idx) => {
+        const sa = (idx / 4) * Math.PI * 2 + timeSec * 1.5;
+        spk.position.x = Math.cos(sa) * 0.75;
+        spk.position.z = Math.sin(sa) * 0.35;
+      });
+
+      // 108. Self Conquest Triumph Outro animation
+      if (this.selfConquestGateway) {
+        this.selfConquestGateway.rotation.y = timeSec * 0.35;
+        const gwPulse = 1.0 + Math.sin(timeSec * 2.5) * 0.06;
+        this.selfConquestGateway.scale.set(gwPulse, gwPulse, gwPulse);
+      }
+      if (this.selfConquestHeroChar) {
+        this.selfConquestHeroChar.position.y = 0.14 + Math.sin(timeSec * 2.4) * 0.05;
+        this.selfConquestHeroChar.rotation.y = Math.sin(timeSec * 0.8) * 0.12;
+      }
+
+      if (this._updateNeonStoryStage) {
+        this._updateNeonStoryStage(timeSec, activeSegment, segProgress, sceneType);
       }
 
       // Camera positioning

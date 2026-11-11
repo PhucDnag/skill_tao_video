@@ -1,0 +1,93 @@
+{
+  "title": "CHIẾN THẮNG BẢN THÂN LÀ CHIẾN THẮNG VĨ ĐẠI NHẤT",
+  "watermark": "",
+  "voice": "giong_mau",
+  "rate": "+8%",
+  "pitch": "+0Hz",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "pauseBetweenSegments": 0.06,
+  "outroDuration": 3.2,
+  "outroScene": "self_conquest_triumph_outro",
+  "outroCamera": "self_conquest_sunrise_outro",
+  "segments": [
+    {
+      "vi": "Trong cuộc đời, chúng ta thường mải miết tìm cách chiến thắng người khác.",
+      "en": "Throughout life, we often relentlessly seek to conquer others.",
+      "receipt": "OUTWARD BATTLES",
+      "scene": "outward_battle_arena_illusion",
+      "camera": "outward_battle_arena_pan"
+    },
+    {
+      "vi": "Muốn giỏi hơn đồng nghiệp, muốn giàu hơn bạn bè, và muốn chứng minh mình vượt trội hơn những người xung quanh.",
+      "en": "Striving to outdo colleagues, out-earn friends, and prove our superiority to those around us.",
+      "receipt": "COMPETITION TRAP",
+      "scene": "comparison_pedestals_clash",
+      "camera": "comparison_pedestals_orbit"
+    },
+    {
+      "vi": "Nhưng bạn biết không... Kẻ thù lớn nhất cản bước bạn đến thành công chưa bao giờ là một ai khác.",
+      "en": "Yet little do we realize... The greatest enemy blocking your path has never been anyone else.",
+      "receipt": "THE GREATEST ENEMY",
+      "scene": "inner_shadow_confrontation",
+      "camera": "inner_shadow_closeup_face"
+    },
+    {
+      "vi": "Đó là tiếng nói lười biếng muốn bạn nằm thêm năm phút. Là nỗi sợ hãi thì thầm rằng bạn không thể làm được. Và là sự dễ dãi luôn tìm lý do để bỏ cuộc.",
+      "en": "It is the lazy whisper urging for five more minutes, the fear saying you can't, and the comfort seeking excuses to quit.",
+      "receipt": "VOICES OF EXCUSES",
+      "scene": "lazy_whisper_comfort_pillow",
+      "camera": "comfort_pillow_to_alarm"
+    },
+    {
+      "vi": "Chiến thắng người khác chỉ mang lại sự kiêu hãnh nhất thời. Nhưng chiến thắng chính mình mới mang lại bản lĩnh và tự do thực sự.",
+      "en": "Conquering others yields only fleeting pride, but conquering yourself brings true fortitude and freedom.",
+      "receipt": "TRUE FREEDOM",
+      "scene": "trophy_vs_inner_crown",
+      "camera": "trophy_vs_crown_contrast"
+    },
+    {
+      "vi": "Đó là khi bạn chọn rời khỏi giường ấm lúc bình minh khi người khác còn đang ngủ.",
+      "en": "It is choosing to rise at dawn while others are still sound asleep.",
+      "receipt": "DAWN DISCIPLINE",
+      "scene": "dawn_discipline_awakening",
+      "camera": "dawn_discipline_track_rise"
+    },
+    {
+      "vi": "Đó là khi bạn chọn đọc một trang sách, tập một bài thể dục, thay vì chìm đắm vào những cám dỗ vô bổ trên màn hình.",
+      "en": "It is choosing to read a page or exercise, rather than drowning in mindless screen distractions.",
+      "receipt": "FOCUSED CHOICE",
+      "scene": "book_and_dumbbell_vs_scroll",
+      "camera": "book_dumbbell_orbit"
+    },
+    {
+      "vi": "Đó là khi bạn kiểm soát được cơn giận dữ khi bị khiêu khích, và giữ được tâm thế bình thản giữa một thế giới đầy xáo động.",
+      "en": "It is mastering your anger under provocation, and staying serene amidst a chaotic world.",
+      "receipt": "EMOTIONAL MASTERY",
+      "scene": "flame_to_zen_water_sphere",
+      "camera": "flame_to_zen_water_pan"
+    },
+    {
+      "vi": "Bạn không cần phải chạy đua với bất kỳ ai. Chỉ cần hôm nay bạn kiên định hơn bạn của ngày hôm qua một chút.",
+      "en": "You don't need to race against anyone; just be a little more steadfast today than you were yesterday.",
+      "receipt": "BETTER THAN YESTERDAY",
+      "scene": "two_versions_self_progress",
+      "camera": "two_versions_progress_track"
+    },
+    {
+      "vi": "Mỗi lần bạn nói 'Không' với sự lười biếng, bạn đã thắng một trận đánh vô hình nhưng đầy vĩ đại.",
+      "en": "Every time you say 'No' to laziness, you have won an invisible yet monumental battle.",
+      "receipt": "INVISIBLE TRIUMPH",
+      "scene": "forging_willpower_diamond",
+      "camera": "forging_willpower_orbit"
+    },
+    {
+      "vi": "Bởi vì chinh phục ngàn quân ngoài chiến trường có thể làm nên một dũng tướng, nhưng chinh phục được chính mình mới tạo nên một bậc vĩ nhân.",
+      "en": "For conquering a thousand warriors makes a general, but mastering yourself creates greatness.",
+      "receipt": "MASTER OF ONESELF",
+      "scene": "self_conquest_triumph_outro",
+      "camera": "self_conquest_sunrise_outro"
+    }
+  ]
+}
