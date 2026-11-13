@@ -1,0 +1,262 @@
+{
+  "title": "LÃNG PHÍ THỜI GIAN – SỰ ĐÁNH ĐỔI CHỈ NHẬN RA KHI ĐÃ QUÁ MUỘN",
+  "layoutMode": "illustrated-story",
+  "style": "phatbieulungtung",
+  "watermark": "",
+  "voice": "giong_mau",
+  "rate": "+4%",
+  "pitch": "+0Hz",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "fadeInDuration": 0.45,
+  "fadeOutDuration": 0.8,
+  "pauseBetweenSegments": 0.14,
+  "outroDuration": 3.0,
+  "segments": [
+    {
+      "vi": "Có một thứ trên đời dù bạn giàu có đến đâu cũng không thể mua lại, dù hối hận đến mức nào cũng không thể quay về. Đó chính là thời gian.",
+      "visual": {
+        "background": "#0f172a",
+        "objects": [
+          { "id": "clock_env", "kind": "clock_time", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 }
+        ]
+      }
+    },
+    {
+      "vi": "Chúng ta dễ dàng dành hàng giờ để lướt mạng xã hội, xem những video vô nghĩa, nhưng lại luôn thấy không có thời gian để phát triển bản thân.",
+      "visual": {
+        "background": "#0f172a",
+        "objects": [
+          { "id": "bedroom_env", "kind": "bedroom_night", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          {
+            "id": "hero_phone",
+            "kind": "person",
+            "style": "phatbieulungtung",
+            "hair": "smooth",
+            "accessory": "glasses",
+            "outfit": "hoodie",
+            "clothesColor": "#4b7bec",
+            "scarf": false,
+            "pose": "hold_phone",
+            "mood": "tired",
+            "x": 0.65,
+            "y": 0.66,
+            "w": 0.15,
+            "h": 0.42
+          }
+        ]
+      }
+    },
+    {
+      "vi": "Chúng ta nói rằng ngày mai sẽ bắt đầu, tuần sau sẽ cố gắng. Nhưng ngày mai lại thành ngày mai, còn thời gian thì không bao giờ chờ đợi.",
+      "visual": {
+        "background": "#74b9ff",
+        "objects": [
+          { "id": "crossroads_env", "kind": "crossroads", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          {
+            "id": "hero_crossroads",
+            "kind": "person",
+            "style": "phatbieulungtung",
+            "hair": "smooth",
+            "accessory": "glasses",
+            "outfit": "hoodie",
+            "clothesColor": "#4b7bec",
+            "scarf": false,
+            "pose": "stand",
+            "mood": "tired",
+            "x": 0.5,
+            "y": 0.68,
+            "w": 0.15,
+            "h": 0.42
+          }
+        ]
+      }
+    },
+    {
+      "vi": "Điều đáng sợ nhất của việc lãng phí thời gian không phải là mất đi vài giờ, mà là bạn đang âm thầm đánh mất những cơ hội thay đổi cả cuộc đời.",
+      "visual": {
+        "background": "#1e272e",
+        "objects": [
+          {
+            "id": "card_time_loss",
+            "kind": "card",
+            "color": "rgba(47, 53, 66, 0.9)",
+            "stroke": "#eb3b5a",
+            "x": 0.32,
+            "y": 0.48,
+            "w": 0.32,
+            "h": 0.42,
+            "cardIcon": "hands_heart",
+            "text": "Mất vài giờ đồng hồ",
+            "textColor": "#dcdde1",
+            "fontSize": 0.03
+          },
+          {
+            "id": "card_life_loss",
+            "kind": "card",
+            "color": "rgba(47, 53, 66, 0.9)",
+            "stroke": "#fed330",
+            "x": 0.68,
+            "y": 0.48,
+            "w": 0.32,
+            "h": 0.42,
+            "cardIcon": "caring_circle",
+            "text": "Đánh mất cả tương lai",
+            "textColor": "#fed330",
+            "fontSize": 0.03
+          }
+        ]
+      }
+    },
+    {
+      "vi": "Mỗi ngày hai tiếng vô bổ, một năm bạn đã mất hơn bảy trăm giờ. Khoảng thời gian ấy đủ để học một ngoại ngữ, thành thạo một kỹ năng, hay xây dựng sự nghiệp mơ ước.",
+      "visual": {
+        "background": "#111827",
+        "objects": [
+          { "id": "office_env", "kind": "office_desk", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          {
+            "id": "hero_office",
+            "kind": "person",
+            "style": "phatbieulungtung",
+            "hair": "smooth",
+            "accessory": "glasses",
+            "outfit": "sweater",
+            "clothesColor": "#3867d6",
+            "scarf": false,
+            "pose": "sit_desk",
+            "mood": "closed",
+            "x": 0.48,
+            "y": 0.64,
+            "w": 0.15,
+            "h": 0.42
+          }
+        ]
+      }
+    },
+    {
+      "vi": "Trong khi người khác đang âm thầm nỗ lực, bạn lại chờ một thời điểm hoàn hảo. Nhưng chẳng có thời điểm nào hoàn hảo cả, chỉ có người hành động và người tìm lý do để trì hoãn.",
+      "visual": {
+        "background": "#2c3e50",
+        "objects": [
+          { "id": "cafe_env", "kind": "rain_cafe", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          {
+            "id": "hero_cafe",
+            "kind": "person",
+            "style": "phatbieulungtung",
+            "hair": "smooth",
+            "accessory": "glasses",
+            "outfit": "sweater",
+            "clothesColor": "#20bf6b",
+            "scarf": false,
+            "pose": "hold_coffee",
+            "mood": "closed",
+            "x": 0.5,
+            "y": 0.65,
+            "w": 0.16,
+            "h": 0.42
+          }
+        ]
+      }
+    },
+    {
+      "vi": "Bởi thời gian không lấy đi tất cả trong một khoảnh khắc. Nó lấy đi từng chút một, qua những ngày tháng mà ta tưởng rằng mình vẫn còn rất nhiều.",
+      "visual": {
+        "background": "#f8a5c2",
+        "objects": [
+          { "id": "park_env", "kind": "park_autumn", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          {
+            "id": "hero_park",
+            "kind": "person",
+            "style": "phatbieulungtung",
+            "hair": "smooth",
+            "accessory": "glasses",
+            "outfit": "hoodie",
+            "clothesColor": "#4b7bec",
+            "scarf": false,
+            "pose": "sit_bench",
+            "mood": "tired",
+            "x": 0.4,
+            "y": 0.68,
+            "w": 0.15,
+            "h": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "vi": "Đừng đợi đến khi tuổi trẻ qua đi mới tiếc nuối vì những điều chưa làm. Đừng đợi đến khi cơ hội khép lại mới ước rằng mình đã cố gắng nhiều hơn.",
+      "visual": {
+        "background": "#38bdf8",
+        "objects": [
+          { "id": "nature_env", "kind": "nature_hill", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          {
+            "id": "hero_hill",
+            "kind": "person",
+            "style": "phatbieulungtung",
+            "hair": "smooth",
+            "accessory": "glasses",
+            "outfit": "hoodie",
+            "clothesColor": "#4b7bec",
+            "scarf": false,
+            "pose": "walk",
+            "mood": "determined",
+            "x": 0.55,
+            "y": 0.68,
+            "w": 0.15,
+            "h": 0.42
+          }
+        ]
+      }
+    },
+    {
+      "vi": "Hãy bắt đầu từ hôm nay, dù chỉ là một hành động nhỏ. Bởi một cuộc đời có ý nghĩa không được tạo nên từ lời hứa ngày mai, mà xây dựng bằng những việc bạn làm trong ngày hôm nay.",
+      "visual": {
+        "background": "#1e272e",
+        "objects": [
+          { "id": "sunrise_env", "kind": "window_sunrise", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          {
+            "id": "hero_sunrise",
+            "kind": "person",
+            "style": "phatbieulungtung",
+            "hair": "smooth",
+            "outfit": "sweater",
+            "clothesColor": "#4b7bec",
+            "scarf": false,
+            "pose": "backview",
+            "mood": "backview",
+            "x": 0.5,
+            "y": 0.72,
+            "w": 0.16,
+            "h": 0.42
+          }
+        ]
+      }
+    },
+    {
+      "vi": "Hãy nhớ rằng: Tiền bạc mất đi còn có thể kiếm lại, nhưng thời gian đã trôi qua thì mãi mãi không bao giờ trở lại.",
+      "visual": {
+        "background": "#090a0f",
+        "objects": [
+          { "id": "rooftop_env", "kind": "rooftop_stars", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          {
+            "id": "hero_rooftop",
+            "kind": "person",
+            "style": "phatbieulungtung",
+            "hair": "smooth",
+            "outfit": "hoodie",
+            "clothesColor": "#4b7bec",
+            "scarf": false,
+            "pose": "backview",
+            "mood": "backview",
+            "x": 0.5,
+            "y": 0.68,
+            "w": 0.16,
+            "h": 0.42
+          }
+        ]
+      }
+    }
+  ]
+}
+

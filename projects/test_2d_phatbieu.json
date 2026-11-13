@@ -1,0 +1,79 @@
+{
+  "title": "MỌI CUỘC GẶP GỠ ĐỀU CÓ Ý NGHĨA",
+  "layoutMode": "illustrated-story",
+  "style": "phatbieulungtung",
+  "watermark": "PHAT BIEU LUNG TUNG",
+  "voice": "giong_mau",
+  "rate": "+0%",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "fadeInDuration": 0.45,
+  "fadeOutDuration": 0.8,
+  "pauseBetweenSegments": 0.12,
+  "outroDuration": 2.5,
+  "segments": [
+    {
+      "vi": "Người ta thường nói, mọi cuộc gặp gỡ trong đời đều có một ý nghĩa riêng.",
+      "visual": {
+        "background": "#8395a7",
+        "objects": [
+          { "id": "street_bg", "kind": "city_street", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero", "kind": "person", "style": "phatbieulungtung", "role": "hero", "mood": "tired", "x": 0.44, "y": 0.62, "w": 0.14, "h": 0.42 },
+          { "id": "friend", "kind": "person", "style": "phatbieulungtung", "color": "#10ac84", "skin": "#f5cd79", "mood": "smile", "x": 0.58, "y": 0.62, "w": 0.14, "h": 0.42 }
+        ]
+      }
+    },
+    {
+      "vi": "Có những người chỉ ở lại trong đời mình một đoạn ngắn, nhưng khiến ta nhớ mãi một cách lạ kỳ.",
+      "visual": {
+        "background": "#1e272e",
+        "objects": [
+          { "id": "subway_bg", "kind": "subway_window", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero_sit", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "sit_bus", "mood": "closed", "x": 0.42, "y": 0.58, "w": 0.15, "h": 0.38 },
+          { "id": "ghost_memory", "kind": "person", "style": "phatbieulungtung", "role": "ghost", "pose": "ghost", "mood": "smile", "color": "#70a1ff", "x": 0.6, "y": 0.58, "w": 0.15, "h": 0.38 }
+        ]
+      }
+    },
+    {
+      "vi": "Giữa đại lộ đêm đông đúc, nhìn dòng xe cộ trôi đi, ta tự hỏi giờ này họ đang ở đâu.",
+      "visual": {
+        "background": "#0a0d18",
+        "objects": [
+          { "id": "overpass_bg", "kind": "overpass_night", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero_lean", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "lean_rail", "mood": "tired", "x": 0.5, "y": 0.68, "w": 0.16, "h": 0.4 }
+        ]
+      }
+    },
+    {
+      "vi": "Có người đến để dạy ta biết tử tế, có người đến để ta hiểu mình cũng xứng đáng được quan tâm.",
+      "visual": {
+        "background": "#12151e",
+        "objects": [
+          { "id": "card_kindness", "kind": "card", "cardIcon": "hands_heart", "text": "biết tử tế", "x": 0.35, "y": 0.48, "w": 0.24, "h": 0.42 },
+          { "id": "card_caring", "kind": "card", "cardIcon": "caring_circle", "text": "được quan tâm", "x": 0.65, "y": 0.48, "w": 0.24, "h": 0.42 }
+        ]
+      }
+    },
+    {
+      "vi": "Họ giống như một ngọn đèn bật sáng trong căn phòng tối, rồi lặng lẽ khép cửa rời đi.",
+      "visual": {
+        "background": "#1e272e",
+        "objects": [
+          { "id": "room_bg", "kind": "desk_room", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero_desk", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "sit_desk", "mood": "tired", "x": 0.24, "y": 0.65, "w": 0.14, "h": 0.38 }
+        ]
+      }
+    },
+    {
+      "vi": "Thời gian trôi qua, ta chỉ mỉm cười và thầm cảm ơn vì họ đã từng bước qua cuộc đời mình.",
+      "visual": {
+        "background": "#1e272e",
+        "objects": [
+          { "id": "sunrise_bg", "kind": "window_sunrise", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero_backview", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "backview", "mood": "backview", "x": 0.5, "y": 0.72, "w": 0.2, "h": 0.46 }
+        ]
+      }
+    }
+  ]
+}

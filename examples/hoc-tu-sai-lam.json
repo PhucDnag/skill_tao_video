@@ -1,0 +1,47 @@
+{
+  "title": "SAI MỘT LẦN, HIỂU THÊM MỘT CHÚT",
+  "layoutMode": "illustrated-story",
+  "voice": "vi-VN-NamMinhNeural",
+  "rate": "+0%",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "outroDuration": 0,
+  "segments": [
+    {
+      "vi": "Làm sai một bài không có nghĩa là bạn không thể học được.",
+      "visualClaim": "Trang bài tập hiện ra, nhãn chưa đúng xuất hiện bên dưới, không phủ dấu sai lên nhân vật.",
+      "visual": {
+        "heading": "MỘT BÀI LÀM CHƯA ĐÚNG",
+        "objects": [
+          {"id":"workbook","kind":"book","x":0.5,"y":0.43,"w":0.55,"h":0.2,"color":"#568d9e"},
+          {"id":"feedback","kind":"text","x":0.5,"y":0.62,"w":0.75,"text":"Bài làm cần sửa","textColor":"#efa69d","opacity":0,"keyframes":[{"at":0.5,"opacity":1}]}
+        ]
+      }
+    },
+    {
+      "vi": "Hãy tìm bước mình chưa hiểu, rồi thử lại từng bước một.",
+      "visualClaim": "Ba bước hiện lần lượt theo chiều dọc, bước cần xem lại có màu nhấn riêng.",
+      "visual": {
+        "heading": "CHẬM LẠI MỘT BƯỚC",
+        "objects": [
+          {"id":"step1","kind":"card","x":0.5,"y":0.32,"w":0.7,"h":0.12,"text":"Đọc lại đề"},
+          {"id":"step2","kind":"card","x":0.5,"y":0.49,"w":0.7,"h":0.12,"text":"Tìm chỗ chưa hiểu","stroke":"#efbc64","opacity":0,"keyframes":[{"at":0.35,"opacity":1}]},
+          {"id":"step3","kind":"card","x":0.5,"y":0.66,"w":0.7,"h":0.12,"text":"Tự làm lại","opacity":0,"keyframes":[{"at":0.4,"opacity":0},{"at":0.8,"opacity":1}]}
+        ]
+      }
+    },
+    {
+      "vi": "Điều đáng giữ lại không phải cảm giác xấu hổ, mà là cách giải bạn vừa hiểu thêm.",
+      "visualClaim": "Nhãn tự trách mờ đi; quyển bài tập giữ lại với nhãn đã hiểu thêm.",
+      "visual": {
+        "heading": "GIỮ LẠI ĐIỀU ĐÃ HỌC",
+        "objects": [
+          {"id":"self-blame","kind":"text","x":0.5,"y":0.3,"w":0.75,"text":"Tự trách mình","textColor":"#b7a4aa","keyframes":[{"at":0.4,"opacity":0}]},
+          {"id":"workbook","kind":"book","x":0.5,"y":0.49,"w":0.55,"h":0.2,"color":"#568d9e"},
+          {"id":"lesson","kind":"text","x":0.5,"y":0.68,"w":0.8,"text":"Hiểu thêm một cách làm","textColor":"#9fd5c1","opacity":0,"keyframes":[{"at":0.45,"opacity":0},{"at":0.8,"opacity":1}]}
+        ]
+      }
+    }
+  ]
+}

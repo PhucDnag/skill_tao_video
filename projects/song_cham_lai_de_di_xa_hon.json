@@ -1,0 +1,127 @@
+{
+  "title": "ĐÔI KHI, SỐNG CHẬM LẠI CHÍNH LÀ CÁCH ĐỂ CHÚNG TA ĐI XA HƠN",
+  "layoutMode": "illustrated-story",
+  "style": "phatbieulungtung",
+  "watermark": "",
+  "voice": "giong_mau",
+  "rate": "+4%",
+  "pitch": "+0Hz",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "fadeInDuration": 0.45,
+  "fadeOutDuration": 0.8,
+  "pauseBetweenSegments": 0.14,
+  "outroDuration": 3.0,
+  "segments": [
+    {
+      "vi": "Có bao giờ bạn tự hỏi, tại sao chúng ta luôn luôn vội vã?",
+      "visual": {
+        "background": "#0a0d18",
+        "objects": [
+          { "id": "overpass_bg1", "kind": "overpass_night", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero1", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "lean_rail", "mood": "tired", "x": 0.5, "y": 0.68, "w": 0.16, "h": 0.4 }
+        ]
+      }
+    },
+    {
+      "vi": "Vội vã thức dậy, vội vã đi làm, chạy theo những mục tiêu mà đôi khi chẳng biết liệu đó có thực sự là điều mình mong muốn?",
+      "visual": {
+        "background": "#8395a7",
+        "objects": [
+          { "id": "street_bg1", "kind": "city_street", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero2", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "stand", "mood": "tired", "x": 0.48, "y": 0.62, "w": 0.14, "h": 0.42 }
+        ]
+      }
+    },
+    {
+      "vi": "Ai cũng muốn đi nhanh hơn, kiếm nhiều tiền hơn. Nhưng có bao giờ bạn dừng lại để hỏi: Mình đang tiến lên, hay chỉ đang chạy trốn chính bản thân mình?",
+      "visual": {
+        "background": "#1e272e",
+        "objects": [
+          { "id": "subway_bg1", "kind": "subway_window", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero_sit1", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "sit_bus", "mood": "closed", "x": 0.48, "y": 0.58, "w": 0.15, "h": 0.38 }
+        ]
+      }
+    },
+    {
+      "vi": "Người ta thường nghĩ sống chậm là tụt hậu. Nhưng sống chậm không phải là từ bỏ, mà là dành cho mình một khoảng lặng để lắng nghe những cảm xúc đã bị bỏ quên.",
+      "visual": {
+        "background": "#1e272e",
+        "objects": [
+          { "id": "room_bg1", "kind": "desk_room", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero_desk1", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "sit_desk", "mood": "tired", "x": 0.24, "y": 0.65, "w": 0.14, "h": 0.38 }
+        ]
+      }
+    },
+    {
+      "vi": "Bởi một người luôn chạy mà không biết đích đến, dù đi nhanh đến đâu cũng chỉ là đang lạc đường.",
+      "visual": {
+        "background": "#12151e",
+        "objects": [
+          { "id": "glass1", "kind": "hourglass", "x": 0.5, "y": 0.5, "w": 0.22, "h": 0.38 }
+        ]
+      }
+    },
+    {
+      "vi": "Đôi khi, cần chậm lại để nhận ra cha mẹ đã già đi, những người thân yêu vẫn đang chờ một cuộc gọi, và tuổi trẻ cũng đang âm thầm trôi qua.",
+      "visual": {
+        "background": "#181b26",
+        "objects": [
+          { "id": "card_family", "kind": "card", "cardIcon": "hands_heart", "text": "cha mẹ & người thân yêu", "x": 0.35, "y": 0.5, "w": 0.26, "h": 0.44 },
+          { "id": "card_youth", "kind": "card", "cardIcon": "caring_circle", "text": "tuổi trẻ không thể tìm lại", "x": 0.65, "y": 0.5, "w": 0.26, "h": 0.44 }
+        ]
+      }
+    },
+    {
+      "vi": "Cuộc sống không phải một cuộc đua mà người về đích sớm nhất sẽ là người chiến thắng. Thành công thực sự còn nằm ở việc bạn đã đánh mất những gì trên hành trình ấy.",
+      "visual": {
+        "background": "#0a0d18",
+        "objects": [
+          { "id": "overpass_bg2", "kind": "overpass_night", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero_overpass2", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "lean_rail", "mood": "tired", "x": 0.5, "y": 0.68, "w": 0.16, "h": 0.4 }
+        ]
+      }
+    },
+    {
+      "vi": "Nếu hôm nay cảm thấy mệt mỏi, hãy cho mình quyền được nghỉ ngơi. Đừng vì nhìn người khác đi nhanh mà vội vàng nghi ngờ hành trình của chính mình.",
+      "visual": {
+        "background": "#1e272e",
+        "objects": [
+          { "id": "room_bg2", "kind": "desk_room", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero_rest", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "sit_desk", "mood": "closed", "x": 0.24, "y": 0.65, "w": 0.14, "h": 0.38 }
+        ]
+      }
+    },
+    {
+      "vi": "Hãy nhớ rằng: Một cái cây không thể lớn lên chỉ sau một đêm. Một dòng sông không cần phải chảy thật nhanh mới có thể chạm đến đại dương.",
+      "visual": {
+        "background": "#141824",
+        "objects": [
+          { "id": "card_tree", "kind": "card", "cardIcon": "hands_heart", "text": "cái cây lớn dần theo năm tháng", "x": 0.35, "y": 0.5, "w": 0.26, "h": 0.44 },
+          { "id": "card_river", "kind": "card", "cardIcon": "caring_circle", "text": "dòng sông rồi sẽ tới đại dương", "x": 0.65, "y": 0.5, "w": 0.26, "h": 0.44 }
+        ]
+      }
+    },
+    {
+      "vi": "Đôi khi, chậm lại không phải để bỏ cuộc, mà là để bước tiếp một cách vững vàng hơn.",
+      "visual": {
+        "background": "#8395a7",
+        "objects": [
+          { "id": "street_peace", "kind": "city_street", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero_peace", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "stand", "mood": "smile", "x": 0.48, "y": 0.62, "w": 0.14, "h": 0.42 }
+        ]
+      }
+    },
+    {
+      "vi": "Bởi cuối cùng, điều quan trọng không phải là bạn đã đi nhanh đến mức nào, mà là sau tất cả, bạn có thực sự sống một cuộc đời mà mình mong muốn hay không?",
+      "visual": {
+        "background": "#1e272e",
+        "objects": [
+          { "id": "sunrise_finish", "kind": "window_sunrise", "x": 0.5, "y": 0.5, "w": 1.0, "h": 1.0 },
+          { "id": "hero_final", "kind": "person", "style": "phatbieulungtung", "role": "hero", "pose": "backview", "mood": "backview", "x": 0.5, "y": 0.72, "w": 0.2, "h": 0.46 }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "title": "MỘT ĐOẠN ĐƯỜNG CÙNG NHAU",
+  "layoutMode": "illustrated-story",
+  "voice": "vi-VN-NamMinhNeural",
+  "rate": "+0%",
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "pauseBetweenSegments": 0.12,
+  "outroDuration": 0.8,
+  "fadeOutDuration": 0.6,
+  "segments": [
+    {
+      "vi": "Có những người chỉ đi cùng ta một đoạn, nhưng để lại một điều rất lâu.",
+      "visualClaim": "Hai người đi từ hai phía đến gần nhau; một trái tim xuất hiện giữa họ.",
+      "visual": {
+        "heading": "MỘT ĐOẠN ĐƯỜNG CÙNG NHAU",
+        "objects": [
+          {"id":"main","kind":"person","x":0.18,"y":0.49,"w":0.12,"h":0.36,"color":"#efbc64","keyframes":[{"at":0.55,"x":0.4}]},
+          {"id":"friend","kind":"person","x":0.82,"y":0.49,"w":0.12,"h":0.36,"color":"#dc91aa","pose":"wave","keyframes":[{"at":0.55,"x":0.6}]},
+          {"id":"connection","kind":"heart","x":0.5,"y":0.44,"w":0.05,"h":0.09,"color":"#dc91aa","opacity":0,"keyframes":[{"at":0.5,"opacity":0},{"at":0.8,"opacity":1}]}
+        ]
+      }
+    },
+    {
+      "vi": "Một lần được lắng nghe có thể giúp ta học cách lắng nghe người khác.",
+      "visualClaim": "Thẻ điều nhận được hiện trước, thẻ điều trao đi xuất hiện sau.",
+      "visual": {
+        "heading": "TỪ NHẬN ĐẾN TRAO",
+        "objects": [
+          {"id":"receive","kind":"card","x":0.3,"y":0.48,"w":0.32,"h":0.4,"opacity":0,"keyframes":[{"at":0.2,"opacity":1}]},
+          {"id":"give","kind":"card","x":0.7,"y":0.48,"w":0.32,"h":0.4,"stroke":"#efbc64","opacity":0,"keyframes":[{"at":0.45,"opacity":0},{"at":0.7,"opacity":1}]},
+          {"id":"care","kind":"heart","x":0.3,"y":0.43,"w":0.1,"h":0.18,"color":"#dc91aa","opacity":0,"keyframes":[{"at":0.2,"opacity":1}]},
+          {"id":"listen","kind":"speech","x":0.7,"y":0.43,"w":0.18,"h":0.17,"color":"#f1d5b2","text":"Mình nghe đây","textColor":"#302936","fontSize":0.026,"opacity":0,"keyframes":[{"at":0.45,"opacity":0},{"at":0.7,"opacity":1}]},
+          {"id":"receive-label","kind":"text","x":0.3,"y":0.6,"w":0.28,"text":"Được lắng nghe","opacity":0,"keyframes":[{"at":0.2,"opacity":1}]},
+          {"id":"give-label","kind":"text","x":0.7,"y":0.6,"w":0.28,"text":"Lắng nghe người khác","opacity":0,"keyframes":[{"at":0.45,"opacity":0},{"at":0.7,"opacity":1}]}
+        ]
+      }
+    },
+    {
+      "vi": "Khi hai người chọn hai hướng khác nhau, điều đã học vẫn có thể ở lại.",
+      "visualClaim": "Người bạn rời sang phải, nhân vật chính và trái tim ký ức vẫn ở lại.",
+      "visual": {
+        "heading": "ĐIỀU TỐT ĐẸP Ở LẠI",
+        "objects": [
+          {"id":"main","kind":"person","x":0.4,"y":0.49,"w":0.12,"h":0.36,"color":"#efbc64"},
+          {"id":"friend","kind":"person","x":0.6,"y":0.49,"w":0.12,"h":0.36,"color":"#dc91aa","keyframes":[{"at":0.2,"x":0.6},{"at":0.8,"x":0.9,"opacity":0}]},
+          {"id":"connection","kind":"heart","x":0.5,"y":0.44,"w":0.05,"h":0.09,"color":"#dc91aa","keyframes":[{"at":0.8,"x":0.43,"y":0.48}]}
+        ]
+      }
+    },
+    {
+      "vi": "Hôm nay, hãy mang sự tử tế ấy đến một cuộc gặp mới.",
+      "visualClaim": "Nhân vật chính tiến tới người mới đang vẫy tay.",
+      "visual": {
+        "heading": "MANG SỰ TỬ TẾ ĐI TIẾP",
+        "objects": [
+          {"id":"main","kind":"person","x":0.4,"y":0.49,"w":0.12,"h":0.36,"color":"#efbc64","keyframes":[{"at":0.85,"x":0.56}]},
+          {"id":"new-friend","kind":"person","x":0.72,"y":0.49,"w":0.12,"h":0.36,"color":"#8ac9bb","pose":"wave"}
+        ]
+      }
+    }
+  ],
+  "outroVisual": {
+    "heading": "MANG SỰ TỬ TẾ ĐI TIẾP",
+    "objects": [
+      {"id":"main","kind":"person","x":0.56,"y":0.49,"w":0.12,"h":0.36,"color":"#efbc64"},
+      {"id":"new-friend","kind":"person","x":0.72,"y":0.49,"w":0.12,"h":0.36,"color":"#8ac9bb","pose":"wave"}
+    ]
+  }
+}

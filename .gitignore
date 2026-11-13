@@ -1,35 +1,46 @@
 # Dependencies
 node_modules/
 
-# Generated videos, TTS audio, timelines, render frames, and temporary work dirs
-output/*
-!output/.gitkeep
+# Build & Temporary Output (Video, Audio, QA Frames, Logs)
+output/
+scratch/
 
-# Large voice samples and temporary recordings; keep voice packs and metadata
+# Voice audio samples (keep metadata & npz models)
+voices/**/*.wav
+voices/**/*.mp3
+voices/**/*.m4a
+voices/**/*.mp4
 voices/*.wav
 voices/*.mp3
 voices/*.m4a
 voices/*.mp4
 
-# Python caches and virtual environments
+# Python Cache & Virtual Environments
 __pycache__/
 *.py[cod]
+*$py.class
 .venv/
 venv/
 env/
+.pytest_cache/
 
-# Logs and temporary files
+# Logs & Temporary Files
 *.log
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 *.tmp
 *.temp
+*.bak
 
-# Local secrets and machine-specific settings
+# Environment & Secrets
 .env
 .env.*
 !.env.example
+
+# IDE & OS System Files
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
 Desktop.ini

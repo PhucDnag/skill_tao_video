@@ -40,11 +40,14 @@
     await loadScript('/js/scene3d.js');
     await loadScript('/js/scene3d_neon_story.js');
     await loadScript('/js/overlay2d.js');
+    await loadScript('/js/subtitles.js');
+    await loadScript('/js/illustratedStory.js');
 
     const glCanvas = document.getElementById('glCanvas');
     const outputCanvas = document.getElementById('outputCanvas');
 
-    let scene3d = new window.MetaphorScene3D(glCanvas, 576, 324);
+    let scene3d = null;
+    const illustrated = new window.IllustratedStory(outputCanvas);
     let composer = new window.VideoOverlayComposer(outputCanvas, glCanvas, 576, 1024);
     let currentTimeline = null;
 
@@ -63,7 +66,11 @@
       outputCanvas.style.width = w + 'px';
       outputCanvas.style.height = h + 'px';
 
-      scene3d.resize(w, stageH);
+      if (timeline.layoutMode !== 'illustrated-story') {
+        scene3d ||= new window.MetaphorScene3D(glCanvas, 576, 324);
+        scene3d.resize(w, stageH);
+        scene3d.presentation = timeline;
+      }
       composer.resize(w, h, timeline);
       window.renderFrameAt(0);
       return true;
@@ -74,10 +81,8 @@
       const segs = currentTimeline.segments || [];
       let activeSeg = segs[0] || null;
       for (const seg of segs) {
-        if (timeSec >= seg.startTime && timeSec <= seg.endTime + 0.05) {
-          activeSeg = seg;
-          break;
-        }
+        if (timeSec >= seg.startTime) activeSeg = seg;
+        else break;
       }
       if (!activeSeg && segs.length > 0) {
         activeSeg = segs[segs.length - 1];
@@ -86,6 +91,10 @@
       const segDur = activeSeg ? Math.max(0.1, activeSeg.endTime - activeSeg.startTime) : 1;
       const segProgress = activeSeg ? Math.max(0, Math.min(1, (timeSec - activeSeg.startTime) / segDur)) : 0;
 
+      if (currentTimeline.layoutMode === 'illustrated-story') {
+        illustrated.render(timeSec, currentTimeline, activeSeg, segProgress);
+        return true;
+      }
       scene3d.renderAtTime(timeSec, activeSeg, segProgress);
       composer.renderComposite(timeSec, currentTimeline);
       return true;

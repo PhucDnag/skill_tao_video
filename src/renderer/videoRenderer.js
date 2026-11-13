@@ -8,11 +8,6 @@ function resolveFfmpegEncoder() {
   if (_encoderConfig !== null) return _encoderConfig;
 
   const candidates = [];
-  const pyFfmpeg =
-    'C:\\Users\\phucd\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win64-v4.2.2.exe';
-  if (fs.existsSync(pyFfmpeg)) {
-    candidates.push(pyFfmpeg);
-  }
   try {
     const pyRes = spawnSync('python', ['-c', 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())'], {
       encoding: 'utf-8'
@@ -79,13 +74,14 @@ function resolveFfmpegEncoder() {
 
 function findBrowserExecutable() {
   const candidates = [
+    process.env.VIDEO_BROWSER_PATH,
     'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
     'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
     'C:\\Program Files\\Microsoft\\Edge\\Application\\msedge.exe'
   ];
   for (const p of candidates) {
-    if (fs.existsSync(p)) return p;
+    if (p && fs.existsSync(p)) return p;
   }
   throw new Error('Không tìm thấy trình duyệt Chrome hoặc Microsoft Edge để render WebGL 3D.');
 }
@@ -108,6 +104,7 @@ function generateTTSAndTimeline(projectData, workDir) {
     let stderr = '';
     proc.stdout.on('data', (d) => { stdout += d.toString(); });
     proc.stderr.on('data', (d) => { stderr += d.toString(); });
+    proc.on('error', reject);
 
     proc.on('close', (code) => {
       if (code !== 0) {
@@ -141,7 +138,7 @@ async function renderVideoMP4({
 
   fs.mkdirSync(path.dirname(outputMp4Path), { recursive: true });
 
-  onProgress({ stage: 'browser', percent: 5, message: 'Khởi tạo engine 3D WebGL trên GPU RTX 4050...' });
+  onProgress({ stage: 'browser', percent: 5, message: 'Khởi tạo bộ dựng video...' });
 
   const executablePath = findBrowserExecutable();
   const browser = await puppeteer.launch({
@@ -180,7 +177,7 @@ async function renderVideoMP4({
     onProgress({
       stage: 'render',
       percent: 10,
-      message: `Đang kết xuất ${totalFrames} khung hình 3D bằng ${useNvenc ? 'GPU NVIDIA NVENC (RTX 4050)' : 'CPU'} (0%)...`
+      message: `Đang kết xuất ${totalFrames} khung hình bằng ${useNvenc ? 'NVIDIA NVENC' : 'CPU'} (0%)...`
     });
 
     // Spawn ffmpeg to encode piped JPEG frames + voiceover.mp3 into H.264 MP4
@@ -252,7 +249,7 @@ async function renderVideoMP4({
           percent: pct,
           frame: doneFrames,
           totalFrames,
-          message: `Đang render cảnh 3D & phụ đề: ${doneFrames}/${totalFrames} frames (${Math.round((doneFrames / totalFrames) * 100)}%)`
+          message: `Đang render hình ảnh & phụ đề: ${doneFrames}/${totalFrames} frames (${Math.round((doneFrames / totalFrames) * 100)}%)`
         });
       }
     }
@@ -268,6 +265,7 @@ async function renderVideoMP4({
 }
 
 module.exports = {
+  findBrowserExecutable,
   generateTTSAndTimeline,
   renderVideoMP4
 };

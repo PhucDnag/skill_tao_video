@@ -11616,6 +11616,19 @@
       this.camera.position.copy(camTarget.pos);
       this.camera.lookAt(camTarget.look);
 
+      // Apply presentation after legacy scene code sets its dark atmosphere.
+      const presentation = this.presentation || {};
+      // Layout/style chooses geometry, not permission to undo the user's palette.
+      if (presentation.visualTheme !== 'dark') {
+        const background = activeSegment?.background || presentation.background || '#dcebf3';
+        this.scene.background.set(background);
+        if (this.scene.fog) this.scene.fog.color.set(background);
+        if (!this.daylightFill) {
+          this.daylightFill = new THREE.HemisphereLight(0xffffff, 0xa5b9c6, 1.1);
+          this.scene.add(this.daylightFill);
+        }
+        this.daylightFill.visible = true;
+      } else if (this.daylightFill) this.daylightFill.visible = false;
       this.renderer.render(this.scene, this.camera);
     }
   }

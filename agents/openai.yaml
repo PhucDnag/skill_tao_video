@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Story Director"
+  short_description: "Đạo diễn hoạt hình 2D/3D, diễn xuất đúng từng câu"
+  default_prompt: "Dùng $video-story-director dựng video hoạt hình 2D hoặc 3D theo chủ đề của tôi, hình sáng đẹp, sub IN HOA phía dưới bôi vàng theo lời đọc và xuất MP4."

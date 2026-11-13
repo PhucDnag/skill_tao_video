@@ -550,6 +550,8 @@ async def process_project(input_json_path: str, output_dir: str):
             "karaokeChunks": [],
             "isOutro": True
         })
+        if project.get("layoutMode") == "illustrated-story":
+            enriched_segments[-1]["visual"] = project.get("outroVisual", enriched_segments[-2].get("visual", {}))
         current_time += outro_duration
 
     # Concatenate all audio files into voiceover.mp3
@@ -574,6 +576,8 @@ async def process_project(input_json_path: str, output_dir: str):
         "watermark": project.get("watermark", ""),
         "layoutMode": project.get("layoutMode", "classic-letterbox"),
         "style": project.get("style", ""),
+        "background": project.get("background", "#eef5fa"),
+        "visualTheme": project.get("visualTheme", "bright"),
         "subtitleMode": project.get("subtitleMode", ""),
         "fadeInDuration": project.get("fadeInDuration", 0.0),
         "fadeOutDuration": project.get("fadeOutDuration", 0.0),

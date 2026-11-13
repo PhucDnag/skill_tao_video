@@ -60,7 +60,7 @@
       }
 
       // 1. Fill full 9:16 black background
-      ctx.fillStyle = '#000000';
+      ctx.fillStyle = timeline.background || '#eef5fa';
       ctx.fillRect(0, 0, w, h);
 
       // 2. Draw 16:9 3D WebGL stage in the middle
@@ -98,7 +98,7 @@
         titleFontSize -= 1;
         ctx.font = `700 ${titleFontSize}px "Segoe UI", Arial, sans-serif`;
       }
-      ctx.fillStyle = '#ffffff';
+      ctx.fillStyle = '#263449';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(title, w / 2, Math.round(282 * s));
@@ -126,7 +126,7 @@
 
       // 6. Draw Bottom Dual Subtitles (Vietnamese Karaoke + English)
       if (!activeSeg.isOutro && activeSeg.vi) {
-        this._drawSubtitles(ctx, timeSec, activeSeg, s);
+        global.drawVideoSubtitles(ctx, timeSec, activeSeg, w, h);
       }
     }
 
@@ -164,7 +164,8 @@
 
         // 4. Condensed Kinetic Caption (Single-line Bold Italic White in upper-middle negative space)
         if (!activeSeg.isOutro && !activeSeg.hideCaption) {
-          this._drawCondensedKineticCaption(ctx, timeSec, activeSeg, segProgress, w, h, s);
+          // Old project metadata must never override the shared subtitle contract.
+          global.drawVideoSubtitles(ctx, timeSec, activeSeg, w, h);
         }
       }
 

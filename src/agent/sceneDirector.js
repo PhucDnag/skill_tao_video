@@ -431,7 +431,7 @@ const PRESETS = {
     outroScene: 'sunrise_ocean_horizon',
     outroCamera: 'sunrise_backview_horizon',
     outroHideCaption: true,
-    segments: require('../../projects/noi_so_dam_dong_neon_stage.json').segments
+    segments: []
   }
 };
 
